@@ -23,6 +23,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist' # Directly point to your default dist folder
+          path: './dist/learn-and-code/browser' # Directly point to your default dist folder
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
