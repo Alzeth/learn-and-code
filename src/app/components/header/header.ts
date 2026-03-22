@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { LoggerService } from '@services/logger';
 import { Burger } from '@shared/components/burger/burger';
 
@@ -17,6 +17,7 @@ import { ZardDarkMode } from '@shared/services/dark-mode';
     RouterLink,
     Burger,
   ],
+  providers: [ActivatedRoute],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './header.html',

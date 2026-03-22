@@ -1,11 +1,12 @@
 import { Component, inject, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { Header } from '@components/header/header';
 import { LoggerService } from '@services/logger';
 
 @Component({
   selector: 'app-root',
   imports: [RouterOutlet, Header],
+  providers: [ActivatedRoute],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

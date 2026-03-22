@@ -1,6 +1,6 @@
 import { NgOptimizedImage } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-logo',
@@ -8,6 +8,7 @@ import { RouterLink } from '@angular/router';
     NgOptimizedImage,
     RouterLink
   ],
+  providers: [ActivatedRoute],
   standalone: true,
   templateUrl: './logo.html',
   styleUrl: './logo.css',
