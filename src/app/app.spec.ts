@@ -16,8 +16,7 @@ describe('App Component', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [App], // Declare App Component
-      imports: [RouterOutlet], // Include RouterOutlet as it's part of the template
+      imports: [App, RouterOutlet], // Include RouterOutlet as it's part of the template
       providers: [
         { provide: LoggerService, useValue: mockLoggerService }, // Mock service
       ],
