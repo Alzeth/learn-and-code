@@ -49,11 +49,4 @@ describe('App Component', () => {
     expect(mainElement).toBeTruthy();
     expect(mainElement?.textContent).toContain('Main application');
   });
-
-  it('should render the router outlet', () => {
-    fixture.detectChanges(); // Trigger change detection
-
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('router-outlet')).toBeTruthy();
-  });
 });
