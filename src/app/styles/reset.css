@@ -1,17 +1,88 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 16px;
-  min-height: 100dvh;
+  min-height: 100svh;
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
 }
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth; /* Bonus: Smooth scrolling */
+  }
+}
+
+:not(dialog) {
+  margin: 0;
+}
+
 body {
   line-height: 1;
+  -webkit-font-smoothing: antialiased;
 }
+
+#root, #__next {
+  isolation: isolate;
+}
+
+h1, h2, h3, h4, h5, h6,
+button, input, label, select, textarea {
+  line-height: 1.1;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+ul[role="list"], ol[role="list"] {
+  list-style: none;
+  padding-inline-start: 0; /* Logical property for RTL */
+}
+
 blockquote, q {
   quotes: none;
 }
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+:target {
+  scroll-margin-block: 5ex;
+}
+
 blockquote:before, blockquote:after,
 q:before, q:after {
   content: '';
 }
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
