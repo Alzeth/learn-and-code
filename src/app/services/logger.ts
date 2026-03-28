@@ -9,25 +9,25 @@ export class LoggerService {
 
   private level = environment.logLevel;
 
-  debug(message: any, ...optional: any[]) {
+  debug(message: string, ...optional: any[]) {
     if (this.level <= LogLevel.DEBUG) {
-      console.debug(message, ...optional);
+      console.debug(`%c ${message}`, "background: #fff; color: #ff7700", ...optional);
     }
   }
 
-  info(message: any, ...optional: any[]) {
+  info(message: string, ...optional: any[]) {
     if (this.level <= LogLevel.INFO) {
-      console.info(message, ...optional);
+      console.info(`%c ${message}`, "background: #fff; color: #0800ff", ...optional);
     }
   }
 
-  warn(message: any, ...optional: any[]) {
+  warn(message: string, ...optional: any[]) {
     if (this.level <= LogLevel.WARN) {
       console.warn(message, ...optional);
     }
   }
 
-  error(message: any, ...optional: any[]) {
+  error(message: string, ...optional: any[]) {
     if (this.level <= LogLevel.ERROR) {
       console.error(message, ...optional);
     }
