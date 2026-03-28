@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { CodeEditor } from '@components/code-editor/code-editor';
 
 @Component({
   selector: 'app-lesson-page',
-  imports: [],
+  imports: [
+    CodeEditor
+  ],
   templateUrl: './lesson-page.html',
   styleUrl: './lesson-page.css',
 })

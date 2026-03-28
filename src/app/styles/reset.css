@@ -4,7 +4,6 @@
 
 html {
   font-size: 16px;
-  min-height: 100svh;
   -moz-text-size-adjust: none;
   -webkit-text-size-adjust: none;
   text-size-adjust: none;
@@ -21,6 +20,7 @@ html {
 }
 
 body {
+  min-height: 100svh;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
 }
