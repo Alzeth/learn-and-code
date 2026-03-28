@@ -13,6 +13,12 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      - name: Set deploy status in_progress ▶
+        uses: unacast/actions-github-deployment-status@0.4.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          status: in_progress
+
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
@@ -34,3 +40,11 @@ jobs:
 
       - name: Deploy to GitHub Pages 🚀
         uses: actions/deploy-pages@v4
+
+      - name: Update result to Deployment API 🏁
+        if: always()
+        uses: unacast/actions-github-deployment-status@0.4.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          status: ${{ job.status }}
+          environment_url: '${{ env.DEPLOY_ENVIRONMENT }}'
