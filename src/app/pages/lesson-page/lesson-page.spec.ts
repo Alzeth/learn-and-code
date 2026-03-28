@@ -1,4 +1,7 @@
+import { importProvidersFrom } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
+import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 
 import { LessonPage } from './lesson-page';
 
@@ -8,7 +11,8 @@ describe('LessonPage', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LessonPage]
+      imports: [LessonPage],
+      providers: [importProvidersFrom(MonacoEditorModule.forRoot())]
     })
     .compileComponents();
 
