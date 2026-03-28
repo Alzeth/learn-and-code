@@ -1,0 +1,15 @@
+on: deployment
+name: Deployment status
+
+jobs:
+  deploy:
+    name: Deploy event
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set deployment status 🏁
+        if: always()
+        uses: unacast/actions-github-deployment-status@0.4.0
+        with:
+         github_token: ${{ secrets.GITHUB_TOKEN }}
+         status: ${{ job.status }}
+         environment_url: '${{ env.DEPLOY_ENVIRONMENT }}'
