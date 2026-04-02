@@ -1,0 +1,9 @@
+.gradient-wrap {
+  transition: box-shadow 0.3s ease;
+  background: linear-gradient(135deg, #BA1200 0, #3185FC 100%);
+  box-shadow: 1px 1px 10px 0 var(--muted-foreground);
+
+  &:hover {
+    box-shadow: 1px 1px 15px 0 var(--muted-foreground);
+  }
+}

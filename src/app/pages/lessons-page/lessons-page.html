@@ -1,9 +1,11 @@
 <div class="container">
-  <ul>
-    @for (lesson of lessons; track lesson.id) {
-      <li><a [routerLink]="lesson.href">{{ lesson.title }}</a></li>
-    } @empty {
-      <li>There are no items.</li>
-    }
-  </ul>
+  <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance">Lessons page</h1>
+  <div class="bg-background py-10">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl lg:mx-0">
+        <p class="mt-2 text-lg/8">Learn how to grow in python topics quickly.</p>
+      </div>
+      <app-lessons-list [lessons]="lessons"></app-lessons-list>
+    </div>
+  </div>
 </div>

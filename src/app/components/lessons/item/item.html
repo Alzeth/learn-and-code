@@ -1,0 +1,13 @@
+<a [routerLink]="lesson.href" class="group block h-full">
+  <div
+    class="gradient-wrap relative p-[2px] rounded-xl h-full"
+  >
+    <z-card
+      [zTitle]="lesson.title"
+      [zDescription]="lesson.description"
+      class="h-full rounded-[10px]"
+    >
+      <time [dateTime]="lesson.datetime">{{ lesson.date }}</time>
+    </z-card>
+  </div>
+</a>
