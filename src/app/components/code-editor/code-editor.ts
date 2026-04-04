@@ -1,11 +1,12 @@
-import { Component, DestroyRef, effect, inject, Injector } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { LoggerService } from '@services/logger';
-import { EDarkModes, ZardDarkMode } from '@shared/services';
-import getEditorTheme from '@shared/utils/get-editor-theme';
-import { AppSettings } from 'app/app.settings';
 import { editor } from 'monaco-editor';
 import { EditorComponent } from 'ngx-monaco-editor-v2';
+import { Component, DestroyRef, effect, inject, Injector } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
+import { LoggerService } from '@app/services/logger';
+import { EDarkModes, ZardDarkMode } from '@app/shared/services';
+import getEditorTheme from '@app/shared/utils/get-editor-theme';
+import { AppSettings } from '@app/app.settings';
 
 @Component({
   selector: 'app-code-editor',

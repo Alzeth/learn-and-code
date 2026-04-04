@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { ZardCardComponent } from "@shared/components/card";
-import { ILesson } from 'app/interfaces';
+
+import { ZardCardComponent } from "@app/shared/components/card";
+import { ILesson } from '@app/interfaces';
 
 @Component({
   selector: 'app-lesson-item',

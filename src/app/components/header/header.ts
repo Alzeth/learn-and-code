@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { LoggerService } from '@services/logger';
-import { Burger } from '@shared/components/burger/burger';
 
-import { ZardButtonComponent } from '@shared/components/button';
-import { ZardIconComponent } from '@shared/components/icon';
-import { Logo } from '@shared/components/logo/logo';
-import { ZardDarkMode } from '@shared/services/dark-mode';
+import { LoggerService } from '@app/services/logger';
+import { Burger } from '@app/shared/components/burger/burger';
+
+import { ZardButtonComponent } from '@app/shared/components/button';
+import { ZardIconComponent } from '@app/shared/components/icon';
+import { Logo } from '@app/shared/components/logo/logo';
+import { ZardDarkMode } from '@app/shared/services/dark-mode';
 
 @Component({
   selector: 'app-header',
