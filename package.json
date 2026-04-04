@@ -13,7 +13,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build PUBLIC_URL=/learn-and-code/",
+    "build": "ng build --base-href /learn-and-code/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:learn-and-code": "node dist/learn-and-code/server/server.mjs"
