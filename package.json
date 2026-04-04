@@ -1,5 +1,6 @@
 {
   "name": "learn-and-code",
+  "homepage": "https://alzeth.github.io/learn-and-code/",
   "version": "1.0.0",
   "description": "Learning platform with code editor",
   "repository": {
@@ -12,7 +13,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build PUBLIC_URL=/learn-and-code/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:learn-and-code": "node dist/learn-and-code/server/server.mjs"
