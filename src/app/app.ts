@@ -1,7 +1,8 @@
 import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { Header } from '@components/header/header';
-import { LoggerService } from '@services/logger';
+
+import { Header } from '@app/components/header/header';
+import { LoggerService } from '@app/services/logger';
 
 @Component({
   selector: 'app-root',

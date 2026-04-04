@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CodeEditor } from '@components/code-editor/code-editor';
+import { CodeEditor } from '@app/components/code-editor/code-editor';
 
 @Component({
   selector: 'app-lesson-page',

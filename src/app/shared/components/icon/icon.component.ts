@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, computed, input, ViewEncapsulation 
 import type { ClassValue } from 'clsx';
 import { LucideAngularModule } from 'lucide-angular';
 
-import { mergeClasses } from '@shared/utils/merge-classes';
+import { mergeClasses } from '@app/shared/utils/merge-classes';
 
 import { iconVariants, type ZardIconSizeVariants } from './icon.variants';
 import { ZARD_ICONS, type ZardIcon } from './icons';
