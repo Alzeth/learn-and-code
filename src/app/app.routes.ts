@@ -9,6 +9,7 @@ import { LoginPage } from '@app/pages/login-page/login-page';
 import { NotFoundPage } from '@app/pages/not-found-page/not-found-page';
 import { RegisterPage } from '@app/pages/register-page/register-page';
 import { LessonsResolver } from '@app/resolvers/lessons.resolver';
+import { CoursesResolver } from '@app/resolvers/courses.resolver';
 
 import { ROUTES } from './constants';
 
@@ -22,7 +23,13 @@ export const routes: Routes = [
     }
   },
   {path: ROUTES.LESSON, component: LessonPage},
-  {path: ROUTES.COURSES, component: CoursesPage},
+  {
+    path: ROUTES.COURSES,
+    component: CoursesPage,
+    resolve: {
+      courses: CoursesResolver,
+    }
+  },
   {path: ROUTES.COURSE, component: CoursePage},
   {path: ROUTES.AUTH.LOGIN, component: LoginPage},
   {path: ROUTES.AUTH.REGISTER, component: RegisterPage},
