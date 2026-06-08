@@ -2,7 +2,8 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "cli": {
-    "packageManager": "npm"
+    "packageManager": "npm",
+    "analytics": "f4691aee-b91b-4407-814c-c14b846c9468"
   },
   "newProjectRoot": "projects",
   "projects": {
@@ -31,6 +32,11 @@
                 "glob": "**/*",
                 "input": "node_modules/monaco-editor",
                 "output": "/assets/monaco/"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/pyodide",
+                "output": "pyodide"
               }
             ],
             "styles": [

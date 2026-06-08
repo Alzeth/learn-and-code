@@ -14,7 +14,7 @@ import { CoursesResolver } from '@app/resolvers/courses.resolver';
 import { ROUTES } from './constants';
 
 export const routes: Routes = [
-  {path: '', component: HomePage, pathMatch: 'full'},
+  { path: '', component: HomePage, pathMatch: 'full' },
   {
     path: ROUTES.LESSONS,
     component: LessonsPage,
@@ -22,7 +22,7 @@ export const routes: Routes = [
       lessons: LessonsResolver,
     }
   },
-  {path: ROUTES.LESSON, component: LessonPage},
+  { path: ROUTES.LESSON, component: LessonPage },
   {
     path: ROUTES.COURSES,
     component: CoursesPage,
@@ -30,8 +30,9 @@ export const routes: Routes = [
       courses: CoursesResolver,
     }
   },
-  {path: ROUTES.COURSE, component: CoursePage},
-  {path: ROUTES.AUTH.LOGIN, component: LoginPage},
-  {path: ROUTES.AUTH.REGISTER, component: RegisterPage},
-  {path: '*', component: NotFoundPage},
+  { path: ROUTES.COURSE, component: CoursePage },
+  { path: ROUTES.AUTH.LOGIN, component: LoginPage },
+  { path: ROUTES.AUTH.REGISTER, component: RegisterPage },
+  { path: ROUTES.NOT_FOUND, component: NotFoundPage },
+  { path: '**', redirectTo: ROUTES.NOT_FOUND },
 ];
