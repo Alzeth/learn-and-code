@@ -1,7 +1,7 @@
 {
   "name": "learn-and-code",
   "homepage": "https://alzeth.github.io/learn-and-code/",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Learning platform with code editor",
   "repository": {
     "type": "git",
@@ -9,7 +9,9 @@
   },
   "types": "index.d.ts",
   "author": "Igor Ovcharenko",
-  "contributors": ["Igor Ovcharenko <mr.alzeth@gmail.com>"],
+  "contributors": [
+    "Igor Ovcharenko <mr.alzeth@gmail.com>"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -48,6 +50,7 @@
     "lucide-angular": "^1.0.0",
     "monaco-editor": "^0.55.1",
     "ngx-monaco-editor-v2": "^21.1.4",
+    "pyodide": "^0.29.4",
     "rxjs": "~7.8.0",
     "tailwind-merge": "^3.6.0",
     "tslib": "^2.3.0"
