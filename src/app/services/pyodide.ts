@@ -1,6 +1,8 @@
 import { inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 
+import { environment } from 'environments/environment';
+
 export interface PyodideResult {
   stdout: string;
   stderr: string;
@@ -10,6 +12,10 @@ export interface PyodideResult {
 export class PyodideService {
   private readonly platformId = inject(PLATFORM_ID);
   private pyodide: any = null;
+
+  private get pyodidePath(): string {
+    return `${environment.baseHref}pyodide/`;
+  }
 
   readonly isLoading = signal(false);
   readonly isReady = signal(false);
@@ -22,13 +28,15 @@ export class PyodideService {
 
     await new Promise<void>((resolve, reject) => {
       const script = document.createElement('script');
-      script.src = '/pyodide/pyodide.js';
+      script.src = `${this.pyodidePath}pyodide.js`;
       script.onload = () => resolve();
       script.onerror = () => reject(new Error('Failed to load Pyodide'));
       document.head.appendChild(script);
     });
 
-    this.pyodide = await window.loadPyodide({ indexURL: 'pyodide/' });
+    this.pyodide = await window.loadPyodide({
+      indexURL: this.pyodidePath
+    });
 
     this.isLoading.set(false);
     this.isReady.set(true);

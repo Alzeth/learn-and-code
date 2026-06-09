@@ -21,6 +21,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
+            "baseHref": "/learn-and-code/",
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "assets": [
