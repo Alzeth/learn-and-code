@@ -28,7 +28,7 @@ export class PyodideService {
       document.head.appendChild(script);
     });
 
-    this.pyodide = await window.loadPyodide({ indexURL: '/pyodide/' });
+    this.pyodide = await window.loadPyodide({ indexURL: 'pyodide/' });
 
     this.isLoading.set(false);
     this.isReady.set(true);
