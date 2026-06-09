@@ -10,6 +10,7 @@ import { NotFoundPage } from '@app/pages/not-found-page/not-found-page';
 import { RegisterPage } from '@app/pages/register-page/register-page';
 import { LessonsResolver } from '@app/resolvers/lessons.resolver';
 import { CoursesResolver } from '@app/resolvers/courses.resolver';
+import { LessonResolver } from '@app/resolvers/lesson.resolver';
 
 import { ROUTES } from './constants';
 
@@ -22,7 +23,13 @@ export const routes: Routes = [
       lessons: LessonsResolver,
     }
   },
-  { path: ROUTES.LESSON, component: LessonPage },
+  {
+    path: ROUTES.LESSON,
+    component: LessonPage,
+    resolve: {
+      lesson: LessonResolver,
+    }
+  },
   {
     path: ROUTES.COURSES,
     component: CoursesPage,

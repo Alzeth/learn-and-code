@@ -3,6 +3,7 @@ import { ApplicationConfig, importProvidersFrom, provideBrowserGlobalErrorListen
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
+import { provideMarkdown } from 'ngx-markdown';
 
 import { routes } from './app.routes';
 import { provideZard } from '@app/shared/core/provider/providezard';
@@ -15,5 +16,6 @@ export const appConfig: ApplicationConfig = {
     provideHttpClient(withFetch()),
     provideZard(),
     importProvidersFrom(MonacoEditorModule.forRoot()),
+    provideMarkdown(),
   ]
 };
