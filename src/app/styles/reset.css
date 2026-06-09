@@ -20,7 +20,6 @@ html {
 }
 
 body {
-  min-height: 100svh;
   line-height: 1;
   -webkit-font-smoothing: antialiased;
 }

@@ -1,15 +1,10 @@
-<div class="container-fluid">
-  <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance">Lesson page</h1>
-
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 h-[70vh]">
-
-    <div class="overflow-y-auto rounded-lg border border-border p-6">
+<div class="container-fluid lesson-container">
+  <div class="block md:flex w-full">
+    <div class="h-full w-full md:w-[50%] overflow-y-auto py-[84px] px-[15px]">
       <p class="text-muted-foreground">Theory content goes here.</p>
     </div>
-
-    <div class="flex flex-col min-h-0">
+    <div class="h-svh w-full md:w-[50%] py-[84px] px-[15px]">
       <app-code-editor [starterCode]="'# Write your Python code here\n'" />
     </div>
-
   </div>
 </div>
