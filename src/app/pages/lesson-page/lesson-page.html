@@ -1,7 +1,7 @@
 <div class="container-fluid lesson-container">
   <div class="block md:flex w-full">
-    <div class="h-full w-full md:w-[50%] overflow-y-auto py-[84px] px-[15px]">
-      <p class="text-muted-foreground">Theory content goes here.</p>
+    <div class="h-svh w-full md:w-[50%] overflow-y-auto py-[84px] px-[15px]">
+      <app-markdown-parcer [theory]="theory()"></app-markdown-parcer>
     </div>
     <div class="h-svh w-full md:w-[50%] py-[84px] px-[15px]">
       <app-code-editor [starterCode]="'# Write your Python code here\n'" />
