@@ -52,7 +52,7 @@
     "monaco-editor": "^0.55.1",
     "ngx-markdown": "^21.3.0",
     "ngx-monaco-editor-v2": "^21.1.4",
-    "pyodide": "^0.29.4",
+    "pyodide": "^314.0.0",
     "rxjs": "~7.8.0",
     "tailwind-merge": "^3.6.0",
     "tslib": "^2.3.0"
