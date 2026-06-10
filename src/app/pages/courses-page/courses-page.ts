@@ -2,12 +2,13 @@ import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ICourse } from '@app/interfaces';
-import { LessonsList } from 'app/components/lessons/list/list';
-import { Item } from 'app/components/lessons/item/item';
+import { CoursesList } from 'app/components/courses/list/list';
 
 @Component({
   selector: 'app-courses-page',
-  imports: [],
+  imports: [
+    CoursesList,
+  ],
   templateUrl: './courses-page.html',
   styleUrl: './courses-page.css',
 })
