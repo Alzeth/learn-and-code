@@ -1,7 +1,7 @@
 {
   "name": "learn-and-code",
   "homepage": "https://alzeth.github.io/learn-and-code/",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "Learning platform with code editor",
   "repository": {
     "type": "git",
@@ -49,7 +49,6 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "express": "^5.1.0",
-    "lucide-angular": "^1.0.0",
     "marked": "^18.0.5",
     "monaco-editor": "^0.55.1",
     "ngx-markdown": "^21.3.0",

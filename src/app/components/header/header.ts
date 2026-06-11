@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { lucideContrast } from '@ng-icons/lucide';
 
 import { LoggerService } from '@app/services/logger';
 import { Burger } from '@app/shared/components/burger/burger';
 
 import { ZardButtonComponent } from '@app/shared/components/button';
-import { ZardIconComponent } from '@app/shared/components/icon';
 import { Logo } from '@app/shared/components/logo/logo';
 import { ZardDarkMode } from '@app/shared/services/dark-mode';
 
@@ -13,11 +14,12 @@ import { ZardDarkMode } from '@app/shared/services/dark-mode';
   selector: 'app-header',
   imports: [
     ZardButtonComponent,
-    ZardIconComponent,
     Logo,
     RouterLink,
     Burger,
+    NgIcon
   ],
+  viewProviders: [provideIcons({ lucideContrast })],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './header.html',
