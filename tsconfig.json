@@ -3,7 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./src",
+    "rootDir": "./src",
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -17,7 +17,8 @@
     "target": "ES2022",
     "module": "preserve",
     "paths": {
-      "@app/*": ["app/*"],
+      "@app/*": ["./src/app/*"],
+      "environments/*": ["./src/environments/*"],
       "src/app/*": ["app/*"],
       "@/shared/*": ["app/shared/*"]
     }

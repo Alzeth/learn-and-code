@@ -26,8 +26,8 @@ import { AppLoader } from 'app/shared/components/app-loader/app-loader';
   standalone: true,
   imports: [RouterOutlet, Header, AppLoader, ToastContainerComponent],
   templateUrl: './app.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './app.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App implements OnInit {
   private readonly router = inject(Router);
