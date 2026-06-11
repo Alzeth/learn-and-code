@@ -37,7 +37,7 @@
   "private": true,
   "packageManager": "npm@10.8.2",
   "dependencies": {
-    "@angular/cdk": "^21.2.6",
+    "@angular/cdk": "^22.0.1",
     "@angular/common": "^22.0.1",
     "@angular/compiler": "^22.0.1",
     "@angular/core": "^22.0.1",
@@ -54,7 +54,7 @@
     "express": "^5.1.0",
     "marked": "^18.0.6",
     "monaco-editor": "^0.55.1",
-    "ngx-markdown": "^21.3.0",
+    "ngx-markdown": "^22.0.0",
     "ngx-monaco-editor-v2": "^21.1.4",
     "pyodide": "^314.0.2",
     "rxjs": "~7.8.0",
