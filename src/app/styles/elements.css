@@ -11,6 +11,10 @@
   padding: 0 15px;
 }
 
+.page-container {
+  padding-top: 84px;
+}
+
 button {
   cursor: pointer;
 }

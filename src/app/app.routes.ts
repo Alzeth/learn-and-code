@@ -11,6 +11,7 @@ import { RegisterPage } from '@app/pages/register-page/register-page';
 import { LessonsResolver } from '@app/resolvers/lessons.resolver';
 import { CoursesResolver } from '@app/resolvers/courses.resolver';
 import { LessonResolver } from '@app/resolvers/lesson.resolver';
+import { CourseResolver } from 'app/resolvers/course.resolver';
 
 import { ROUTES } from './constants';
 
@@ -37,7 +38,13 @@ export const routes: Routes = [
       courses: CoursesResolver,
     }
   },
-  { path: ROUTES.COURSE, component: CoursePage },
+  {
+    path: ROUTES.COURSE,
+    component: CoursePage,
+    resolve: {
+      course: CourseResolver,
+    }
+  },
   { path: ROUTES.AUTH.LOGIN, component: LoginPage },
   { path: ROUTES.AUTH.REGISTER, component: RegisterPage },
   { path: ROUTES.NOT_FOUND, component: NotFoundPage },

@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance">{{ course?.title }}</h1>
+  <p class="leading-7 [&amp;:not(:first-child)]:mt-6 mb-10">{{ course?.description }}</p>
+  <z-accordion class="mb-10" [zDefaultValue]="course?.tableOfContents?.[0]?.id ?? ''">
+    @for (item of course?.tableOfContents; track item.id) {
+      <z-accordion-item [zValue]="item.id" [zTitle]="item.title">
+        {{ item.description }}
+      </z-accordion-item>
+    }
+  </z-accordion>
+  <a [routerLink]="['/lessons', course?.tableOfContents?.[0]?.id]"
+     [queryParams]="{ course: course?.id }">
+    <button type="button" z-button zType="outline">Start course <ng-icon name="lucideArrowRight" /></button>
+  </a>
+</div>
