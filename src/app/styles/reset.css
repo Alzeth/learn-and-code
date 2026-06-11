@@ -15,10 +15,6 @@ html {
   }
 }
 
-:not(dialog) {
-  margin: 0;
-}
-
 body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;

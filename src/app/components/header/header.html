@@ -2,27 +2,29 @@
   <div class="container">
     <div class="flex items-center justify-between">
       <app-logo></app-logo>
-    </div>
-    <div class="">
-      <ul class="block md:flex">
+      <ul class="block md:flex gap-4">
         <li>
-            <a routerLink="/courses">Courses</a>
+            <a routerLink="/courses">
+              <button z-button zSize="sm" zType="link">Courses</button>
+            </a>
         </li>
         <li>
-          <a routerLink="/lessons">Lessons</a>
+          <a routerLink="/lessons">
+            <button z-button zSize="sm" zType="link">Lessons</button>
+          </a>
         </li>
       </ul>
-    </div>
-    <div class="flex flex-1 justify-end items-center">
-      <div class="mr-2">
-        <button z-button zType="ghost" zSize="sm" (click)="toggleTheme()">
-          <z-icon zType="dark-mode" class="size-4.5" />
-          <span class="sr-only">Toggle theme</span>
-        </button>
+      <div class="flex justify-end items-center">
+        <div class="mr-2">
+          <button z-button zType="ghost" zSize="sm" (click)="toggleTheme()">
+            <z-icon zType="dark-mode" class="size-4.5" />
+            <span class="sr-only">Toggle theme</span>
+          </button>
+        </div>
+        <a routerLink="/login">
+          Log in <span aria-hidden="true">&rarr;</span>
+        </a>
       </div>
-      <a routerLink="/login">
-        Log in <span aria-hidden="true">&rarr;</span>
-      </a>
     </div>
     <div class="flex flex-1 justify-end md:hidden">
       <app-burger [isOpenSignal]="isOpen"></app-burger>

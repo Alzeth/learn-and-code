@@ -1,4 +1,7 @@
 <app-header></app-header>
 <main class="main h-svh">
+  @if (isLoading()) {
+    <z-loader></z-loader>
+  }
   <router-outlet />
 </main>

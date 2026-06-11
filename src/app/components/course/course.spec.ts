@@ -1,15 +1,15 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoursePage } from './course-page';
+import { Course } from './course';
 import { ActivatedRoute } from '@angular/router';
 
-describe('CoursePage', () => {
+describe('Course', () => {
   const fakeActivatedRoute = {
     snapshot: {data: {courses: {courses: []}}}
   } as unknown as ActivatedRoute;
 
-  let component: CoursePage;
-  let fixture: ComponentFixture<CoursePage>;
+  let component: Course;
+  let fixture: ComponentFixture<Course>;
 
   beforeAll(() => {
     Object.defineProperty(window, 'matchMedia', {
@@ -29,12 +29,12 @@ describe('CoursePage', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [CoursePage],
+      imports: [Course],
       providers: [{ provide: ActivatedRoute, useValue: fakeActivatedRoute }]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CoursePage);
+    fixture = TestBed.createComponent(Course);
     component = fixture.componentInstance;
     await fixture.whenStable();
   });
