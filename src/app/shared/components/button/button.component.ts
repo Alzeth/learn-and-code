@@ -22,14 +22,14 @@ import {
   type ZardButtonSizeVariants,
   type ZardButtonTypeVariants,
 } from './button.variants';
-import { ZardIconComponent } from '@app/shared/components/icon/icon.component';
+import { ZardLoaderComponent } from 'app/shared/components/loader';
 
 @Component({
   selector: 'z-button, button[z-button], a[z-button]',
-  imports: [ZardIconComponent],
+  imports: [ZardLoaderComponent],
   template: `
     @if (zLoading()) {
-      <z-icon zType="loader-circle" class="animate-spin duration-2000" />
+      <z-loader></z-loader>
     }
     <ng-content />
   `,
