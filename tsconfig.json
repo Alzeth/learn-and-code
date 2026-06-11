@@ -3,7 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": "./src",
+    "rootDir": "./src",
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
@@ -16,7 +16,9 @@
     "target": "ES2022",
     "module": "preserve",
     "paths": {
-      "@app/*": ["app/*"]
+      "@app/*": ["./src/app/*"],
+      "app/*": ["./src/app/*"],
+      "environments/*": ["./src/environments/*"]
     }
   },
   "angularCompilerOptions": {
