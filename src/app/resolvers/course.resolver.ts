@@ -14,6 +14,6 @@ export class CourseResolver implements Resolve<ICourse> {
   resolve(route: ActivatedRouteSnapshot): Observable<ICourse> {
     const href = route.paramMap.get('id')!;
 
-    return this.courseService.getByHref(href);
+    return this.courseService.getById(href);
   }
 }
