@@ -1,10 +1,10 @@
-<a [routerLink]="course.id" class="group block h-full">
+<a [routerLink]="course()?.id" class="group block h-full">
   <div
     class="gradient-wrap relative p-[2px] rounded-xl h-full"
   >
     <z-card
-      [zTitle]="course.title"
-      [zDescription]="course.description"
+      [zTitle]="course()?.title"
+      [zDescription]="course()?.description"
       class="h-full rounded-[10px]"
     >
     </z-card>

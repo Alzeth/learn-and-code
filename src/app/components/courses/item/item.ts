@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { ZardCardComponent } from "@app/shared/components/card";
@@ -14,10 +14,5 @@ import { ICourse } from '@app/interfaces';
   styleUrl: './item.css',
 })
 export class Item {
-  @Input({ required: true }) course: ICourse = {
-    id: '',
-    title: '',
-    description: '',
-    tableOfContents: [],
-  };
+  course = input<ICourse>();
 }
