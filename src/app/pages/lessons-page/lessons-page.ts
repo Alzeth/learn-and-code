@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { LessonsList } from '@app/components/lessons/list/list';
 import { ILesson } from '@app/interfaces';
+import { LoggerService } from 'app/services/logger';
 
 @Component({
   selector: 'app-lessons-page',
@@ -17,9 +18,11 @@ export class LessonsPage {
   lessons: ILesson[] = [];
 
   private route = inject(ActivatedRoute);
+  private logger = inject(LoggerService);
 
   ngOnInit() {
     const response = this.route.snapshot.data["lessons"];
+    this.logger.debug('Lessons page response:', response);
     this.lessons = response.lessons;
   }
 }

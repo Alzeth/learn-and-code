@@ -4,6 +4,7 @@ import { map, Observable } from 'rxjs';
 import { ICourse } from 'app/interfaces';
 import { API_BASE_URL, USE_LOCAL_DATA } from './api.config';
 import { ICoursesResponse } from './interfaces';
+import { LoggerService } from 'app/services/logger';
 
 @Injectable({
   providedIn: 'root',
@@ -12,9 +13,12 @@ export class CoursesService {
   private http = inject(HttpClient);
   private apiUrl = inject(API_BASE_URL);
   private useLocal = inject(USE_LOCAL_DATA);
+  private logger = inject(LoggerService);
 
   getAll(): Observable<ICoursesResponse> {
     const url = this.useLocal ? 'courses.json' : `${this.apiUrl}/courses`;
+    this.logger.debug('API Url', url);
+
     return this.http.get<ICoursesResponse>(url);
   }
 

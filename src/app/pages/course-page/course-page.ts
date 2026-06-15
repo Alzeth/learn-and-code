@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { ICourse } from 'app/interfaces';
 import { Course } from 'app/components/course/course';
+import { LoggerService } from 'app/services/logger';
 
 @Component({
   selector: 'app-course-page',
@@ -14,13 +15,14 @@ import { Course } from 'app/components/course/course';
 })
 export class CoursePage {
   private readonly route = inject(ActivatedRoute);
+  private logger = inject(LoggerService);
 
   course = signal<ICourse | undefined>(undefined);
 
   ngOnInit(): void {
     const data = this.route.snapshot.data['course'];
+    this.logger.debug('Course page data:', data);
 
     this.course.set(data);
-    console.log('111', data);
   }
 }

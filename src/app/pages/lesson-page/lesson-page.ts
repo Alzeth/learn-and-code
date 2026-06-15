@@ -5,6 +5,7 @@ import { CodeEditor } from '@app/components/code-editor/code-editor';
 import { LessonResolved } from '@app/resolvers/lesson.resolver';
 import { ILesson } from '@app/interfaces';
 import { MarkdownParcer } from '@app/components/markdown-parcer/markdown-parcer';
+import { LoggerService } from 'app/services/logger';
 
 @Component({
   selector: 'app-lesson-page',
@@ -17,12 +18,14 @@ import { MarkdownParcer } from '@app/components/markdown-parcer/markdown-parcer'
 })
 export class LessonPage {
   private readonly route = inject(ActivatedRoute);
+  private logger = inject(LoggerService);
 
   lesson = signal<ILesson | undefined>(undefined);
   theory = signal<string>('');
 
   ngOnInit(): void {
     const data = this.route.snapshot.data['lesson'] as LessonResolved;
+    this.logger.debug('Lesson page data:', data);
 
     this.lesson.set(data.lesson);
     this.theory.set(data.theory);
