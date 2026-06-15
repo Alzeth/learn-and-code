@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { LessonsList } from '@app/components/lessons/list/list';
@@ -15,7 +15,7 @@ import { LoggerService } from 'app/services/logger';
   ]
 })
 export class LessonsPage {
-  lessons: ILesson[] = [];
+  lessons = signal<ILesson[] | undefined>(undefined);
 
   private route = inject(ActivatedRoute);
   private logger = inject(LoggerService);
@@ -23,6 +23,6 @@ export class LessonsPage {
   ngOnInit() {
     const response = this.route.snapshot.data["lessons"];
     this.logger.debug('Lessons page response:', response);
-    this.lessons = response.lessons;
+    this.lessons.set(response);
   }
 }
