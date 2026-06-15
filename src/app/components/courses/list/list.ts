@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input, Input } from '@angular/core';
 
 import { Item } from '@app/components/courses/item/item';
 import { ICourse } from '@app/interfaces';
@@ -10,5 +10,5 @@ import { ICourse } from '@app/interfaces';
   styleUrl: './list.css',
 })
 export class CoursesList {
-  @Input({ required: true }) courses: ICourse[] | null = [];
+  courses = input<ICourse[]>();
 }
