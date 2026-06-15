@@ -1,8 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
-import { forkJoin, Observable } from 'rxjs';
-import { LessonsService } from '@app/services/lessons';
-import { ICourse, ILesson } from 'app/interfaces';
+import { Observable } from 'rxjs';
+import { ICourse } from 'app/interfaces';
 import { CoursesService } from 'app/services/courses';
 
 @Injectable({
