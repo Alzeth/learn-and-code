@@ -3,7 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { ICourse } from 'app/interfaces';
 import { API_BASE_URL, USE_LOCAL_DATA } from './api.config';
-import { ICoursesResponse } from './interfaces';
+import { IApiResponse, ICoursesResponse } from './interfaces';
 import { LoggerService } from 'app/services/logger';
 
 @Injectable({
@@ -19,13 +19,16 @@ export class CoursesService {
     const url = this.useLocal ? 'courses.json' : `${this.apiUrl}/courses`;
     this.logger.debug('API Url', url);
 
-    return this.http.get<ICoursesResponse>(url);
+    if (this.useLocal) {
+      return this.http.get<ICoursesResponse>(url);
+    }
+    return this.http.get<IApiResponse<ICoursesResponse>>(url).pipe(map(r => r.data!));
   }
 
   getById(id: string): Observable<ICourse> {
     if (this.useLocal) {
       return this.getAll().pipe(map(r => r.courses.find(c => c.id === id)!));
     }
-    return this.http.get<ICourse>(`${this.apiUrl}/courses/${id}`);
+    return this.http.get<IApiResponse<ICourse>>(`${this.apiUrl}/courses/${id}`).pipe(map(r => r.data!));
   }
 }

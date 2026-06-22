@@ -4,7 +4,7 @@ import { map, Observable } from 'rxjs';
 import { ILesson } from 'app/interfaces';
 import { environment } from 'environments/environment';
 import { API_BASE_URL, USE_LOCAL_DATA } from './api.config';
-import { ILessonsResponse } from './interfaces';
+import { IApiResponse, ILessonsResponse } from './interfaces';
 
 @Injectable({
   providedIn: 'root',
@@ -15,17 +15,17 @@ export class LessonsService {
   private useLocal = inject(USE_LOCAL_DATA);
 
   getAll(): Observable<ILessonsResponse> {
-    const url = this.useLocal
-      ? `${environment.baseHref}lessons.json`
-      : `${this.apiUrl}/lessons`;
-    return this.http.get<ILessonsResponse>(url);
+    if (this.useLocal) {
+      return this.http.get<ILessonsResponse>(`${environment.baseHref}lessons.json`);
+    }
+    return this.http.get<IApiResponse<ILessonsResponse>>(`${this.apiUrl}/lessons`).pipe(map(r => r.data!));
   }
 
   getByHref(href: string): Observable<ILesson> {
     if (this.useLocal) {
       return this.getAll().pipe(map(r => r.lessons.find(l => l.href === href)!));
     }
-    return this.http.get<ILesson>(`${this.apiUrl}/lessons/${href}`);
+    return this.http.get<IApiResponse<ILesson>>(`${this.apiUrl}/lessons/${href}`).pipe(map(r => r.data!));
   }
 
   getLessonTheory(href: string): Observable<string> {
