@@ -1,6 +1,6 @@
 import { inject, Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
-import { forkJoin, Observable } from 'rxjs';
+import { catchError, forkJoin, Observable, of, tap } from 'rxjs';
 import { LessonsService } from '@app/services/lessons';
 import { ILesson } from 'app/interfaces';
 import { LoggerService } from 'app/services/logger';
@@ -23,7 +23,14 @@ export class LessonResolver implements Resolve<LessonResolved> {
 
     return forkJoin({
       lesson: this.lessonsService.getByHref(href),
-      theory: this.lessonsService.getLessonTheory(href)
-    });
+      theory: this.lessonsService.getLessonTheory(href).pipe(
+        catchError((err) => {
+          this.logger.debug('LessonResolver getLessonTheory error:', err);
+          return of('');
+        })
+      ),
+    }).pipe(
+      tap(result => this.logger.debug('LessonResolver resolved:', result))
+    );
   }
 }
