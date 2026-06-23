@@ -1,5 +1,5 @@
 export interface ILesson {
-  id: number,
+  id: string,
   title: string,
   href: string,
   description: string,
