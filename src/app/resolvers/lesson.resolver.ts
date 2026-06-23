@@ -3,6 +3,7 @@ import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { forkJoin, Observable } from 'rxjs';
 import { LessonsService } from '@app/services/lessons';
 import { ILesson } from 'app/interfaces';
+import { LoggerService } from 'app/services/logger';
 
 export interface LessonResolved {
   lesson: ILesson | undefined;
@@ -14,9 +15,11 @@ export interface LessonResolved {
 })
 export class LessonResolver implements Resolve<LessonResolved> {
   private readonly lessonsService = inject(LessonsService);
+  private logger = inject(LoggerService);
 
   resolve(route: ActivatedRouteSnapshot): Observable<LessonResolved> {
     const href = route.paramMap.get('id')!;
+    this.logger.debug('Lesson resolver route:', route);
 
     return forkJoin({
       lesson: this.lessonsService.getByHref(href),
