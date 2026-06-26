@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ICourse } from 'app/interfaces';
 import { Course } from 'app/components/course/course';
 import { LoggerService } from 'app/services/logger';
+import { CourseEmpty } from 'app/components/course/course-empty/course-empty';
 
 @Component({
   selector: 'app-course-page',
@@ -11,6 +12,7 @@ import { LoggerService } from 'app/services/logger';
   styleUrl: './course-page.css',
   imports: [
     Course,
+    CourseEmpty,
   ],
 })
 export class CoursePage {
@@ -21,7 +23,6 @@ export class CoursePage {
 
   ngOnInit(): void {
     const data = this.route.snapshot.data['course'];
-    this.logger.debug('Course page data:', data);
 
     this.course.set(data);
   }

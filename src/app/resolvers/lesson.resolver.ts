@@ -30,7 +30,7 @@ export class LessonResolver implements Resolve<LessonResolved> {
         })
       ),
     }).pipe(
-      tap(result => this.logger.debug('LessonResolver resolved:', result))
+      tap(result => this.logger.info('LessonResolver resolved:', result))
     );
   }
 }

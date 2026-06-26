@@ -6,6 +6,7 @@ export interface ILesson {
   date: string,
   datetime: string,
   icon: string,
+  theoryMd: string,
 }
 
 export interface ICourseLesson {

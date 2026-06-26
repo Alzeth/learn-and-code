@@ -22,6 +22,7 @@ export class CoursesService {
     if (this.useLocal) {
       return this.http.get<ICoursesResponse>(url);
     }
+
     return this.http.get<IApiResponse<ICoursesResponse>>(url).pipe(map(r => r.data!));
   }
 
@@ -29,6 +30,7 @@ export class CoursesService {
     if (this.useLocal) {
       return this.getAll().pipe(map(r => r.courses.find(c => c.id === id)!));
     }
+
     return this.http.get<IApiResponse<ICourse>>(`${this.apiUrl}/courses/${id}`).pipe(map(r => r.data!));
   }
 }
