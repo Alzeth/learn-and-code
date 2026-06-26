@@ -10,5 +10,5 @@ import { MarkdownComponent } from 'ngx-markdown';
   styleUrl: './markdown-parcer.css',
 })
 export class MarkdownParcer {
-  readonly theory = input<string>('');
+  readonly theory = input<string | undefined>('');
 }

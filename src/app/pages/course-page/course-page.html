@@ -1,3 +1,7 @@
 <div class="container-fluid page-container">
-  <app-course [course]="course()"></app-course>
+  @if (course()) {
+    <app-course [course]="course()"></app-course>
+  } @else {
+    <app-course-empty></app-course-empty>
+  }
 </div>

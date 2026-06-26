@@ -22,6 +22,6 @@ export class CoursesPage {
   ngOnInit() {
     const response = this.route.snapshot.data["courses"];
     this.logger.debug('Courses page response:', response);
-    this.courses.set(response);
+    this.courses.set(response?.courses);
   }
 }
