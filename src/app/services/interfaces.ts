@@ -22,3 +22,13 @@ export interface ILessonsResponse {
 export interface ICoursesResponse {
   courses: ICourse[];
 }
+
+export interface IAuthUser {
+  id: string;
+  email: string;
+}
+
+export interface IAuthResponse {
+  accessToken: string;
+  user: IAuthUser;
+}

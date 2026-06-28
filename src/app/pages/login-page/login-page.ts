@@ -1,11 +1,51 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { Router, RouterLink } from '@angular/router';
+
+import { ROUTES } from '@app/constants';
+import { AuthService } from '@app/services/auth.service';
+import { ZardButtonComponent } from '@app/shared/components/button';
+import {
+  ZardFormControlComponent,
+  ZardFormFieldComponent, ZardFormLabelComponent,
+  ZardFormMessageComponent,
+} from 'app/shared/components/form/form.component';
+import { ZardInputDirective } from '@app/shared/components/input';
 
 @Component({
   selector: 'app-login-page',
-  imports: [],
+  imports: [ReactiveFormsModule, RouterLink, ZardButtonComponent, ZardFormFieldComponent, ZardFormControlComponent, ZardFormMessageComponent, ZardFormLabelComponent, ZardInputDirective],
   templateUrl: './login-page.html',
   styleUrl: './login-page.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginPage {
+  private auth = inject(AuthService);
+  private router = inject(Router);
+  private fb = inject(FormBuilder);
 
+  readonly ROUTES = ROUTES;
+  readonly isLoading = signal(false);
+  readonly error = signal<string | null>(null);
+
+  form = this.fb.group({
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required, Validators.minLength(8)]],
+  });
+
+  submit(): void {
+    if (this.form.invalid) return;
+
+    const { email, password } = this.form.getRawValue();
+    this.isLoading.set(true);
+    this.error.set(null);
+
+    this.auth.login(email!, password!).subscribe({
+      next: () => this.router.navigate([ROUTES.BASE_URL]),
+      error: err => {
+        this.error.set(err?.error?.error?.message ?? 'Invalid email or password.');
+        this.isLoading.set(false);
+      },
+    });
+  }
 }
