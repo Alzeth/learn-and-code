@@ -14,16 +14,19 @@
           </a>
         </li>
       </ul>
-      <div class="flex justify-end items-center">
-        <div class="mr-2">
-          <button z-button zType="ghost" zSize="sm" (click)="toggleTheme()">
-            <ng-icon name="lucideContrast" />
-            <span class="sr-only">Toggle theme</span>
-          </button>
-        </div>
-        <a routerLink="/login">
-          Log in <span aria-hidden="true">&rarr;</span>
-        </a>
+      <div class="flex justify-end items-center gap-2">
+        <button z-button zType="ghost" zSize="sm" (click)="toggleTheme()">
+          <ng-icon name="lucideContrast" />
+          <span class="sr-only">Toggle theme</span>
+        </button>
+        @if (isAuthenticated()) {
+          <span class="text-sm text-muted-foreground hidden md:inline">{{ currentUser()?.email }}</span>
+          <button z-button zType="outline" zSize="sm" (click)="logout()">Log out</button>
+        } @else {
+          <a routerLink="/login">
+            <button z-button zSize="sm">Log in <span aria-hidden="true">&rarr;</span></button>
+          </a>
+        }
       </div>
     </div>
     <div class="flex flex-1 justify-end md:hidden">

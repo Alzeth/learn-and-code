@@ -12,6 +12,7 @@ import { LessonsResolver } from '@app/resolvers/lessons.resolver';
 import { CoursesResolver } from '@app/resolvers/courses.resolver';
 import { LessonResolver } from '@app/resolvers/lesson.resolver';
 import { CourseResolver } from 'app/resolvers/course.resolver';
+import { authGuard } from '@app/guards/auth.guard';
 
 import { ROUTES } from './constants';
 
@@ -26,6 +27,7 @@ export const routes: Routes = [
   },
   {
     path: ROUTES.LESSON,
+    canActivate: [authGuard],
     component: LessonPage,
     resolve: {
       lesson: LessonResolver,
@@ -40,6 +42,7 @@ export const routes: Routes = [
   },
   {
     path: ROUTES.COURSE,
+    canActivate: [authGuard],
     component: CoursePage,
     resolve: {
       course: CourseResolver,

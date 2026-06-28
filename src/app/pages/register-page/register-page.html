@@ -1,1 +1,50 @@
-<p>register-page works!</p>
+<div class="container-fluid page-container">
+  <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance mb-10">Create account</h1>
+  <div class="container">
+    <div class="auth-card flex justify-center">
+      <form [formGroup]="form" (ngSubmit)="submit()" class="space-y-6 min-w-1/2">
+        @if (error()) {
+          <z-form-message zType="error">{{ error() }}</z-form-message>
+        }
+        <z-form-field>
+          <label for="email" z-form-label zRequired>Email</label>
+          <z-form-control>
+            <input
+              id="email"
+              type="email"
+              autocomplete="email"
+              formControlName="email"
+              placeholder="you@example.com"
+              z-input
+            />
+          </z-form-control>
+          @if (form.controls.email.invalid && form.controls.email.touched) {
+            <z-form-message zType="error">Enter a valid email.</z-form-message>
+          }
+        </z-form-field>
+        <z-form-field>
+          <label for="password" z-form-label zRequired>Password</label>
+          <z-form-control>
+            <input
+              id="password"
+              autocomplete="new-password"
+              type="password"
+              formControlName="password"
+              z-input
+            />
+          </z-form-control>
+          @if (form.controls.password.invalid && form.controls.password.touched) {
+            <z-form-message zType="error">Password must be at least 8 characters.</z-form-message>
+          }
+        </z-form-field>
+
+        <button z-button zType="default" zFull type="submit" [zLoading]="isLoading()" [zDisabled]="form.invalid">
+          Create account
+        </button>
+        <p class="py-2 text-center">
+          Already have an account? <a class="hover:underline" [routerLink]="['/', ROUTES.AUTH.LOGIN]">Sign in</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
