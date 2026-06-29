@@ -9,9 +9,9 @@
   },
   "baseUrl": "./src",
   "aliases": {
-    "components": "src/app/shared/components",
-    "utils": "src/app/shared/utils",
-    "core": "src/app/shared/core",
-    "services": "src/app/shared/services"
+    "components": "app/shared/components",
+    "utils": "app/shared/utils",
+    "core": "app/shared/core",
+    "services": "app/shared/services"
   }
 }

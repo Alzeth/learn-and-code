@@ -23,3 +23,8 @@ export interface ICourse {
   description: string,
   tableOfContents: ICourseLesson[]
 }
+
+export interface IUser {
+  id: string;
+  email: string;
+}
