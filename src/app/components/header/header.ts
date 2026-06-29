@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideContrast } from '@ng-icons/lucide';
+import { lucideContrast, lucideUserCircle } from '@ng-icons/lucide';
 
 import { LoggerService } from '@app/services/logger';
 import { AuthService } from '@app/services/auth.service';
@@ -20,7 +20,7 @@ import { ZardDarkMode } from '@app/shared/services/dark-mode';
     Burger,
     NgIcon
   ],
-  viewProviders: [provideIcons({ lucideContrast })],
+  viewProviders: [provideIcons({ lucideContrast, lucideUserCircle })],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './header.html',

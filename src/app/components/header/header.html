@@ -20,11 +20,16 @@
           <span class="sr-only">Toggle theme</span>
         </button>
         @if (isAuthenticated()) {
-          <span class="text-sm text-muted-foreground hidden md:inline">{{ currentUser()?.email }}</span>
-          <button z-button zType="outline" zSize="sm" (click)="logout()">Log out</button>
+          <a routerLink="/profile">
+            <button z-button zType="ghost" zSize="sm">
+              <ng-icon name="lucideUserCircle" />
+              <span class="sr-only">User profile</span>
+            </button>
+          </a>
+          <button z-button zType="link" zSize="sm" (click)="logout()">Log out</button>
         } @else {
           <a routerLink="/login">
-            <button z-button zSize="sm">Log in <span aria-hidden="true">&rarr;</span></button>
+            <button z-button zType="link" zSize="sm">Log in <span aria-hidden="true">&rarr;</span></button>
           </a>
         }
       </div>

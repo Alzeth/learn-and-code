@@ -9,5 +9,6 @@ export const ROUTES = {
     LOGIN: 'login',
     REGISTER: 'register',
   },
+  PROFILE: 'profile',
   NOT_FOUND: '404'
 };

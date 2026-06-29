@@ -1,0 +1,3 @@
+.lesson-container {
+  height: calc(100svh - 64px);
+}
