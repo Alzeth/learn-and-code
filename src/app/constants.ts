@@ -10,5 +10,6 @@ export const ROUTES = {
     REGISTER: 'register',
   },
   PROFILE: 'profile',
+  ABOUT: 'about',
   NOT_FOUND: '404'
 };
