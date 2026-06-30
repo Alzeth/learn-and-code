@@ -1,4 +1,4 @@
-import { Component, inject, OnDestroy, signal } from '@angular/core';
+import { Component, ElementRef, inject, OnDestroy, signal, ViewChild } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Subscription, combineLatest } from 'rxjs';
 
@@ -25,6 +25,8 @@ export class LessonPage implements OnDestroy {
   private logger = inject(LoggerService);
   private subscription = new Subscription();
 
+  @ViewChild('theoryPanel') theoryPanel!: ElementRef<HTMLDivElement>;
+
   lesson = signal<ILesson | undefined>(undefined);
   theory = signal<string | undefined>('');
   prevLesson = signal<string | undefined>(undefined);
@@ -40,6 +42,10 @@ export class LessonPage implements OnDestroy {
       this.prevLesson.set(resolved.prevLesson);
       this.nextLesson.set(resolved.nextLesson);
       this.courseId.set(queryParams.get('course'));
+
+      if (this.theoryPanel) {
+        this.theoryPanel.nativeElement.scrollTop = 0;
+      }
     });
   }
 
