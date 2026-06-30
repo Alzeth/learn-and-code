@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { map, Observable, shareReplay } from 'rxjs';
 import { ILesson } from 'app/interfaces';
 import { environment } from 'environments/environment';
 import { API_BASE_URL, USE_LOCAL_DATA } from './api.config';
@@ -14,12 +14,21 @@ export class LessonsService {
   private apiUrl = inject(API_BASE_URL);
   private useLocal = inject(USE_LOCAL_DATA);
 
-  getAll(): Observable<ILessonsResponse> {
-    if (this.useLocal) {
-      return this.http.get<ILessonsResponse>(`${environment.baseHref}lessons.json`);
-    }
+  private allCache$: Observable<ILessonsResponse> | null = null;
 
-    return this.http.get<IApiResponse<ILessonsResponse>>(`${this.apiUrl}/lessons`).pipe(map(r => r.data!));
+  getAll(): Observable<ILessonsResponse> {
+    if (this.allCache$) return this.allCache$;
+
+    const request$ = this.useLocal
+      ? this.http.get<ILessonsResponse>(`${environment.baseHref}lessons.json`)
+      : this.http.get<IApiResponse<ILessonsResponse>>(`${this.apiUrl}/lessons`).pipe(map(r => r.data!));
+
+    this.allCache$ = request$.pipe(shareReplay(1));
+    return this.allCache$;
+  }
+
+  invalidateAll(): void {
+    this.allCache$ = null;
   }
 
   getByHref(href: string): Observable<ILesson> {
