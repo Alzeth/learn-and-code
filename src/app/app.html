@@ -2,6 +2,7 @@
 <main class="main h-svh">
   @if (isLoading()) {
     <z-loader></z-loader>
+  } @else {
+    <router-outlet />
   }
-  <router-outlet />
 </main>

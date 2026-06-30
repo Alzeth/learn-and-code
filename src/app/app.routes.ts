@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 import { HomePage } from 'app/pages/home-page/home-page';
+import { AboutPage } from 'app/pages/about-page/about-page';
 import { LoginPage } from 'app/pages/login-page/login-page';
 import { CoursePage } from 'app/pages/course-page/course-page';
 import { LessonPage } from 'app/pages/lesson-page/lesson-page';
@@ -60,6 +61,7 @@ export const routes: Routes = [
       profile: ProfileResolver,
     }
   },
+  { path: ROUTES.ABOUT, component: AboutPage },
   { path: ROUTES.NOT_FOUND, component: NotFoundPage },
   { path: '**', redirectTo: ROUTES.NOT_FOUND },
 ];
