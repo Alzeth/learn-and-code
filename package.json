@@ -51,7 +51,7 @@
     "express": "^5.1.0",
     "marked": "^18.0.5",
     "monaco-editor": "^0.55.1",
-    "ngx-markdown": "^21.3.0",
+    "ngx-markdown": "^22.0.0",
     "ngx-monaco-editor-v2": "^21.1.4",
     "pyodide": "^314.0.2",
     "rxjs": "~7.8.0",
