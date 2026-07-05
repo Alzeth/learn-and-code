@@ -11,11 +11,11 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { Header } from '@app/components/header/header';
 import { LoggerService } from '@app/services/logger';
-import { ZardLoaderComponent } from 'app/shared/components/loader';
+import { AppLoader } from 'app/shared/components/app-loader/app-loader';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header, ZardLoaderComponent],
+  imports: [RouterOutlet, Header, AppLoader],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

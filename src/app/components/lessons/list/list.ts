@@ -11,4 +11,5 @@ import { ILesson } from '@app/interfaces';
 })
 export class LessonsList {
   lessons = input<ILesson[]>();
+  completedIds = input<Set<string>>(new Set());
 }
