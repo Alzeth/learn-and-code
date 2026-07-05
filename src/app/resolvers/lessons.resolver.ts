@@ -25,7 +25,9 @@ export class LessonsResolver implements Resolve<LessonsResolved> {
       map(({ lessonsResponse, progress }) => ({
         lessons: lessonsResponse.lessons,
         completedIds: new Set(
-          (progress?.lessons ?? []).filter(l => l.completed).map(l => l.lessonId)
+          (progress?.lessons ?? [])
+            .filter(lesson => lesson.completed)
+            .map(lesson => lesson.lessonId)
         ),
       }))
     );
