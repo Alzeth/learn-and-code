@@ -28,3 +28,23 @@ export interface IUser {
   id: string;
   email: string;
 }
+
+export interface ILessonProgress {
+  lessonId: string;
+  completed: boolean;
+  completedAt: string | null;
+}
+
+export interface ICourseProgress {
+  courseId: string;
+  totalLessons: number;
+  completedLessons: number;
+  percentage: number;
+}
+
+export interface IUserProgress {
+  lessons: ILessonProgress[];
+  courses: ICourseProgress[];
+}
+
+

@@ -1,16 +1,35 @@
 import { inject, Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-import { Observable } from 'rxjs';
-import { ILessonsResponse } from '@app/services/interfaces';
+import { Observable, forkJoin, map, catchError, of } from 'rxjs';
+import { ILesson } from '@app/interfaces';
 import { LessonsService } from '@app/services/lessons';
+import { UserProgressService } from '@app/services/user-progress.service';
+
+export interface LessonsResolved {
+  lessons: ILesson[];
+  completedIds: Set<string>;
+}
 
 @Injectable({
   providedIn: 'root'
 })
-export class LessonsResolver implements Resolve<ILessonsResponse> {
-  private lessonsService: LessonsService = inject(LessonsService);
+export class LessonsResolver implements Resolve<LessonsResolved> {
+  private lessonsService = inject(LessonsService);
+  private progressService = inject(UserProgressService);
 
-  resolve(): Observable<ILessonsResponse> {
-    return this.lessonsService.getAll();
+  resolve(): Observable<LessonsResolved> {
+    return forkJoin({
+      lessonsResponse: this.lessonsService.getAll(),
+      progress: this.progressService.getUserProgress().pipe(catchError(() => of(null))),
+    }).pipe(
+      map(({ lessonsResponse, progress }) => ({
+        lessons: lessonsResponse.lessons,
+        completedIds: new Set(
+          (progress?.lessons ?? [])
+            .filter(lesson => lesson.completed)
+            .map(lesson => lesson.lessonId)
+        ),
+      }))
+    );
   }
 }

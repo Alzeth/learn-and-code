@@ -7,7 +7,15 @@
       [zDescription]="lesson()?.description"
       class="h-full rounded-[10px]"
     >
-      <time [dateTime]="lesson()?.datetime">{{ lesson()?.date }}</time>
+      <div class="flex items-center justify-between">
+        <time [dateTime]="lesson()?.datetime">{{ lesson()?.date }}</time>
+        @if (completed()) {
+          <z-badge zType="secondary" zShape="pill" class="bg-green-800 text-white dark:bg-green-600">
+            <ng-icon name="lucideBadgeCheck" />
+            Completed
+          </z-badge>
+        }
+      </div>
     </z-card>
   </div>
 </a>

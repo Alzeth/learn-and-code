@@ -3,14 +3,16 @@ import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { catchError, forkJoin, map, Observable, of, tap } from 'rxjs';
 import { LessonsService } from '@app/services/lessons';
 import { CoursesService } from '@app/services/courses';
-import { ILesson } from 'app/interfaces';
+import { ILesson, ILessonProgress } from 'app/interfaces';
 import { LoggerService } from 'app/services/logger';
+import { UserProgressService } from 'app/services/user-progress.service';
 
 export interface LessonResolved {
   lesson: ILesson | undefined;
   theory: string;
   prevLesson?: string;
   nextLesson?: string;
+  lessonProgress: ILessonProgress | null;
 }
 
 @Injectable({
@@ -19,6 +21,7 @@ export interface LessonResolved {
 export class LessonResolver implements Resolve<LessonResolved> {
   private readonly lessonsService = inject(LessonsService);
   private readonly coursesService = inject(CoursesService);
+  private readonly progressService = inject(UserProgressService);
   private logger = inject(LoggerService);
 
   resolve(route: ActivatedRouteSnapshot): Observable<LessonResolved> {
@@ -34,17 +37,21 @@ export class LessonResolver implements Resolve<LessonResolved> {
         })
       ),
       course: courseId ? this.coursesService.getById(courseId) : of(null),
+      lessonProgress: this.progressService.getLessonProgress(href).pipe(
+        catchError(() => of(null))
+      ),
     }).pipe(
-      map(({ lesson, theory, course }) => {
+      map(({ lesson, theory, course, lessonProgress }) => {
         const entry = course?.tableOfContents.find(t => t.id === lesson?.id);
         return {
           lesson,
           theory,
           prevLesson: entry?.prevLesson || undefined,
           nextLesson: entry?.nextLesson || undefined,
+          lessonProgress,
         };
       }),
-      tap(result => this.logger.info('LessonResolver resolved:', result))
+      tap(result => this.logger.debug('LessonResolver resolved:', result))
     );
   }
 }

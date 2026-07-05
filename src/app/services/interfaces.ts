@@ -1,4 +1,4 @@
-import { ICourse, ILesson } from '@app/interfaces';
+import { ICourse, ICourseProgress, ILesson, ILessonProgress } from '@app/interfaces';
 
 export interface IResponseErrorEntity {
   message: string,
@@ -32,3 +32,10 @@ export interface IAuthResponse {
   accessToken: string;
   user: IAuthUser;
 }
+
+export interface IUserProgressResponse {
+  lessons: ILessonProgress[];
+  courses: ICourseProgress[];
+}
+
+export interface ILessonProgressResponse extends ILessonProgress {}
