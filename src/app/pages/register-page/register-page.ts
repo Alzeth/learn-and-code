@@ -4,6 +4,7 @@ import { Router, RouterLink } from '@angular/router';
 
 import { ROUTES } from '@app/constants';
 import { AuthService } from '@app/services/auth.service';
+import { HasUnsavedChanges } from 'app/guards/unsaved-changes.guard';
 import { ZardButtonComponent } from '@app/shared/components/button';
 import {
   ZardFormControlComponent,
@@ -20,7 +21,7 @@ import { ZardInputDirective } from 'app/shared/components/input';
   styleUrl: './register-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class RegisterPage {
+export class RegisterPage implements HasUnsavedChanges {
   private auth = inject(AuthService);
   private router = inject(Router);
   private fb = inject(FormBuilder);
@@ -33,6 +34,10 @@ export class RegisterPage {
     email: ['', [Validators.required, Validators.email]],
     password: ['', [Validators.required, Validators.minLength(8)]],
   });
+
+  hasUnsavedChanges(): boolean {
+    return this.form.dirty && !this.isLoading();
+  }
 
   submit(): void {
     if (this.form.invalid) return;
