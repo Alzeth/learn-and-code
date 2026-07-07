@@ -16,6 +16,7 @@ import { CoursesResolver } from 'app/resolvers/courses.resolver';
 import { LessonResolver } from 'app/resolvers/lesson.resolver';
 import { CourseResolver } from 'app/resolvers/course.resolver';
 import { authGuard } from 'app/guards/auth.guard';
+import { unsavedChangesGuard } from 'app/guards/unsaved-changes.guard';
 
 import { ROUTES } from './constants';
 
@@ -51,8 +52,8 @@ export const routes: Routes = [
       course: CourseResolver,
     }
   },
-  { path: ROUTES.AUTH.LOGIN, component: LoginPage },
-  { path: ROUTES.AUTH.REGISTER, component: RegisterPage },
+  { path: ROUTES.AUTH.LOGIN, component: LoginPage, canDeactivate: [unsavedChangesGuard] },
+  { path: ROUTES.AUTH.REGISTER, component: RegisterPage, canDeactivate: [unsavedChangesGuard] },
   {
     path: ROUTES.PROFILE,
     canActivate: [authGuard],
@@ -63,5 +64,5 @@ export const routes: Routes = [
   },
   { path: ROUTES.ABOUT, component: AboutPage },
   { path: ROUTES.NOT_FOUND, component: NotFoundPage },
-  { path: '**', redirectTo: ROUTES.NOT_FOUND },
+  { path: '**', redirectTo: ROUTES.NOT_FOUND, pathMatch: 'full' },
 ];
