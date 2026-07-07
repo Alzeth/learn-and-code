@@ -3,6 +3,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "baseUrl": "./src",
     "rootDir": "./src",
     "strict": true,
     "noImplicitOverride": true,
