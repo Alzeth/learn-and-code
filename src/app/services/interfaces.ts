@@ -38,4 +38,4 @@ export interface IUserProgressResponse {
   courses: ICourseProgress[];
 }
 
-export interface ILessonProgressResponse extends ILessonProgress {}
+export type ILessonProgressResponse = ILessonProgress;

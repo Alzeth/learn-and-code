@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ICourse } from 'app/interfaces';
@@ -17,11 +17,11 @@ import { CourseEmpty } from 'app/components/course/course-empty/course-empty';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CoursePage {
+export class CoursePage implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private logger = inject(LoggerService);
 
-  course = signal<ICourse | undefined>(undefined);
+  readonly course = signal<ICourse | undefined>(undefined);
 
   ngOnInit(): void {
     const data = this.route.snapshot.data['course'];

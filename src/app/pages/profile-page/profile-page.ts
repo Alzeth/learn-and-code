@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideBookSearch, lucideScrollText } from '@ng-icons/lucide';
@@ -21,18 +21,18 @@ import { ZardProgressBarComponent } from 'app/shared/components/progress-bar';
   styleUrl: './profile-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProfilePage {
+export class ProfilePage implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private logger = inject(LoggerService);
 
-  user = signal<IUser | undefined>(undefined);
-  progress = signal<IUserProgress | undefined>(undefined);
+  readonly user = signal<IUser | undefined>(undefined);
+  readonly progress = signal<IUserProgress | undefined>(undefined);
 
-  completedCourses = computed(() =>
+  readonly completedCourses = computed(() =>
     this.progress()?.courses?.filter(course => course.percentage === 100).length ?? 0
   );
-  totalCourses = computed(() => this.progress()?.courses?.length ?? 0);
-  completedLessons = computed(() =>
+  readonly totalCourses = computed(() => this.progress()?.courses?.length ?? 0);
+  readonly completedLessons = computed(() =>
     this.progress()?.lessons?.filter(lesson => lesson.completed)?.length ?? 0);
 
   ngOnInit(): void {

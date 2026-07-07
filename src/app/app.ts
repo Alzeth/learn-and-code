@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, inject, signal, OnInit } from '@angular/core';
 import {
   NavigationCancel,
   NavigationEnd,
@@ -21,7 +21,7 @@ import { AppLoader } from 'app/shared/components/app-loader/app-loader';
   styleUrl: './app.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class App {
+export class App implements OnInit {
   private readonly router = inject(Router);
   private logger: LoggerService = inject(LoggerService);
   private readonly destroyRef = inject(DestroyRef);

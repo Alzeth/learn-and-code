@@ -12,6 +12,6 @@ import { ILesson } from 'app/interfaces';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LessonsList {
-  lessons = input<ILesson[]>();
-  completedIds = input<Set<string>>(new Set());
+  readonly lessons = input<ILesson[]>();
+  readonly completedIds = input<Set<string>>(new Set());
 }
