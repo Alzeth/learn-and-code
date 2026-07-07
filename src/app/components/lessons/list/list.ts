@@ -1,13 +1,15 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
-import { Item } from '@app/components/lessons/item/item';
-import { ILesson } from '@app/interfaces';
+import { Item } from 'app/components/lessons/item/item';
+import { ILesson } from 'app/interfaces';
 
 @Component({
   selector: 'app-lessons-list',
+  standalone: true,
   imports: [Item],
   templateUrl: './list.html',
   styleUrl: './list.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LessonsList {
   lessons = input<ILesson[]>();

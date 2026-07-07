@@ -1,4 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ICourse } from 'app/interfaces';
@@ -8,12 +8,14 @@ import { CourseEmpty } from 'app/components/course/course-empty/course-empty';
 
 @Component({
   selector: 'app-course-page',
+  standalone: true,
   templateUrl: './course-page.html',
   styleUrl: './course-page.css',
   imports: [
     Course,
     CourseEmpty,
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CoursePage {
   private readonly route = inject(ActivatedRoute);

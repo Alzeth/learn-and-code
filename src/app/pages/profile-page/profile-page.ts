@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideBookSearch, lucideScrollText } from '@ng-icons/lucide';
@@ -10,6 +10,7 @@ import { ZardProgressBarComponent } from 'app/shared/components/progress-bar';
 
 @Component({
   selector: 'app-profile-page',
+  standalone: true,
   imports: [
     ZardAvatarComponent,
     NgIcon,
@@ -18,6 +19,7 @@ import { ZardProgressBarComponent } from 'app/shared/components/progress-bar';
   viewProviders: [provideIcons({ lucideBookSearch, lucideScrollText })],
   templateUrl: './profile-page.html',
   styleUrl: './profile-page.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfilePage {
   private readonly route = inject(ActivatedRoute);

@@ -1,17 +1,19 @@
-import { Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { ICourse } from '@app/interfaces';
+import { ICourse } from 'app/interfaces';
 import { CoursesList } from 'app/components/courses/list/list';
 import { LoggerService } from 'app/services/logger';
 
 @Component({
   selector: 'app-courses-page',
+  standalone: true,
   imports: [
     CoursesList,
   ],
   templateUrl: './courses-page.html',
   styleUrl: './courses-page.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CoursesPage {
   courses = signal<ICourse[] | undefined>(undefined);

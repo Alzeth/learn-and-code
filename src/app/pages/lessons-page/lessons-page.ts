@@ -1,21 +1,22 @@
-import { Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { LessonsList } from '@app/components/lessons/list/list';
-import { ILesson } from '@app/interfaces';
+import { LessonsList } from 'app/components/lessons/list/list';
+import { ILesson } from 'app/interfaces';
 import { LoggerService } from 'app/services/logger';
 import { LessonsEmpty } from 'app/components/lessons/lessons-empty/lessons-empty';
-import { LessonsResolved } from '@app/resolvers/lessons.resolver';
+import { LessonsResolved } from 'app/resolvers/lessons.resolver';
 
 @Component({
   selector: 'app-lessons-page',
+  standalone: true,
   templateUrl: './lessons-page.html',
   styleUrl: './lessons-page.css',
-  standalone: true,
   imports: [
     LessonsList,
     LessonsEmpty,
   ],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LessonsPage {
   lessons = signal<ILesson[] | undefined>(undefined);
