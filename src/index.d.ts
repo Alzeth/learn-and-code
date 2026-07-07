@@ -3,6 +3,7 @@ interface Monaco {
 }
 
 interface Pyodide {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   loadPyodide: (config: { indexURL: string }) => Promise<any>
 }
 

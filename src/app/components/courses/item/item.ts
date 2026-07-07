@@ -16,5 +16,5 @@ import { ICourse } from 'app/interfaces';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Item {
-  course = input<ICourse>();
+  readonly course = input<ICourse>();
 }

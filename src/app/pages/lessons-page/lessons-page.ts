@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { LessonsList } from 'app/components/lessons/list/list';
@@ -18,9 +18,9 @@ import { LessonsResolved } from 'app/resolvers/lessons.resolver';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LessonsPage {
-  lessons = signal<ILesson[] | undefined>(undefined);
-  completedIds = signal<Set<string>>(new Set());
+export class LessonsPage implements OnInit {
+  readonly lessons = signal<ILesson[] | undefined>(undefined);
+  readonly completedIds = signal<Set<string>>(new Set());
 
   private route = inject(ActivatedRoute);
   private logger = inject(LoggerService);

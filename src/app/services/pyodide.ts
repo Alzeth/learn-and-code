@@ -11,7 +11,7 @@ export interface PyodideResult {
 @Injectable({ providedIn: 'root' })
 export class PyodideService {
   private readonly platformId = inject(PLATFORM_ID);
-  private pyodide: any = null;
+  private pyodide: Awaited<ReturnType<Window['loadPyodide']>> | null = null;
 
   private get pyodidePath(): string {
     return `${environment.baseHref}pyodide/`;
@@ -53,8 +53,8 @@ export class PyodideService {
 
     try {
       await this.pyodide.runPythonAsync(code);
-    } catch (err: any) {
-      stderr = err.message;
+    } catch (err: unknown) {
+      stderr = err instanceof Error ? err.message : String(err);
     }
 
     return { stdout: stdout.trim(), stderr: stderr.trim() };

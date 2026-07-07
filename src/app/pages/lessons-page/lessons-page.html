@@ -7,9 +7,9 @@
           <div class="mx-auto max-w-2xl lg:mx-0">
             <p class="mt-2 text-lg/8">Learn how to grow in python topics quickly.</p>
           </div>
-          <app-lessons-list [lessons]="lessons()" [completedIds]="completedIds()"></app-lessons-list>
+          <app-lessons-list [lessons]="lessons()" [completedIds]="completedIds()" />
         } @else {
-          <app-lessons-empty></app-lessons-empty>
+          <app-lessons-empty />
         }
       </div>
     </div>

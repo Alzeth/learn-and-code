@@ -8,11 +8,11 @@
         </z-badge>
       }
       @if (theory()) {
-        <app-markdown-parcer [theory]="theory()"></app-markdown-parcer>
+        <app-markdown-parcer [theory]="theory()" />
       } @else if (lesson()?.theoryMd) {
-        <app-markdown-parcer [theory]="lesson()?.theoryMd"></app-markdown-parcer>
+        <app-markdown-parcer [theory]="lesson()?.theoryMd" />
       } @else {
-        <app-markdown-empty></app-markdown-empty>
+        <app-markdown-empty />
       }
 
       <nav class="flex justify-between items-center mt-8 pb-4">

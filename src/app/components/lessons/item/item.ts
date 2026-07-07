@@ -22,6 +22,6 @@ import { ZardBadgeComponent } from 'app/shared/components/badge';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Item {
-  lesson = input<ILesson>();
-  completed = input<boolean>(false);
+  readonly lesson = input<ILesson>();
+  readonly completed = input<boolean>(false);
 }

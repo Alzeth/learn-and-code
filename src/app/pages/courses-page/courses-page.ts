@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { ICourse } from 'app/interfaces';
@@ -15,8 +15,8 @@ import { LoggerService } from 'app/services/logger';
   styleUrl: './courses-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CoursesPage {
-  courses = signal<ICourse[] | undefined>(undefined);
+export class CoursesPage implements OnInit {
+  readonly courses = signal<ICourse[] | undefined>(undefined);
 
   private route = inject(ActivatedRoute);
   private logger = inject(LoggerService);

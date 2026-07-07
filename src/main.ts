@@ -9,9 +9,10 @@ if (environment.production) {
   enableProdMode();
   const methods = ['log', 'debug', 'info', 'warn', 'error'];
   methods.forEach((method) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     (window.console as any)[method] = () => {};
   });
 }
 
 bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err));
+  .catch((err) => console.error(err)); // eslint-disable-line no-console

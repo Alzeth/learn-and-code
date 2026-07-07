@@ -31,7 +31,7 @@ export class Header {
   private readonly darkModeService = inject(ZardDarkMode);
   private readonly auth = inject(AuthService);
 
-  isOpen = signal(false);
+  readonly isOpen = signal(false);
   readonly currentUser = this.auth.currentUser;
   readonly isAuthenticated = this.auth.isAuthenticated;
 

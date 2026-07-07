@@ -24,5 +24,5 @@ import { ZardButtonComponent } from 'app/shared/components/button';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Course {
-  course = input.required<ICourse | undefined>();
+  readonly course = input.required<ICourse | undefined>();
 }

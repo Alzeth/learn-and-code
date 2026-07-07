@@ -122,7 +122,7 @@ export class ZardDarkMode {
     try {
       localStorage.setItem(ZardDarkMode.STORAGE_KEY, theme);
     } catch (error) {
-      console.warn('Failed to save theme to localStorage:', error);
+      console.warn('Failed to save theme to localStorage:', error); // eslint-disable-line no-console
     }
     this.themeSignal.set(theme);
 
@@ -149,7 +149,7 @@ export class ZardDarkMode {
         return value;
       }
     } catch (error) {
-      console.warn('Failed to read theme from localStorage:', error);
+      console.warn('Failed to read theme from localStorage:', error); // eslint-disable-line no-console
     }
     return undefined;
   }
@@ -180,7 +180,7 @@ export class ZardDarkMode {
         this.query.removeEventListener('change', this.handleThemeChange);
       }
     } catch (error) {
-      console.warn('Failed to manage media query event listener:', error);
+      console.warn('Failed to manage media query event listener:', error); // eslint-disable-line no-console
     }
   }
 }

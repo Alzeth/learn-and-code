@@ -16,7 +16,7 @@ export class AuthService {
   private apiUrl = inject(API_BASE_URL);
   private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
-  private _user = signal<IAuthUser | null>(this.loadStoredUser());
+  private readonly _user = signal<IAuthUser | null>(this.loadStoredUser());
   readonly currentUser = this._user.asReadonly();
   readonly isAuthenticated = computed(() => this._user() !== null);
 

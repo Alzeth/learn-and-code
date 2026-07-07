@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, ElementRef, inject, OnDestroy, signal, viewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, inject, OnDestroy, signal, viewChild, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Subscription, combineLatest } from 'rxjs';
 import { NgIcon, provideIcons } from '@ng-icons/core';
@@ -29,21 +29,21 @@ import { lucideBadgeCheck } from '@ng-icons/lucide';
   styleUrl: './lesson-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LessonPage implements OnDestroy {
+export class LessonPage implements OnDestroy, OnInit {
   private readonly route = inject(ActivatedRoute);
   private logger = inject(LoggerService);
   private readonly progressService = inject(UserProgressService);
   private subscription = new Subscription();
 
-  theoryPanel = viewChild<ElementRef<HTMLDivElement>>('theoryPanel');
+  readonly theoryPanel = viewChild<ElementRef<HTMLDivElement>>('theoryPanel');
 
-  lesson = signal<ILesson | undefined>(undefined);
-  theory = signal<string | undefined>('');
-  prevLesson = signal<string | undefined>(undefined);
-  nextLesson = signal<string | undefined>(undefined);
-  courseId = signal<string | null>(null);
-  isCompleted = signal(false);
-  isMarkingComplete = signal(false);
+  readonly lesson = signal<ILesson | undefined>(undefined);
+  readonly theory = signal<string | undefined>('');
+  readonly prevLesson = signal<string | undefined>(undefined);
+  readonly nextLesson = signal<string | undefined>(undefined);
+  readonly courseId = signal<string | null>(null);
+  readonly isCompleted = signal(false);
+  readonly isMarkingComplete = signal(false);
 
   ngOnInit(): void {
     this.subscription = combineLatest([this.route.data, this.route.queryParamMap]).subscribe(([data, queryParams]) => {
