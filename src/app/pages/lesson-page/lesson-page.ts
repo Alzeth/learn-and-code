@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, OnDestroy, signal, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, inject, OnDestroy, signal, viewChild } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Subscription, combineLatest } from 'rxjs';
 import { NgIcon, provideIcons } from '@ng-icons/core';
@@ -15,6 +15,7 @@ import { lucideBadgeCheck } from '@ng-icons/lucide';
 
 @Component({
   selector: 'app-lesson-page',
+  standalone: true,
   imports: [
     CodeEditor,
     MarkdownParcer,
@@ -26,6 +27,7 @@ import { lucideBadgeCheck } from '@ng-icons/lucide';
   viewProviders: [provideIcons({ lucideBadgeCheck })],
   templateUrl: './lesson-page.html',
   styleUrl: './lesson-page.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LessonPage implements OnDestroy {
   private readonly route = inject(ActivatedRoute);
@@ -33,7 +35,7 @@ export class LessonPage implements OnDestroy {
   private readonly progressService = inject(UserProgressService);
   private subscription = new Subscription();
 
-  @ViewChild('theoryPanel') theoryPanel!: ElementRef<HTMLDivElement>;
+  theoryPanel = viewChild<ElementRef<HTMLDivElement>>('theoryPanel');
 
   lesson = signal<ILesson | undefined>(undefined);
   theory = signal<string | undefined>('');
@@ -54,8 +56,9 @@ export class LessonPage implements OnDestroy {
       this.courseId.set(queryParams.get('course'));
       this.isCompleted.set(resolved.lessonProgress?.completed ?? false);
 
-      if (this.theoryPanel) {
-        this.theoryPanel.nativeElement.scrollTop = 0;
+      const panel = this.theoryPanel();
+      if (panel) {
+        panel.nativeElement.scrollTop = 0;
       }
     });
   }

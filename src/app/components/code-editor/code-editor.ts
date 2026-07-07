@@ -1,6 +1,6 @@
 import { editor } from 'monaco-editor';
 import { EditorComponent } from 'ngx-monaco-editor-v2';
-import { Component, DestroyRef, effect, inject, Injector, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, DestroyRef, effect, inject, Injector, input, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { LoggerService } from '@app/services/logger';
@@ -20,6 +20,7 @@ import { PyodideService } from '@app/services/pyodide';
   standalone: true,
   templateUrl: './code-editor.html',
   styleUrl: './code-editor.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CodeEditor {
   private logger: LoggerService = inject(LoggerService);

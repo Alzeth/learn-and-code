@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { ICourse } from 'app/interfaces';
 import { RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
@@ -10,6 +10,7 @@ import { ZardButtonComponent } from 'app/shared/components/button';
 
 @Component({
   selector: 'app-course',
+  standalone: true,
   imports: [
     ZardAccordionComponent,
     ZardAccordionItemComponent,
@@ -20,13 +21,8 @@ import { ZardButtonComponent } from 'app/shared/components/button';
   viewProviders: [provideIcons({ lucideArrowRight })],
   templateUrl: './course.html',
   styleUrl: './course.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Course {
-  @Input({ required: true }) course: ICourse | undefined = {
-    id: '',
-    title: '',
-    description: '',
-    tableOfContents: [],
-  };
-
+  course = input.required<ICourse | undefined>();
 }
