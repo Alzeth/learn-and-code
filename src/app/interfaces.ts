@@ -46,5 +46,3 @@ export interface IUserProgress {
   lessons: ILessonProgress[];
   courses: ICourseProgress[];
 }
-
-
