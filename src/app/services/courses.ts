@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
+
 import { ICourse } from 'app/interfaces';
+import { LoggerService } from 'app/services/logger';
+
 import { API_BASE_URL, USE_LOCAL_DATA } from './api.config';
 import { IApiResponse, ICoursesResponse } from './interfaces';
-import { LoggerService } from 'app/services/logger';
 
 @Injectable({
   providedIn: 'root',

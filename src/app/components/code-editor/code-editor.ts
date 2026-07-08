@@ -1,14 +1,14 @@
-import { editor } from 'monaco-editor';
-import { EditorComponent } from 'ngx-monaco-editor-v2';
 import { ChangeDetectionStrategy, Component, DestroyRef, effect, inject, Injector, input, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { editor } from 'monaco-editor';
+import { EditorComponent } from 'ngx-monaco-editor-v2';
 
-import { LoggerService } from '@app/services/logger';
-import { EDarkModes, ZardDarkMode } from '@app/shared/services';
-import getEditorTheme from '@app/shared/utils/get-editor-theme';
-import { AppSettings } from '@app/app.settings';
-import { ZardButtonComponent } from '@app/shared/components/button';
-import { PyodideService } from '@app/services/pyodide';
+import { AppSettings } from 'app/app.settings';
+import { LoggerService } from 'app/services/logger';
+import { PyodideService } from 'app/services/pyodide';
+import { ZardButtonComponent } from 'app/shared/components/button';
+import { EDarkModes, ZardDarkMode } from 'app/shared/services';
+import getEditorTheme from 'app/shared/utils/get-editor-theme';
 
 @Component({
   selector: 'app-code-editor',

@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component, inject, signal, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit,signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { ICourse } from 'app/interfaces';
 import { CoursesList } from 'app/components/courses/list/list';
+import { ICourse } from 'app/interfaces';
 import { LoggerService } from 'app/services/logger';
 
 @Component({

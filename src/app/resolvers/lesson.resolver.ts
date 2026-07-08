@@ -1,9 +1,10 @@
 import { inject, Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot,Resolve } from '@angular/router';
 import { catchError, forkJoin, map, Observable, of, tap } from 'rxjs';
-import { LessonsService } from '@app/services/lessons';
-import { CoursesService } from '@app/services/courses';
+
 import { ILesson, ILessonProgress } from 'app/interfaces';
+import { CoursesService } from 'app/services/courses';
+import { LessonsService } from 'app/services/lessons';
 import { LoggerService } from 'app/services/logger';
 import { UserProgressService } from 'app/services/user-progress.service';
 

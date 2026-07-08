@@ -1,11 +1,12 @@
-import { computed, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+import { computed, inject, Injectable, PLATFORM_ID, signal } from '@angular/core';
 import { Router } from '@angular/router';
 import { firstValueFrom } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
-import { ROUTES } from '@app/constants';
+import { ROUTES } from 'app/constants';
+
 import { API_BASE_URL } from './api.config';
 import { IApiResponse, IAuthResponse, IAuthUser } from './interfaces';
 

@@ -1,11 +1,11 @@
-import { ChangeDetectionStrategy, Component, inject, signal, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit,signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import { LessonsEmpty } from 'app/components/lessons/lessons-empty/lessons-empty';
 import { LessonsList } from 'app/components/lessons/list/list';
 import { ILesson } from 'app/interfaces';
-import { LoggerService } from 'app/services/logger';
-import { LessonsEmpty } from 'app/components/lessons/lessons-empty/lessons-empty';
 import { LessonsResolved } from 'app/resolvers/lessons.resolver';
+import { LoggerService } from 'app/services/logger';
 
 @Component({
   selector: 'app-lessons-page',

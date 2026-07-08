@@ -4,7 +4,7 @@ import { inject, PLATFORM_ID } from '@angular/core';
 import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 
-import { ROUTES } from '@app/constants';
+import { ROUTES } from 'app/constants';
 import { ToastService } from 'app/services/toast.service';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
@@ -25,7 +25,6 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
         localStorage.removeItem('access_token');
         localStorage.removeItem('user');
 
-        // Only redirect and notify once — skip if already on the login page
         if (!router.url.startsWith(`/${ROUTES.AUTH.LOGIN}`)) {
           toast.show({
             title: hadToken ? 'Session expired' : 'Login required',

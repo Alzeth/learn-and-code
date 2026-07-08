@@ -1,10 +1,10 @@
-import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-import { API_BASE_URL } from 'app/services/api.config';
+import { inject, Injectable } from '@angular/core';
 import { map } from 'rxjs/operators';
-import { IApiResponse, ILessonProgressResponse, IUserProgressResponse } from 'app/services/interfaces';
+
 import { ILessonProgress } from 'app/interfaces';
+import { API_BASE_URL } from 'app/services/api.config';
+import { IApiResponse, ILessonProgressResponse, IUserProgressResponse } from 'app/services/interfaces';
 
 @Injectable({
   providedIn: 'root',

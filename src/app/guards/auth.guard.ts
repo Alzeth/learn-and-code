@@ -1,8 +1,8 @@
 import { inject } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivateFn, Router } from '@angular/router';
 
-import { ROUTES } from '@app/constants';
-import { AuthService } from '@app/services/auth.service';
+import { ROUTES } from 'app/constants';
+import { AuthService } from 'app/services/auth.service';
 import { ToastService } from 'app/services/toast.service';
 
 export const authGuard: CanActivateFn = (route: ActivatedRouteSnapshot) => {

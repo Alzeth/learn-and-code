@@ -1,4 +1,4 @@
-import { LogLevel } from '@app/services/log-level';
+import { LogLevel } from 'app/services/log-level';
 
 export const environment = {
   baseHref: '/',

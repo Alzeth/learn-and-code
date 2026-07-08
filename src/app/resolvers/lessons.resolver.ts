@@ -1,9 +1,10 @@
 import { inject, Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
-import { Observable, forkJoin, map, catchError, of } from 'rxjs';
-import { ILesson } from '@app/interfaces';
-import { LessonsService } from '@app/services/lessons';
-import { UserProgressService } from '@app/services/user-progress.service';
+import { catchError, forkJoin, map, Observable, of } from 'rxjs';
+
+import { ILesson } from 'app/interfaces';
+import { LessonsService } from 'app/services/lessons';
+import { UserProgressService } from 'app/services/user-progress.service';
 
 export interface LessonsResolved {
   lessons: ILesson[];

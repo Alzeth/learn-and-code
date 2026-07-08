@@ -1,17 +1,17 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 
-import { ROUTES } from '@app/constants';
-import { AuthService } from '@app/services/auth.service';
+import { ROUTES } from 'app/constants';
 import { HasUnsavedChanges } from 'app/guards/unsaved-changes.guard';
-import { ZardButtonComponent } from '@app/shared/components/button';
+import { AuthService } from 'app/services/auth.service';
+import { ZardButtonComponent } from 'app/shared/components/button';
 import {
   ZardFormControlComponent,
   ZardFormFieldComponent, ZardFormLabelComponent,
   ZardFormMessageComponent,
 } from 'app/shared/components/form/form.component';
-import { ZardInputDirective } from '@app/shared/components/input';
+import { ZardInputDirective } from 'app/shared/components/input';
 
 @Component({
   selector: 'app-login-page',

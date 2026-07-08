@@ -1,4 +1,4 @@
-import { ICourse, ICourseProgress, ILesson, ILessonProgress } from '@app/interfaces';
+import { ICourse, ICourseProgress, ILesson, ILessonProgress } from 'app/interfaces';
 
 export interface IResponseErrorEntity {
   message: string,

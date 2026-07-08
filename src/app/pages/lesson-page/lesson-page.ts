@@ -1,17 +1,17 @@
-import { ChangeDetectionStrategy, Component, ElementRef, inject, OnDestroy, signal, viewChild, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, ElementRef, inject, OnDestroy, OnInit,signal, viewChild } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { Subscription, combineLatest } from 'rxjs';
 import { NgIcon, provideIcons } from '@ng-icons/core';
+import { lucideBadgeCheck } from '@ng-icons/lucide';
+import { combineLatest,Subscription } from 'rxjs';
 
-import { MarkdownParcer } from 'app/components/markdown-parcer/markdown-parcer';
-import { MarkdownEmpty } from 'app/components/markdown-empty/markdown-empty';
-import { UserProgressService } from 'app/services/user-progress.service';
 import { CodeEditor } from 'app/components/code-editor/code-editor';
-import { ZardBadgeComponent } from 'app/shared/components/badge';
+import { MarkdownEmpty } from 'app/components/markdown-empty/markdown-empty';
+import { MarkdownParcer } from 'app/components/markdown-parcer/markdown-parcer';
+import { ILesson } from 'app/interfaces';
 import { LessonResolved } from 'app/resolvers/lesson.resolver';
 import { LoggerService } from 'app/services/logger';
-import { ILesson } from 'app/interfaces';
-import { lucideBadgeCheck } from '@ng-icons/lucide';
+import { UserProgressService } from 'app/services/user-progress.service';
+import { ZardBadgeComponent } from 'app/shared/components/badge';
 
 @Component({
   selector: 'app-lesson-page',

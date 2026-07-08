@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { ICourse } from 'app/interfaces';
 import { RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideArrowRight } from '@ng-icons/lucide';
 
+import { ICourse } from 'app/interfaces';
 import { ZardAccordionComponent } from 'app/shared/components/accordion/accordion.component';
 import { ZardAccordionItemComponent } from 'app/shared/components/accordion/accordion-item.component';
 import { ZardButtonComponent } from 'app/shared/components/button';
