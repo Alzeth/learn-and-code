@@ -1,9 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
+import { lucideArrowUpRight, lucideFolderCode } from '@ng-icons/lucide';
+
 import { ZardButtonComponent } from 'app/shared/components/button';
 import { ZardEmptyComponent } from 'app/shared/components/empty';
-import { lucideArrowUpRight, lucideFolderCode } from '@ng-icons/lucide';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-course-empty',

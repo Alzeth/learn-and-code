@@ -3,9 +3,9 @@ import { RouterLink } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideBadgeCheck } from '@ng-icons/lucide';
 
-import { ZardCardComponent } from 'app/shared/components/card';
 import { ILesson } from 'app/interfaces';
 import { ZardBadgeComponent } from 'app/shared/components/badge';
+import { ZardCardComponent } from 'app/shared/components/card';
 
 @Component({
   selector: 'app-lesson-item',

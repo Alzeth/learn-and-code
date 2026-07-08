@@ -1,10 +1,10 @@
-import { ChangeDetectionStrategy, Component, computed, inject, signal, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject, OnInit,signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideBookSearch, lucideScrollText } from '@ng-icons/lucide';
 
-import { LoggerService } from 'app/services/logger';
 import { IUser, IUserProgress } from 'app/interfaces';
+import { LoggerService } from 'app/services/logger';
 import { ZardAvatarComponent } from 'app/shared/components/avatar';
 import { ZardProgressBarComponent } from 'app/shared/components/progress-bar';
 

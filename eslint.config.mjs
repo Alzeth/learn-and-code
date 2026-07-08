@@ -3,16 +3,44 @@ import angular from '@angular-eslint/eslint-plugin';
 import angularTemplate from '@angular-eslint/eslint-plugin-template';
 import angularTemplateParser from '@angular-eslint/template-parser';
 import prettierConfig from 'eslint-config-prettier';
+import simpleImportSort from 'eslint-plugin-simple-import-sort';
+
+const localPlugin = {
+  rules: {
+    'no-code-comments': {
+      meta: {
+        type: 'suggestion',
+        docs: { description: 'Disallow comments that are not ESLint directives.' },
+        schema: [],
+        messages: { unexpected: 'Comments are not allowed. Remove the comment or convert it to code.' },
+      },
+      create(context) {
+        const DIRECTIVE = /^\s*eslint[-\s]/i;
+        return {
+          Program() {
+            for (const comment of (context.sourceCode.ast.comments ?? [])) {
+              if (!DIRECTIVE.test(comment.value)) {
+                context.report({ loc: comment.loc, messageId: 'unexpected' });
+              }
+            }
+          },
+        };
+      },
+    },
+  },
+};
 
 export default tsEslint.config(
   {
-    ignores: ['dist/', 'node_modules/', '.angular/', 'src/app/shared/components/', 'src/app/shared/core/'],
+    ignores: ['dist/', 'node_modules/', '.angular/', 'src/app/shared/'],
   },
   {
     files: ['**/*.ts'],
     extends: [...tsEslint.configs.recommended],
     plugins: {
       '@angular-eslint': angular,
+      local: localPlugin,
+      'simple-import-sort': simpleImportSort,
     },
     languageOptions: {
       parserOptions: {
@@ -46,6 +74,26 @@ export default tsEslint.config(
 
       // ── General ───────────────────────────────────────────────────────────
       'no-console': 'error',
+      'local/no-code-comments': 'error',
+      'no-restricted-imports': ['error', {
+        patterns: [
+          {
+            group: ['@app/*', '@app/**'],
+            message: "Use 'app/...' instead of '@app/...'",
+          },
+          {
+            group: ['src/app/*', 'src/app/**'],
+            message: "Use 'app/...' instead of 'src/app/...'",
+          },
+        ],
+      }],
+      'simple-import-sort/imports': ['error', {
+        groups: [
+          ['^(?!app/)(?!@app/)@?\\w'],
+          ['^app/', '^@app/'],
+          ['^\\.'],
+        ],
+      }],
       'id-length': ['error', {
         min: 2,
         properties: 'never',

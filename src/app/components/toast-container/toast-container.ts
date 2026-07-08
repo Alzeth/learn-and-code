@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { provideIcons } from '@ng-icons/core';
 import { lucideLock } from '@ng-icons/lucide';
 
-import { ZardAlertComponent } from 'app/shared/components/alert/alert.component';
 import { ToastService } from 'app/services/toast.service';
+import { ZardAlertComponent } from 'app/shared/components/alert/alert.component';
 
 @Component({
   selector: 'app-toast-container',

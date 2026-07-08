@@ -1,8 +1,8 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
-import { ZardCardComponent } from 'app/shared/components/card';
 import { ICourse } from 'app/interfaces';
+import { ZardCardComponent } from 'app/shared/components/card';
 
 @Component({
   selector: 'app-course-item',

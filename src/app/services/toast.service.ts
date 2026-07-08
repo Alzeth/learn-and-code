@@ -1,7 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 
-import { IToast, IToastOptions } from 'app/services/interfaces';
 import { DISPLAY_MS, EXIT_MS } from 'app/services/constants';
+import { IToast, IToastOptions } from 'app/services/interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class ToastService {

@@ -1,6 +1,7 @@
 import { inject, Injectable } from '@angular/core';
-import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot,Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
+
 import { ICourse } from 'app/interfaces';
 import { CoursesService } from 'app/services/courses';
 
