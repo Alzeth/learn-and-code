@@ -39,3 +39,19 @@ export interface IUserProgressResponse {
 }
 
 export type ILessonProgressResponse = ILessonProgress;
+
+export interface IToast {
+  id: number;
+  title: string;
+  message: string;
+  type: 'default' | 'destructive';
+  icon?: string;
+  dismissing: boolean;
+}
+
+export interface IToastOptions {
+  title: string;
+  message: string;
+  type?: 'default' | 'destructive';
+  icon?: string;
+}

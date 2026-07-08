@@ -1,0 +1,12 @@
+<div class="toast-container">
+  @for (toast of toastService.toasts(); track toast.id) {
+    <div class="toast-wrapper" [class.dismissing]="toast.dismissing">
+      <z-alert
+        [zType]="toast.type"
+        [zTitle]="toast.title"
+        [zDescription]="toast.message"
+        [zIcon]="toast.icon ?? ''"
+      />
+    </div>
+  }
+</div>

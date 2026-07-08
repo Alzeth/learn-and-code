@@ -16,18 +16,18 @@ export class UserProgressService {
   getUserProgress() {
     return this.http
       .get<IApiResponse<IUserProgressResponse>>(`${this.apiUrl}/progress`)
-      .pipe(map(r => r.data!));
+      .pipe(map(res => res.data!));
   }
 
   getLessonProgress(href: string) {
     return this.http
       .get<IApiResponse<ILessonProgress>>(`${this.apiUrl}/progress/lessons/${href}`)
-      .pipe(map(r => r.data!));
+      .pipe(map(res => res.data!));
   }
 
   markLessonCompleted(href: string) {
     return this.http
       .post<IApiResponse<ILessonProgressResponse>>(`${this.apiUrl}/progress/lessons/${href}/complete`, {})
-      .pipe(map(r => r.data!));
+      .pipe(map(res => res.data!));
   }
 }
