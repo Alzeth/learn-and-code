@@ -9,7 +9,6 @@ import { MarkdownEmpty } from 'app/components/markdown-empty/markdown-empty';
 import { MarkdownParcer } from 'app/components/markdown-parcer/markdown-parcer';
 import { ILesson } from 'app/interfaces';
 import { LessonResolved } from 'app/resolvers/lesson.resolver';
-import { LoggerService } from 'app/services/logger';
 import { UserProgressService } from 'app/services/user-progress.service';
 import { ZardBadgeComponent } from 'app/shared/components/badge';
 
@@ -31,7 +30,6 @@ import { ZardBadgeComponent } from 'app/shared/components/badge';
 })
 export class LessonPage implements OnDestroy, OnInit {
   private readonly route = inject(ActivatedRoute);
-  private logger = inject(LoggerService);
   private readonly progressService = inject(UserProgressService);
   private subscription = new Subscription();
 

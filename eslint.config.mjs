@@ -116,4 +116,11 @@ export default tsEslint.config(
     },
   },
   prettierConfig,
+  {
+    files: ['**/*.ts'],
+    rules: {
+      'indent': ['error', 2, { SwitchCase: 1 }],
+      'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0, maxBOF: 0 }],
+    },
+  },
 );

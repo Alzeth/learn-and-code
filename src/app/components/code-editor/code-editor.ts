@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, effect, inject, Injector, input, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, Injector, input, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { editor } from 'monaco-editor';
 import { EditorComponent } from 'ngx-monaco-editor-v2';
@@ -25,7 +25,6 @@ import getEditorTheme from 'app/shared/utils/get-editor-theme';
 export class CodeEditor {
   private logger: LoggerService = inject(LoggerService);
   private readonly darkModeService = inject(ZardDarkMode);
-  private readonly destroyRef = inject(DestroyRef);
   private injector = inject(Injector);
   readonly pyodide = inject(PyodideService);
 
