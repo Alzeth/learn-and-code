@@ -27,5 +27,6 @@ export class CoursePage implements OnInit {
     const data = this.route.snapshot.data['course'];
 
     this.course.set(data);
+    this.logger.debug('Course Page loaded', this.course());
   }
 }

@@ -24,6 +24,7 @@ export const routes: Routes = [
   { path: '', component: HomePage, pathMatch: 'full' },
   {
     path: ROUTES.LESSONS,
+    pathMatch: 'full',
     component: LessonsPage,
     resolve: {
       lessons: LessonsResolver,
