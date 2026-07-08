@@ -23,19 +23,19 @@ export class AuthService {
   login(email: string, password: string) {
     return this.http
       .post<IApiResponse<IAuthResponse>>(`${this.apiUrl}/auth/login`, { email, password })
-      .pipe(map(r => r.data!), tap(data => this.persist(data)));
+      .pipe(map(res => res.data!), tap(data => this.persist(data)));
   }
 
   register(email: string, password: string) {
     return this.http
       .post<IApiResponse<IAuthResponse>>(`${this.apiUrl}/auth/register`, { email, password })
-      .pipe(map(r => r.data!), tap(data => this.persist(data)));
+      .pipe(map(res => res.data!), tap(data => this.persist(data)));
   }
 
   me() {
     return this.http
       .get<IApiResponse<IAuthUser>>(`${this.apiUrl}/auth/me`)
-      .pipe(map(r => r.data!), tap(user => this._user.set(user)));
+      .pipe(map(res => res.data!), tap(user => this._user.set(user)));
   }
 
   logout() {

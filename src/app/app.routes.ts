@@ -33,6 +33,7 @@ export const routes: Routes = [
     path: ROUTES.LESSON,
     canActivate: [authGuard],
     component: LessonPage,
+    data: { authMessage: 'Please log in to access lessons.' },
     resolve: {
       lesson: LessonResolver,
     }
@@ -48,6 +49,7 @@ export const routes: Routes = [
     path: ROUTES.COURSE,
     canActivate: [authGuard],
     component: CoursePage,
+    data: { authMessage: 'Please log in to access courses.' },
     resolve: {
       course: CourseResolver,
     }
@@ -58,6 +60,7 @@ export const routes: Routes = [
     path: ROUTES.PROFILE,
     canActivate: [authGuard],
     component: ProfilePage,
+    data: { authMessage: 'Please log in to view your profile.' },
     resolve: {
       profile: ProfileResolver,
     }

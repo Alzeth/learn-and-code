@@ -6,7 +6,7 @@ import prettierConfig from 'eslint-config-prettier';
 
 export default tsEslint.config(
   {
-    ignores: ['dist/', 'node_modules/', '.angular/', 'src/app/shared/components/'],
+    ignores: ['dist/', 'node_modules/', '.angular/', 'src/app/shared/components/', 'src/app/shared/core/'],
   },
   {
     files: ['**/*.ts'],
@@ -46,6 +46,12 @@ export default tsEslint.config(
 
       // ── General ───────────────────────────────────────────────────────────
       'no-console': 'error',
+      'id-length': ['error', {
+        min: 2,
+        properties: 'never',
+        exceptions: ['_'],
+        exceptionPatterns: ['^[A-Z]$'], // TypeScript generic type parameters (T, K, V, etc.)
+      }],
     },
   },
   {

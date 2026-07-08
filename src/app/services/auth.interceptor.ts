@@ -5,9 +5,11 @@ import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 
 import { ROUTES } from '@app/constants';
+import { ToastService } from 'app/services/toast.service';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const router = inject(Router);
+  const toast = inject(ToastService);
   const isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   const token = isBrowser ? localStorage.getItem('access_token') : null;
@@ -18,12 +20,22 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(authReq).pipe(
     catchError(err => {
-      if (err.status === 401) {
-        if (isBrowser) {
-          localStorage.removeItem('access_token');
-          localStorage.removeItem('user');
+      if (err.status === 401 && isBrowser) {
+        const hadToken = !!localStorage.getItem('access_token');
+        localStorage.removeItem('access_token');
+        localStorage.removeItem('user');
+
+        // Only redirect and notify once — skip if already on the login page
+        if (!router.url.startsWith(`/${ROUTES.AUTH.LOGIN}`)) {
+          toast.show({
+            title: hadToken ? 'Session expired' : 'Login required',
+            message: hadToken
+              ? 'Your session has expired. Please log in again.'
+              : 'Please log in to continue.',
+            icon: 'lucideLock',
+          });
+          router.navigate([ROUTES.AUTH.LOGIN]);
         }
-        router.navigate([ROUTES.AUTH.LOGIN]);
       }
       return throwError(() => err);
     })

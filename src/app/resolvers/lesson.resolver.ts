@@ -42,7 +42,7 @@ export class LessonResolver implements Resolve<LessonResolved> {
       ),
     }).pipe(
       map(({ lesson, theory, course, lessonProgress }) => {
-        const entry = course?.tableOfContents.find(t => t.id === lesson?.id);
+        const entry = course?.tableOfContents.find(item => item.id === lesson?.id);
         return {
           lesson,
           theory,

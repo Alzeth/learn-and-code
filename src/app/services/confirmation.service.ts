@@ -25,8 +25,8 @@ export class ConfirmationService {
         resolve(result);
       };
 
-      const onEscape = (e: KeyboardEvent) => {
-        if (e.key === 'Escape') settle(false);
+      const onEscape = (event: KeyboardEvent) => {
+        if (event.key === 'Escape') settle(false);
       };
       document.addEventListener('keydown', onEscape, true);
 
