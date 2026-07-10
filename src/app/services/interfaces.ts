@@ -40,6 +40,10 @@ export interface IUserProgressResponse {
 
 export type ILessonProgressResponse = ILessonProgress;
 
+export interface IMessageResponse {
+  message: string;
+}
+
 export interface IToast {
   id: number;
   title: string;
