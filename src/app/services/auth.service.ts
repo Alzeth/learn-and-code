@@ -8,7 +8,7 @@ import { map, tap } from 'rxjs/operators';
 import { ROUTES } from 'app/constants';
 
 import { API_BASE_URL } from './api.config';
-import { IApiResponse, IAuthResponse, IAuthUser } from './interfaces';
+import { IApiResponse, IAuthResponse, IAuthUser, IMessageResponse } from './interfaces';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -31,6 +31,14 @@ export class AuthService {
     return this.http
       .post<IApiResponse<IAuthResponse>>(`${this.apiUrl}/auth/register`, { email, password })
       .pipe(map(res => res.data!), tap(data => this.persist(data)));
+  }
+
+  forgotPassword(email: string) {
+    return this.http.post<IApiResponse<IMessageResponse>>(`${this.apiUrl}/auth/forgot-password`, { email });
+  }
+
+  resetPassword(token: string, newPassword: string) {
+    return this.http.post<IApiResponse<IMessageResponse>>(`${this.apiUrl}/auth/reset-password`, { token, newPassword });
   }
 
   me() {
