@@ -1,7 +1,7 @@
 <header class="bg-background fixed z-50 w-full py-3.5 shadow-[0px_4px_6px_0px_rgba(0,_0,_0,_0.1)]">
   <div class="container">
     <div class="flex items-center justify-between">
-      <app-logo />
+      <div class="flex flex-1"><app-logo /></div>
       <ul class="block md:flex gap-4">
         <li>
             <a routerLink="/courses">
@@ -14,7 +14,7 @@
           </a>
         </li>
       </ul>
-      <div class="flex justify-end items-center gap-2">
+      <div class="flex flex-1 justify-end items-center gap-2">
         <button z-button zType="ghost" zSize="sm" (click)="toggleTheme()">
           <ng-icon name="lucideContrast" />
           <span class="sr-only">Toggle theme</span>
