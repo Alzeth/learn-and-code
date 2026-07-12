@@ -11,7 +11,7 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { ROUTES } from 'app/constants';
-import { AuthService } from 'app/services/auth.service';
+import { AuthService } from 'app/services/auth/auth.service';
 import { ZardButtonComponent } from 'app/shared/components/button';
 import {
   ZardFormControlComponent,

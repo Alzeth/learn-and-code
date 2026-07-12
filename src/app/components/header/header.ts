@@ -4,8 +4,8 @@ import { TranslocoPipe } from '@jsverse/transloco';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideContrast, lucideUserCircle } from '@ng-icons/lucide';
 
-import { AuthService } from 'app/services/auth.service';
-import { LoggerService } from 'app/services/logger';
+import { AuthService } from 'app/services/auth/auth.service';
+import { LoggerService } from 'app/services/logger/logger';
 import { Burger } from 'app/shared/components/burger/burger';
 import { ZardButtonComponent } from 'app/shared/components/button';
 import { Logo } from 'app/shared/components/logo/logo';

@@ -13,8 +13,8 @@ import { editor } from 'monaco-editor';
 import { EditorComponent } from 'ngx-monaco-editor-v2';
 
 import { AppSettings } from 'app/app.settings';
-import { LoggerService } from 'app/services/logger';
-import { PyodideService } from 'app/services/pyodide';
+import { LoggerService } from 'app/services/logger/logger';
+import { PyodideService } from 'app/services/pyodide/pyodide';
 import { ZardButtonComponent } from 'app/shared/components/button';
 import { EDarkModes, ZardDarkMode } from 'app/shared/services';
 import getEditorTheme from 'app/shared/utils/get-editor-theme';

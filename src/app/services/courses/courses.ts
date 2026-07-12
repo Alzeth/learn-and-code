@@ -3,10 +3,10 @@ import { inject, Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 
 import { ICourse } from 'app/interfaces';
-import { LoggerService } from 'app/services/logger';
+import { LoggerService } from 'app/services/logger/logger';
 
-import { API_BASE_URL, USE_LOCAL_DATA } from './api.config';
-import { IApiResponse, ICoursesResponse } from './interfaces';
+import { API_BASE_URL, USE_LOCAL_DATA } from 'app/services/api.config';
+import { IApiResponse, ICoursesResponse } from 'app/services/interfaces';
 
 @Injectable({
   providedIn: 'root',

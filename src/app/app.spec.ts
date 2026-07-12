@@ -8,7 +8,7 @@ import {
 } from '@angular/router';
 import { Subject } from 'rxjs';
 
-import { LoggerService } from 'app/services/logger';
+import { LoggerService } from 'app/services/logger/logger';
 
 import { App } from './app';
 

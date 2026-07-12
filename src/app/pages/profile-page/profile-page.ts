@@ -12,7 +12,7 @@ import { TranslocoPipe } from '@jsverse/transloco';
 import { UserInfo } from 'app/components/user/user-info/user-info';
 import { UserLearningProgress } from 'app/components/user/user-learning-progress/user-learning-progress';
 import { IUser, IUserProgress } from 'app/interfaces';
-import { LoggerService } from 'app/services/logger';
+import { LoggerService } from 'app/services/logger/logger';
 
 @Component({
   selector: 'app-profile-page',

@@ -6,7 +6,7 @@ import { LessonsEmpty } from 'app/components/lessons/lessons-empty/lessons-empty
 import { LessonsList } from 'app/components/lessons/list/list';
 import { ILesson } from 'app/interfaces';
 import { LessonsResolved } from 'app/resolvers/lessons.resolver';
-import { LoggerService } from 'app/services/logger';
+import { LoggerService } from 'app/services/logger/logger';
 
 @Component({
   selector: 'app-lessons-page',

@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Course } from 'app/components/course/course';
 import { CourseEmpty } from 'app/components/course/course-empty/course-empty';
 import { ICourse } from 'app/interfaces';
-import { LoggerService } from 'app/services/logger';
+import { LoggerService } from 'app/services/logger/logger';
 
 @Component({
   selector: 'app-course-page',

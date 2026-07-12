@@ -4,7 +4,7 @@ import { TranslocoPipe } from '@jsverse/transloco';
 
 import { CoursesList } from 'app/components/courses/list/list';
 import { ICourse } from 'app/interfaces';
-import { LoggerService } from 'app/services/logger';
+import { LoggerService } from 'app/services/logger/logger';
 
 @Component({
   selector: 'app-courses-page',
