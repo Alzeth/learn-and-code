@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "courses": "Kursy",
+    "lessons": "Lekcje"
+  },
+  "header": {
+    "toggleTheme": "Zmień motyw",
+    "userProfile": "Profil użytkownika",
+    "login": "Zaloguj się",
+    "logout": "Wyloguj się"
+  },
+  "codeEditor": {
+    "title": "Edytor Pythona",
+    "reset": "Resetuj",
+    "loadingPython": "Ładowanie Pythona...",
+    "run": "Uruchom ▶",
+    "error": "Błąd",
+    "output": "Wynik",
+    "runtimeNotReady": "Środowisko Python załaduje się, gdy edytor będzie gotowy.",
+    "noOutput": "(brak wyniku)"
+  },
+  "course": {
+    "startCourse": "Rozpocznij kurs",
+    "empty": {
+      "title": "Brak dostępnej treści",
+      "description": "Ten kurs nie został znaleziony",
+      "tryOther": "Spróbuj innych kursów"
+    }
+  },
+  "markdownEmpty": {
+    "title": "Brak dostępnej treści",
+    "description": "Nie ma jeszcze teorii dla tej lekcji. Nasz zespół ją przygotowuje.",
+    "checkLessons": "Sprawdź inne lekcje"
+  },
+  "pages": {
+    "about": {
+      "title": "O nas",
+      "missionTitle": "Misja",
+      "mission": "Pomagać dzieciom rozwijać się w technologiach"
+    },
+    "courses": {
+      "title": "Strona kursów",
+      "subtitle": "Ucz się szybko rozwijać w tematach Python."
+    },
+    "lessons": {
+      "title": "Strona lekcji",
+      "subtitle": "Ucz się szybko rozwijać w tematach Python."
+    },
+    "home": {
+      "heading": "Witaj w swojej ekscytującej podróży z Pythonem",
+      "subheading": "Ucz się i rozwijaj każdego dnia dzięki tym kursom i lekcjom",
+      "getStarted": "Rozpocznij",
+      "learnMore": "Dowiedz się więcej"
+    },
+    "lesson": {
+      "completed": "Ukończono",
+      "previous": "← Poprzednia",
+      "next": "Następna →",
+      "markAsComplete": "Oznacz jako ukończone",
+      "saving": "Zapisywanie...",
+      "starterCode": "# Napisz tutaj swój kod Python\n"
+    },
+    "notFound": {
+      "title": "Strona nie znaleziona",
+      "description": "Wygląda na to, że ta strona nie istnieje.",
+      "backToHome": "Wróć do strony głównej"
+    },
+    "profile": {
+      "title": "Mój profil",
+      "userInfo": {
+        "emailAddress": "Adres e-mail",
+        "userId": "ID użytkownika",
+        "bio": "Bio",
+        "occupation": "Zawód",
+        "address": "Adres"
+      }
+    },
+    "login": {
+      "title": "Zaloguj się",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "ty@przyklad.pl",
+      "emailError": "Wprowadź prawidłowy adres e-mail.",
+      "passwordLabel": "Hasło",
+      "passwordError": "Hasło musi mieć co najmniej 8 znaków.",
+      "signIn": "Zaloguj się",
+      "forgotPassword": "Zapomniałeś hasła?",
+      "noAccount": "Nie masz konta?",
+      "register": "Zarejestruj się",
+      "invalidCredentials": "Nieprawidłowy e-mail lub hasło."
+    },
+    "register": {
+      "title": "Utwórz konto",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "ty@przyklad.pl",
+      "emailError": "Wprowadź prawidłowy adres e-mail.",
+      "passwordLabel": "Hasło",
+      "passwordError": "Hasło musi mieć co najmniej 8 znaków.",
+      "createAccount": "Utwórz konto",
+      "alreadyHaveAccount": "Masz już konto?",
+      "signIn": "Zaloguj się",
+      "emailTaken": "Ten adres e-mail jest już zarejestrowany.",
+      "failed": "Rejestracja nie powiodła się. Spróbuj ponownie."
+    },
+    "forgotPassword": {
+      "title": "Zapomniałem hasła",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "ty@przyklad.pl",
+      "emailError": "Wprowadź prawidłowy adres e-mail.",
+      "sendLink": "Wyślij link do resetowania",
+      "backTo": "Wróć do",
+      "signIn": "logowania",
+      "inboxTitle": "Sprawdź swoją skrzynkę",
+      "inboxDescription": "Jeśli ten e-mail jest zarejestrowany, wkrótce otrzymasz link do resetowania.",
+      "backToSignIn": "Wróć do logowania",
+      "error": "Coś poszło nie tak. Spróbuj ponownie."
+    },
+    "resetPassword": {
+      "invalidTitle": "Nieprawidłowy link resetowania",
+      "invalidDescription": "W tym linku brakuje tokenu resetowania.",
+      "requestNewLink": "Poproś o nowy link",
+      "successTitle": "Hasło zaktualizowane",
+      "successDescription": "Twoje hasło zostało zmienione. Przekierowanie do logowania…",
+      "formTitle": "Ustaw nowe hasło",
+      "newPasswordLabel": "Nowe hasło",
+      "newPasswordError": "Hasło musi mieć co najmniej 8 znaków.",
+      "confirmPasswordLabel": "Potwierdź hasło",
+      "confirmPasswordError": "Hasła nie są zgodne.",
+      "setNewPassword": "Ustaw nowe hasło",
+      "backTo": "Wróć do",
+      "signIn": "logowania",
+      "expiredLink": "Ten link do resetowania wygasł lub został już użyty.",
+      "error": "Coś poszło nie tak. Spróbuj ponownie."
+    }
+  }
+}

@@ -13,5 +13,5 @@ export const ROUTES = {
   },
   PROFILE: 'profile',
   ABOUT: 'about',
-  NOT_FOUND: '404'
+  NOT_FOUND: '404',
 };

@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "courses": "Kurse",
+    "lessons": "Lektionen"
+  },
+  "header": {
+    "toggleTheme": "Design wechseln",
+    "userProfile": "Benutzerprofil",
+    "login": "Anmelden",
+    "logout": "Abmelden"
+  },
+  "codeEditor": {
+    "title": "Python-Editor",
+    "reset": "Zurücksetzen",
+    "loadingPython": "Python wird geladen...",
+    "run": "Ausführen ▶",
+    "error": "Fehler",
+    "output": "Ausgabe",
+    "runtimeNotReady": "Die Python-Laufzeitumgebung wird geladen, sobald der Editor bereit ist.",
+    "noOutput": "(keine Ausgabe)"
+  },
+  "course": {
+    "startCourse": "Kurs starten",
+    "empty": {
+      "title": "Kein Inhalt verfügbar",
+      "description": "Dieser Kurs wurde nicht gefunden",
+      "tryOther": "Andere Kurse ausprobieren"
+    }
+  },
+  "markdownEmpty": {
+    "title": "Kein Inhalt verfügbar",
+    "description": "Für diese Lektion gibt es noch keine Theorie. Unser Team bereitet sie vor.",
+    "checkLessons": "Andere Lektionen ansehen"
+  },
+  "pages": {
+    "about": {
+      "title": "Über uns",
+      "missionTitle": "Mission",
+      "mission": "Kindern helfen, in der Technologie zu wachsen"
+    },
+    "courses": {
+      "title": "Kursseite",
+      "subtitle": "Lerne, schnell in Python-Themen zu wachsen."
+    },
+    "lessons": {
+      "title": "Lektionsseite",
+      "subtitle": "Lerne, schnell in Python-Themen zu wachsen."
+    },
+    "home": {
+      "heading": "Willkommen auf deiner aufregenden Python-Reise",
+      "subheading": "Lerne und wachse täglich mit diesen Kursen und Lektionen",
+      "getStarted": "Loslegen",
+      "learnMore": "Mehr erfahren"
+    },
+    "lesson": {
+      "completed": "Abgeschlossen",
+      "previous": "← Vorherige",
+      "next": "Nächste →",
+      "markAsComplete": "Als abgeschlossen markieren",
+      "saving": "Speichern...",
+      "starterCode": "# Schreibe hier deinen Python-Code\n"
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "description": "Diese Seite scheint nicht zu existieren.",
+      "backToHome": "Zur Startseite"
+    },
+    "profile": {
+      "title": "Mein Profil",
+      "userInfo": {
+        "emailAddress": "E-Mail-Adresse",
+        "userId": "Benutzer-ID",
+        "bio": "Biografie",
+        "occupation": "Beruf",
+        "address": "Adresse"
+      }
+    },
+    "login": {
+      "title": "Anmelden",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "du@beispiel.de",
+      "emailError": "Gib eine gültige E-Mail-Adresse ein.",
+      "passwordLabel": "Passwort",
+      "passwordError": "Das Passwort muss mindestens 8 Zeichen lang sein.",
+      "signIn": "Anmelden",
+      "forgotPassword": "Passwort vergessen?",
+      "noAccount": "Kein Konto?",
+      "register": "Registrieren",
+      "invalidCredentials": "Ungültige E-Mail oder Passwort."
+    },
+    "register": {
+      "title": "Konto erstellen",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "du@beispiel.de",
+      "emailError": "Gib eine gültige E-Mail-Adresse ein.",
+      "passwordLabel": "Passwort",
+      "passwordError": "Das Passwort muss mindestens 8 Zeichen lang sein.",
+      "createAccount": "Konto erstellen",
+      "alreadyHaveAccount": "Bereits ein Konto?",
+      "signIn": "Anmelden",
+      "emailTaken": "Diese E-Mail ist bereits registriert.",
+      "failed": "Registrierung fehlgeschlagen. Bitte versuche es erneut."
+    },
+    "forgotPassword": {
+      "title": "Passwort vergessen",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "du@beispiel.de",
+      "emailError": "Gib eine gültige E-Mail-Adresse ein.",
+      "sendLink": "Reset-Link senden",
+      "backTo": "Zurück zur",
+      "signIn": "Anmeldung",
+      "inboxTitle": "Überprüfe dein Postfach",
+      "inboxDescription": "Wenn diese E-Mail registriert ist, erhältst du in Kürze einen Reset-Link.",
+      "backToSignIn": "Zurück zur Anmeldung",
+      "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+    },
+    "resetPassword": {
+      "invalidTitle": "Ungültiger Reset-Link",
+      "invalidDescription": "Diesem Link fehlt ein Reset-Token.",
+      "requestNewLink": "Neuen Link anfordern",
+      "successTitle": "Passwort aktualisiert",
+      "successDescription": "Dein Passwort wurde geändert. Weiterleitung zur Anmeldung…",
+      "formTitle": "Neues Passwort festlegen",
+      "newPasswordLabel": "Neues Passwort",
+      "newPasswordError": "Das Passwort muss mindestens 8 Zeichen lang sein.",
+      "confirmPasswordLabel": "Passwort bestätigen",
+      "confirmPasswordError": "Die Passwörter stimmen nicht überein.",
+      "setNewPassword": "Neues Passwort festlegen",
+      "backTo": "Zurück zur",
+      "signIn": "Anmeldung",
+      "expiredLink": "Dieser Reset-Link ist abgelaufen oder wurde bereits verwendet.",
+      "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
+    }
+  }
+}

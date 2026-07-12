@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideContrast, lucideUserCircle } from '@ng-icons/lucide';
 
@@ -10,15 +11,11 @@ import { ZardButtonComponent } from 'app/shared/components/button';
 import { Logo } from 'app/shared/components/logo/logo';
 import { ZardDarkMode } from 'app/shared/services/dark-mode';
 
+import { LanguageSwitcher } from './language-switcher/language-switcher';
+
 @Component({
   selector: 'app-header',
-  imports: [
-    ZardButtonComponent,
-    Logo,
-    RouterLink,
-    Burger,
-    NgIcon
-  ],
+  imports: [ZardButtonComponent, Logo, RouterLink, Burger, NgIcon, LanguageSwitcher, TranslocoPipe],
   viewProviders: [provideIcons({ lucideContrast, lucideUserCircle })],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,

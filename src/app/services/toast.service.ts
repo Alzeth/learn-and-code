@@ -12,7 +12,7 @@ export class ToastService {
   show(options: IToastOptions): void {
     const id = ++this.nextId;
 
-    this._toasts.update(list => [
+    this._toasts.update((list) => [
       ...list,
       {
         id,
@@ -28,12 +28,12 @@ export class ToastService {
   }
 
   dismiss(id: number): void {
-    this._toasts.update(list =>
-      list.map(toast => (toast.id === id ? { ...toast, dismissing: true } : toast)),
+    this._toasts.update((list) =>
+      list.map((toast) => (toast.id === id ? { ...toast, dismissing: true } : toast)),
     );
 
     setTimeout(() => {
-      this._toasts.update(list => list.filter(toast => toast.id !== id));
+      this._toasts.update((list) => list.filter((toast) => toast.id !== id));
     }, EXIT_MS);
   }
 }

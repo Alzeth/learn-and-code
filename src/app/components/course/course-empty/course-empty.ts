@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideArrowUpRight, lucideFolderCode } from '@ng-icons/lucide';
 
@@ -10,7 +11,7 @@ import { ZardEmptyComponent } from 'app/shared/components/empty';
   selector: 'app-course-empty',
   templateUrl: './course-empty.html',
   styleUrl: './course-empty.css',
-  imports: [ZardButtonComponent, ZardEmptyComponent, NgIcon, RouterLink],
+  imports: [ZardButtonComponent, ZardEmptyComponent, NgIcon, RouterLink, TranslocoPipe],
   changeDetection: ChangeDetectionStrategy.OnPush,
   viewProviders: [
     provideIcons({

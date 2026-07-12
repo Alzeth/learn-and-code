@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit,signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Course } from 'app/components/course/course';
@@ -11,10 +11,7 @@ import { LoggerService } from 'app/services/logger';
   standalone: true,
   templateUrl: './course-page.html',
   styleUrl: './course-page.css',
-  imports: [
-    Course,
-    CourseEmpty,
-  ],
+  imports: [Course, CourseEmpty],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CoursePage implements OnInit {

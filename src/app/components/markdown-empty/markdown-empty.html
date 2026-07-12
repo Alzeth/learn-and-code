@@ -1,11 +1,11 @@
 <z-empty
   zIcon="lucideFolderCode"
-  zTitle="No available content here"
-  zDescription="Here is no lesson theory yet. Our team is preparing it for you."
+  [zTitle]="'markdownEmpty.title' | transloco"
+  [zDescription]="'markdownEmpty.description' | transloco"
 >
   <a class="relative block" routerLink="/lessons">
     <button type="button" z-button zType="link" zSize="sm" class="text-muted-foreground">
-      Check other lessons
+      {{ 'markdownEmpty.checkLessons' | transloco }}
       <ng-icon name="lucideArrowUpRight" class="size-3!" />
     </button>
   </a>

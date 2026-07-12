@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "courses": "Cours",
+    "lessons": "Leçons"
+  },
+  "header": {
+    "toggleTheme": "Changer le thème",
+    "userProfile": "Profil utilisateur",
+    "login": "Se connecter",
+    "logout": "Se déconnecter"
+  },
+  "codeEditor": {
+    "title": "Éditeur Python",
+    "reset": "Réinitialiser",
+    "loadingPython": "Chargement de Python...",
+    "run": "Exécuter ▶",
+    "error": "Erreur",
+    "output": "Sortie",
+    "runtimeNotReady": "L'environnement Python se chargera lorsque l'éditeur sera prêt.",
+    "noOutput": "(aucune sortie)"
+  },
+  "course": {
+    "startCourse": "Commencer le cours",
+    "empty": {
+      "title": "Aucun contenu disponible",
+      "description": "Ce cours est introuvable",
+      "tryOther": "Essayez d'autres cours"
+    }
+  },
+  "markdownEmpty": {
+    "title": "Aucun contenu disponible",
+    "description": "Il n'y a pas encore de théorie pour cette leçon. Notre équipe la prépare.",
+    "checkLessons": "Voir d'autres leçons"
+  },
+  "pages": {
+    "about": {
+      "title": "À propos",
+      "missionTitle": "Mission",
+      "mission": "Aider les enfants à progresser dans les technologies"
+    },
+    "courses": {
+      "title": "Page des cours",
+      "subtitle": "Apprenez à progresser rapidement dans les sujets Python."
+    },
+    "lessons": {
+      "title": "Page des leçons",
+      "subtitle": "Apprenez à progresser rapidement dans les sujets Python."
+    },
+    "home": {
+      "heading": "Bienvenue dans votre passionnant voyage Python",
+      "subheading": "Apprenez et progressez chaque jour avec ces cours et leçons",
+      "getStarted": "Commencer",
+      "learnMore": "En savoir plus"
+    },
+    "lesson": {
+      "completed": "Terminé",
+      "previous": "← Précédent",
+      "next": "Suivant →",
+      "markAsComplete": "Marquer comme terminé",
+      "saving": "Enregistrement...",
+      "starterCode": "# Écrivez votre code Python ici\n"
+    },
+    "notFound": {
+      "title": "Page introuvable",
+      "description": "Il semble que cette page n'existe pas.",
+      "backToHome": "Retour à l'accueil"
+    },
+    "profile": {
+      "title": "Mon profil",
+      "userInfo": {
+        "emailAddress": "Adresse e-mail",
+        "userId": "ID utilisateur",
+        "bio": "Biographie",
+        "occupation": "Profession",
+        "address": "Adresse"
+      }
+    },
+    "login": {
+      "title": "Se connecter",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "vous@exemple.com",
+      "emailError": "Entrez une adresse e-mail valide.",
+      "passwordLabel": "Mot de passe",
+      "passwordError": "Le mot de passe doit contenir au moins 8 caractères.",
+      "signIn": "Se connecter",
+      "forgotPassword": "Mot de passe oublié ?",
+      "noAccount": "Pas de compte ?",
+      "register": "S'inscrire",
+      "invalidCredentials": "E-mail ou mot de passe invalide."
+    },
+    "register": {
+      "title": "Créer un compte",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "vous@exemple.com",
+      "emailError": "Entrez une adresse e-mail valide.",
+      "passwordLabel": "Mot de passe",
+      "passwordError": "Le mot de passe doit contenir au moins 8 caractères.",
+      "createAccount": "Créer un compte",
+      "alreadyHaveAccount": "Vous avez déjà un compte ?",
+      "signIn": "Se connecter",
+      "emailTaken": "Cet e-mail est déjà enregistré.",
+      "failed": "Échec de l'inscription. Veuillez réessayer."
+    },
+    "forgotPassword": {
+      "title": "Mot de passe oublié",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "vous@exemple.com",
+      "emailError": "Entrez une adresse e-mail valide.",
+      "sendLink": "Envoyer le lien de réinitialisation",
+      "backTo": "Retour à la",
+      "signIn": "connexion",
+      "inboxTitle": "Vérifiez votre boîte de réception",
+      "inboxDescription": "Si cet e-mail est enregistré, vous recevrez bientôt un lien de réinitialisation.",
+      "backToSignIn": "Retour à la connexion",
+      "error": "Une erreur s'est produite. Veuillez réessayer."
+    },
+    "resetPassword": {
+      "invalidTitle": "Lien de réinitialisation invalide",
+      "invalidDescription": "Ce lien ne contient pas de token de réinitialisation.",
+      "requestNewLink": "Demander un nouveau lien",
+      "successTitle": "Mot de passe mis à jour",
+      "successDescription": "Votre mot de passe a été modifié. Redirection vers la connexion…",
+      "formTitle": "Définir un nouveau mot de passe",
+      "newPasswordLabel": "Nouveau mot de passe",
+      "newPasswordError": "Le mot de passe doit contenir au moins 8 caractères.",
+      "confirmPasswordLabel": "Confirmer le mot de passe",
+      "confirmPasswordError": "Les mots de passe ne correspondent pas.",
+      "setNewPassword": "Définir le nouveau mot de passe",
+      "backTo": "Retour à la",
+      "signIn": "connexion",
+      "expiredLink": "Ce lien de réinitialisation a expiré ou a déjà été utilisé.",
+      "error": "Une erreur s'est produite. Veuillez réessayer."
+    }
+  }
+}

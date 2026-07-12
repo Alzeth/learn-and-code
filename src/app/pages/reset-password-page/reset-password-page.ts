@@ -1,7 +1,14 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { AbstractControl, FormBuilder, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  ReactiveFormsModule,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { ROUTES } from 'app/constants';
 import { AuthService } from 'app/services/auth.service';
@@ -22,7 +29,17 @@ function passwordsMatch(control: AbstractControl): ValidationErrors | null {
 
 @Component({
   selector: 'app-reset-password-page',
-  imports: [ReactiveFormsModule, RouterLink, ZardButtonComponent, ZardFormFieldComponent, ZardFormControlComponent, ZardFormMessageComponent, ZardFormLabelComponent, ZardInputDirective],
+  imports: [
+    ReactiveFormsModule,
+    RouterLink,
+    ZardButtonComponent,
+    ZardFormFieldComponent,
+    ZardFormControlComponent,
+    ZardFormMessageComponent,
+    ZardFormLabelComponent,
+    ZardInputDirective,
+    TranslocoPipe,
+  ],
   templateUrl: './reset-password-page.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -31,6 +48,7 @@ export class ResetPasswordPage {
   private router = inject(Router);
   private route = inject(ActivatedRoute);
   private fb = inject(FormBuilder);
+  private readonly transloco = inject(TranslocoService);
 
   private token: string | null = this.route.snapshot.queryParamMap.get('token');
 
@@ -39,13 +57,14 @@ export class ResetPasswordPage {
   readonly isLoading = signal(false);
   readonly success = signal(false);
   readonly error = signal<string | null>(null);
+  readonly isExpiredError = signal(false);
 
   form = this.fb.group(
     {
       newPassword: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', Validators.required],
     },
-    { validators: passwordsMatch }
+    { validators: passwordsMatch },
   );
 
   submit(): void {
@@ -54,6 +73,7 @@ export class ResetPasswordPage {
     const { newPassword } = this.form.getRawValue();
     this.isLoading.set(true);
     this.error.set(null);
+    this.isExpiredError.set(false);
 
     this.auth.resetPassword(this.token, newPassword!).subscribe({
       next: () => {
@@ -63,10 +83,13 @@ export class ResetPasswordPage {
         setTimeout(() => this.router.navigate([ROUTES.AUTH.LOGIN]), 2000);
       },
       error: (err: HttpErrorResponse) => {
-        const message = err.status === 400
-          ? 'This reset link has expired or has already been used. Please request a new one.'
-          : 'Something went wrong. Please try again.';
-        this.error.set(message);
+        const isExpired = err.status === 400;
+        this.isExpiredError.set(isExpired);
+        this.error.set(
+          isExpired
+            ? this.transloco.translate('pages.resetPassword.expiredLink')
+            : this.transloco.translate('pages.resetPassword.error'),
+        );
         this.isLoading.set(false);
       },
     });

@@ -24,27 +24,39 @@ export class AuthService {
   login(email: string, password: string) {
     return this.http
       .post<IApiResponse<IAuthResponse>>(`${this.apiUrl}/auth/login`, { email, password })
-      .pipe(map(res => res.data!), tap(data => this.persist(data)));
+      .pipe(
+        map((res) => res.data!),
+        tap((data) => this.persist(data)),
+      );
   }
 
   register(email: string, password: string) {
     return this.http
       .post<IApiResponse<IAuthResponse>>(`${this.apiUrl}/auth/register`, { email, password })
-      .pipe(map(res => res.data!), tap(data => this.persist(data)));
+      .pipe(
+        map((res) => res.data!),
+        tap((data) => this.persist(data)),
+      );
   }
 
   forgotPassword(email: string) {
-    return this.http.post<IApiResponse<IMessageResponse>>(`${this.apiUrl}/auth/forgot-password`, { email });
+    return this.http.post<IApiResponse<IMessageResponse>>(`${this.apiUrl}/auth/forgot-password`, {
+      email,
+    });
   }
 
   resetPassword(token: string, newPassword: string) {
-    return this.http.post<IApiResponse<IMessageResponse>>(`${this.apiUrl}/auth/reset-password`, { token, newPassword });
+    return this.http.post<IApiResponse<IMessageResponse>>(`${this.apiUrl}/auth/reset-password`, {
+      token,
+      newPassword,
+    });
   }
 
   me() {
-    return this.http
-      .get<IApiResponse<IAuthUser>>(`${this.apiUrl}/auth/me`)
-      .pipe(map(res => res.data!), tap(user => this._user.set(user)));
+    return this.http.get<IApiResponse<IAuthUser>>(`${this.apiUrl}/auth/me`).pipe(
+      map((res) => res.data!),
+      tap((user) => this._user.set(user)),
+    );
   }
 
   logout() {

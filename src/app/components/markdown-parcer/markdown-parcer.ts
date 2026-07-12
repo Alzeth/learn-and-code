@@ -4,9 +4,7 @@ import { MarkdownComponent } from 'ngx-markdown';
 @Component({
   selector: 'app-markdown-parcer',
   standalone: true,
-  imports: [
-    MarkdownComponent,
-  ],
+  imports: [MarkdownComponent],
   templateUrl: './markdown-parcer.html',
   styleUrl: './markdown-parcer.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

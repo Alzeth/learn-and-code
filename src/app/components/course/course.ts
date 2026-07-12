@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideArrowRight } from '@ng-icons/lucide';
 
@@ -17,6 +18,7 @@ import { ZardButtonComponent } from 'app/shared/components/button';
     RouterLink,
     ZardButtonComponent,
     NgIcon,
+    TranslocoPipe,
   ],
   viewProviders: [provideIcons({ lucideArrowRight })],
   templateUrl: './course.html',

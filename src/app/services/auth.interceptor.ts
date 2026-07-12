@@ -14,12 +14,10 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
 
   const token = isBrowser ? localStorage.getItem('access_token') : null;
 
-  const authReq = token
-    ? req.clone({ setHeaders: { Authorization: `Bearer ${token}` } })
-    : req;
+  const authReq = token ? req.clone({ setHeaders: { Authorization: `Bearer ${token}` } }) : req;
 
   return next(authReq).pipe(
-    catchError(err => {
+    catchError((err) => {
       if (err.status === 401 && isBrowser) {
         const hadToken = !!localStorage.getItem('access_token');
         localStorage.removeItem('access_token');
@@ -37,6 +35,6 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
         }
       }
       return throwError(() => err);
-    })
+    }),
   );
 };

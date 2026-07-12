@@ -6,7 +6,7 @@ import { CoursesService } from 'app/services/courses';
 import { ICoursesResponse } from 'app/services/interfaces';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CoursesResolver implements Resolve<ICoursesResponse> {
   private coursesService: CoursesService = inject(CoursesService);

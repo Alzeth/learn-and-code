@@ -1,7 +1,5 @@
 <a [routerLink]="lesson()?.id" class="group block h-full">
-  <div
-    class="gradient-wrap relative p-[2px] rounded-xl h-full"
-  >
+  <div class="gradient-wrap relative p-[2px] rounded-xl h-full">
     <z-card
       [zTitle]="lesson()?.title"
       [zDescription]="lesson()?.description"
@@ -10,7 +8,11 @@
       <div class="flex items-center justify-between">
         <time [dateTime]="lesson()?.datetime">{{ lesson()?.date }}</time>
         @if (completed()) {
-          <z-badge zType="secondary" zShape="pill" class="bg-green-800 text-white dark:bg-green-600">
+          <z-badge
+            zType="secondary"
+            zShape="pill"
+            class="bg-green-800 text-white dark:bg-green-600"
+          >
             <ng-icon name="lucideBadgeCheck" />
             Completed
           </z-badge>

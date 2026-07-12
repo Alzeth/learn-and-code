@@ -12,7 +12,7 @@ export interface IUserResolved {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProfileResolver implements Resolve<IUserResolved> {
   private readonly authService = inject(AuthService);
@@ -22,6 +22,6 @@ export class ProfileResolver implements Resolve<IUserResolved> {
     return forkJoin({
       user: this.authService.me(),
       userProgress: this.progressService.getUserProgress(),
-    })
+    });
   }
 }

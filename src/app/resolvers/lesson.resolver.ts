@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot,Resolve } from '@angular/router';
+import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { catchError, forkJoin, map, Observable, of, tap } from 'rxjs';
 
 import { ILesson, ILessonProgress } from 'app/interfaces';
@@ -17,7 +17,7 @@ export interface LessonResolved {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LessonResolver implements Resolve<LessonResolved> {
   private readonly lessonsService = inject(LessonsService);
@@ -35,15 +35,13 @@ export class LessonResolver implements Resolve<LessonResolved> {
         catchError((err) => {
           this.logger.debug('LessonResolver getLessonTheory error:', err);
           return of('');
-        })
+        }),
       ),
       course: courseId ? this.coursesService.getById(courseId) : of(null),
-      lessonProgress: this.progressService.getLessonProgress(href).pipe(
-        catchError(() => of(null))
-      ),
+      lessonProgress: this.progressService.getLessonProgress(href).pipe(catchError(() => of(null))),
     }).pipe(
       map(({ lesson, theory, course, lessonProgress }) => {
-        const entry = course?.tableOfContents.find(item => item.id === lesson?.id);
+        const entry = course?.tableOfContents.find((item) => item.id === lesson?.id);
         return {
           lesson,
           theory,
@@ -52,7 +50,7 @@ export class LessonResolver implements Resolve<LessonResolved> {
           lessonProgress,
         };
       }),
-      tap(result => this.logger.debug('LessonResolver resolved:', result))
+      tap((result) => this.logger.debug('LessonResolver resolved:', result)),
     );
   }
 }

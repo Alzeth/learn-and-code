@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "courses": "Corsi",
+    "lessons": "Lezioni"
+  },
+  "header": {
+    "toggleTheme": "Cambia tema",
+    "userProfile": "Profilo utente",
+    "login": "Accedi",
+    "logout": "Esci"
+  },
+  "codeEditor": {
+    "title": "Editor Python",
+    "reset": "Reimposta",
+    "loadingPython": "Caricamento Python...",
+    "run": "Esegui ▶",
+    "error": "Errore",
+    "output": "Output",
+    "runtimeNotReady": "L'ambiente Python si caricherà quando l'editor sarà pronto.",
+    "noOutput": "(nessun output)"
+  },
+  "course": {
+    "startCourse": "Inizia il corso",
+    "empty": {
+      "title": "Nessun contenuto disponibile",
+      "description": "Questo corso non è stato trovato",
+      "tryOther": "Prova altri corsi"
+    }
+  },
+  "markdownEmpty": {
+    "title": "Nessun contenuto disponibile",
+    "description": "Non c'è ancora teoria per questa lezione. Il nostro team la sta preparando.",
+    "checkLessons": "Vedi altre lezioni"
+  },
+  "pages": {
+    "about": {
+      "title": "Chi siamo",
+      "missionTitle": "Missione",
+      "mission": "Aiutare i bambini a crescere nelle tecnologie"
+    },
+    "courses": {
+      "title": "Pagina dei corsi",
+      "subtitle": "Impara a crescere rapidamente negli argomenti Python."
+    },
+    "lessons": {
+      "title": "Pagina delle lezioni",
+      "subtitle": "Impara a crescere rapidamente negli argomenti Python."
+    },
+    "home": {
+      "heading": "Benvenuto nel tuo entusiasmante viaggio con Python",
+      "subheading": "Impara e cresci ogni giorno con questi corsi e lezioni",
+      "getStarted": "Inizia",
+      "learnMore": "Scopri di più"
+    },
+    "lesson": {
+      "completed": "Completato",
+      "previous": "← Precedente",
+      "next": "Successivo →",
+      "markAsComplete": "Segna come completato",
+      "saving": "Salvataggio...",
+      "starterCode": "# Scrivi il tuo codice Python qui\n"
+    },
+    "notFound": {
+      "title": "Pagina non trovata",
+      "description": "Sembra che questa pagina non esista.",
+      "backToHome": "Torna alla home"
+    },
+    "profile": {
+      "title": "Il mio profilo",
+      "userInfo": {
+        "emailAddress": "Indirizzo e-mail",
+        "userId": "ID utente",
+        "bio": "Biografia",
+        "occupation": "Professione",
+        "address": "Indirizzo"
+      }
+    },
+    "login": {
+      "title": "Accedi",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "tu@esempio.it",
+      "emailError": "Inserisci un indirizzo e-mail valido.",
+      "passwordLabel": "Password",
+      "passwordError": "La password deve contenere almeno 8 caratteri.",
+      "signIn": "Accedi",
+      "forgotPassword": "Password dimenticata?",
+      "noAccount": "Non hai un account?",
+      "register": "Registrati",
+      "invalidCredentials": "E-mail o password non validi."
+    },
+    "register": {
+      "title": "Crea account",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "tu@esempio.it",
+      "emailError": "Inserisci un indirizzo e-mail valido.",
+      "passwordLabel": "Password",
+      "passwordError": "La password deve contenere almeno 8 caratteri.",
+      "createAccount": "Crea account",
+      "alreadyHaveAccount": "Hai già un account?",
+      "signIn": "Accedi",
+      "emailTaken": "Questa e-mail è già registrata.",
+      "failed": "Registrazione fallita. Per favore riprova."
+    },
+    "forgotPassword": {
+      "title": "Password dimenticata",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "tu@esempio.it",
+      "emailError": "Inserisci un indirizzo e-mail valido.",
+      "sendLink": "Invia link di reimpostazione",
+      "backTo": "Torna al",
+      "signIn": "login",
+      "inboxTitle": "Controlla la tua casella di posta",
+      "inboxDescription": "Se quell'e-mail è registrata, riceverai a breve un link di reimpostazione.",
+      "backToSignIn": "Torna al login",
+      "error": "Qualcosa è andato storto. Per favore riprova."
+    },
+    "resetPassword": {
+      "invalidTitle": "Link di reimpostazione non valido",
+      "invalidDescription": "A questo link manca un token di reimpostazione.",
+      "requestNewLink": "Richiedi un nuovo link",
+      "successTitle": "Password aggiornata",
+      "successDescription": "La tua password è stata cambiata. Reindirizzamento al login…",
+      "formTitle": "Imposta una nuova password",
+      "newPasswordLabel": "Nuova password",
+      "newPasswordError": "La password deve contenere almeno 8 caratteri.",
+      "confirmPasswordLabel": "Conferma password",
+      "confirmPasswordError": "Le password non corrispondono.",
+      "setNewPassword": "Imposta nuova password",
+      "backTo": "Torna al",
+      "signIn": "login",
+      "expiredLink": "Questo link di reimpostazione è scaduto o è già stato utilizzato.",
+      "error": "Qualcosa è andato storto. Per favore riprova."
+    }
+  }
+}

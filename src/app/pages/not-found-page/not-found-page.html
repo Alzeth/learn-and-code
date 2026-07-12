@@ -1,5 +1,7 @@
 <div class="not-found">
-  <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance">Page not found</h1>
-  <p class="mt-2 text-lg/8">Looks like this page doesn't exist.</p>
-  <button (click)="goHome()">Back to home</button>
+  <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance">
+    {{ 'pages.notFound.title' | transloco }}
+  </h1>
+  <p class="mt-2 text-lg/8">{{ 'pages.notFound.description' | transloco }}</p>
+  <button (click)="goHome()">{{ 'pages.notFound.backToHome' | transloco }}</button>
 </div>

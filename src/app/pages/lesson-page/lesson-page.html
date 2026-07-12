@@ -4,7 +4,7 @@
       @if (isCompleted()) {
         <z-badge zType="secondary" zShape="pill" class="bg-green-800 text-white dark:bg-green-600">
           <ng-icon name="lucideBadgeCheck" />
-          Completed
+          {{ 'pages.lesson.completed' | transloco }}
         </z-badge>
       }
       @if (theory()) {
@@ -17,7 +17,12 @@
 
       <nav class="flex justify-between items-center mt-8 pb-4">
         @if (prevLesson()) {
-          <a [routerLink]="['/lessons', prevLesson()]" [queryParams]="{ course: courseId() }" class="text-sm text-indigo-400 hover:text-indigo-300">&larr; Previous</a>
+          <a
+            [routerLink]="['/lessons', prevLesson()]"
+            [queryParams]="{ course: courseId() }"
+            class="text-sm text-indigo-400 hover:text-indigo-300"
+            >{{ 'pages.lesson.previous' | transloco }}</a
+          >
         } @else {
           <span></span>
         }
@@ -25,19 +30,29 @@
           <button
             (click)="markComplete()"
             [disabled]="isMarkingComplete()"
-            class="text-sm px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors">
-            {{ isMarkingComplete() ? 'Saving...' : 'Mark as Complete' }}
+            class="text-sm px-3 py-1.5 rounded-lg bg-indigo-600 hover:bg-indigo-500 text-white disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+          >
+            {{
+              (isMarkingComplete() ? 'pages.lesson.saving' : 'pages.lesson.markAsComplete')
+                | transloco
+            }}
           </button>
         }
         @if (nextLesson()) {
-          <a [routerLink]="['/lessons', nextLesson()]" [queryParams]="{ course: courseId() }" class="text-sm text-indigo-400 hover:text-indigo-300">Next &rarr;</a>
+          <a
+            [routerLink]="['/lessons', nextLesson()]"
+            [queryParams]="{ course: courseId() }"
+            class="text-sm text-indigo-400 hover:text-indigo-300"
+          >
+            {{ 'pages.lesson.next' | transloco }}
+          </a>
         } @else {
           <span></span>
         }
       </nav>
     </div>
     <div class="h-svh w-full md:w-[50%] py-[84px] px-[15px]">
-      <app-code-editor [starterCode]="'# Write your Python code here\n'" />
+      <app-code-editor [starterCode]="starterCode" />
     </div>
   </div>
 </div>

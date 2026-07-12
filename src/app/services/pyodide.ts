@@ -34,7 +34,7 @@ export class PyodideService {
     });
 
     this.pyodide = await window.loadPyodide({
-      indexURL: this.pyodidePath
+      indexURL: this.pyodidePath,
     });
 
     this.isLoading.set(false);
@@ -47,8 +47,16 @@ export class PyodideService {
     let stdout = '';
     let stderr = '';
 
-    this.pyodide.setStdout({ batched: (text: string) => { stdout += text + '\n'; } });
-    this.pyodide.setStderr({ batched: (text: string) => { stderr += text + '\n'; } });
+    this.pyodide.setStdout({
+      batched: (text: string) => {
+        stdout += text + '\n';
+      },
+    });
+    this.pyodide.setStderr({
+      batched: (text: string) => {
+        stderr += text + '\n';
+      },
+    });
 
     try {
       await this.pyodide.runPythonAsync(code);

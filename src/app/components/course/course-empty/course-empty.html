@@ -1,11 +1,11 @@
 <z-empty
   zIcon="lucideFolderCode"
-  zTitle="No available content here"
-  zDescription="This course isn't found"
+  [zTitle]="'course.empty.title' | transloco"
+  [zDescription]="'course.empty.description' | transloco"
 >
   <a class="relative block" routerLink="/courses">
     <button type="button" z-button zType="link" zSize="sm" class="text-muted-foreground">
-      Try other courses instead
+      {{ 'course.empty.tryOther' | transloco }}
       <ng-icon name="lucideArrowUpRight" class="size-3!" />
     </button>
   </a>

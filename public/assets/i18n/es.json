@@ -1,0 +1,135 @@
+{
+  "nav": {
+    "courses": "Cursos",
+    "lessons": "Lecciones"
+  },
+  "header": {
+    "toggleTheme": "Cambiar tema",
+    "userProfile": "Perfil de usuario",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión"
+  },
+  "codeEditor": {
+    "title": "Editor de Python",
+    "reset": "Restablecer",
+    "loadingPython": "Cargando Python...",
+    "run": "Ejecutar ▶",
+    "error": "Error",
+    "output": "Salida",
+    "runtimeNotReady": "El entorno de Python se cargará cuando el editor esté listo.",
+    "noOutput": "(sin salida)"
+  },
+  "course": {
+    "startCourse": "Iniciar curso",
+    "empty": {
+      "title": "No hay contenido disponible",
+      "description": "Este curso no fue encontrado",
+      "tryOther": "Prueba otros cursos"
+    }
+  },
+  "markdownEmpty": {
+    "title": "No hay contenido disponible",
+    "description": "Aún no hay teoría para esta lección. Nuestro equipo la está preparando.",
+    "checkLessons": "Ver otras lecciones"
+  },
+  "pages": {
+    "about": {
+      "title": "Acerca de",
+      "missionTitle": "Misión",
+      "mission": "Ayudar a los niños a crecer en tecnología"
+    },
+    "courses": {
+      "title": "Página de cursos",
+      "subtitle": "Aprende a crecer rápidamente en temas de Python."
+    },
+    "lessons": {
+      "title": "Página de lecciones",
+      "subtitle": "Aprende a crecer rápidamente en temas de Python."
+    },
+    "home": {
+      "heading": "Bienvenido a tu emocionante viaje con Python",
+      "subheading": "Aprende y crece cada día con estos cursos y lecciones",
+      "getStarted": "Comenzar",
+      "learnMore": "Saber más"
+    },
+    "lesson": {
+      "completed": "Completado",
+      "previous": "← Anterior",
+      "next": "Siguiente →",
+      "markAsComplete": "Marcar como completado",
+      "saving": "Guardando...",
+      "starterCode": "# Escribe tu código Python aquí\n"
+    },
+    "notFound": {
+      "title": "Página no encontrada",
+      "description": "Parece que esta página no existe.",
+      "backToHome": "Volver al inicio"
+    },
+    "profile": {
+      "title": "Mi perfil",
+      "userInfo": {
+        "emailAddress": "Dirección de correo",
+        "userId": "ID de usuario",
+        "bio": "Biografía",
+        "occupation": "Ocupación",
+        "address": "Dirección"
+      }
+    },
+    "login": {
+      "title": "Iniciar sesión",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "emailError": "Introduce un correo electrónico válido.",
+      "passwordLabel": "Contraseña",
+      "passwordError": "La contraseña debe tener al menos 8 caracteres.",
+      "signIn": "Iniciar sesión",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "noAccount": "¿No tienes cuenta?",
+      "register": "Registrarse",
+      "invalidCredentials": "Correo electrónico o contraseña incorrectos."
+    },
+    "register": {
+      "title": "Crear cuenta",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "emailError": "Introduce un correo electrónico válido.",
+      "passwordLabel": "Contraseña",
+      "passwordError": "La contraseña debe tener al menos 8 caracteres.",
+      "createAccount": "Crear cuenta",
+      "alreadyHaveAccount": "¿Ya tienes una cuenta?",
+      "signIn": "Iniciar sesión",
+      "emailTaken": "Este correo ya está registrado.",
+      "failed": "Error en el registro. Por favor, inténtalo de nuevo."
+    },
+    "forgotPassword": {
+      "title": "Olvidé mi contraseña",
+      "emailLabel": "Correo electrónico",
+      "emailPlaceholder": "tu@ejemplo.com",
+      "emailError": "Introduce una dirección de correo electrónico válida.",
+      "sendLink": "Enviar enlace de restablecimiento",
+      "backTo": "Volver a",
+      "signIn": "inicio de sesión",
+      "inboxTitle": "Revisa tu bandeja de entrada",
+      "inboxDescription": "Si ese correo está registrado, recibirás un enlace de restablecimiento en breve.",
+      "backToSignIn": "Volver a inicio de sesión",
+      "error": "Algo salió mal. Por favor, inténtalo de nuevo."
+    },
+    "resetPassword": {
+      "invalidTitle": "Enlace de restablecimiento inválido",
+      "invalidDescription": "A este enlace le falta un token de restablecimiento.",
+      "requestNewLink": "Solicitar un nuevo enlace",
+      "successTitle": "Contraseña actualizada",
+      "successDescription": "Tu contraseña ha sido cambiada. Redirigiendo al inicio de sesión…",
+      "formTitle": "Establecer una nueva contraseña",
+      "newPasswordLabel": "Nueva contraseña",
+      "newPasswordError": "La contraseña debe tener al menos 8 caracteres.",
+      "confirmPasswordLabel": "Confirmar contraseña",
+      "confirmPasswordError": "Las contraseñas no coinciden.",
+      "setNewPassword": "Establecer nueva contraseña",
+      "backTo": "Volver a",
+      "signIn": "inicio de sesión",
+      "expiredLink": "Este enlace de restablecimiento ha caducado o ya se ha utilizado.",
+      "error": "Algo salió mal. Por favor, inténtalo de nuevo."
+    }
+  }
+}

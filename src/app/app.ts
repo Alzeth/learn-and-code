@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, DestroyRef, inject, OnInit,signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  DestroyRef,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import {
   NavigationCancel,
@@ -30,19 +37,17 @@ export class App implements OnInit {
   protected readonly title = signal('learn-and-code');
 
   constructor() {
-    this.router.events
-      .pipe(takeUntilDestroyed(this.destroyRef))
-      .subscribe(event => {
-        if (event instanceof NavigationStart) {
-          this.isLoading.set(true);
-        } else if (
-          event instanceof NavigationEnd ||
-          event instanceof NavigationCancel ||
-          event instanceof NavigationError
-        ) {
-          this.isLoading.set(false);
-        }
-      });
+    this.router.events.pipe(takeUntilDestroyed(this.destroyRef)).subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        this.isLoading.set(true);
+      } else if (
+        event instanceof NavigationEnd ||
+        event instanceof NavigationCancel ||
+        event instanceof NavigationError
+      ) {
+        this.isLoading.set(false);
+      }
+    });
   }
 
   ngOnInit() {

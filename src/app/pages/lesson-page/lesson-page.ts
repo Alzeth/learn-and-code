@@ -1,8 +1,18 @@
-import { ChangeDetectionStrategy, Component, ElementRef, inject, OnDestroy, OnInit,signal, viewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  inject,
+  OnDestroy,
+  OnInit,
+  signal,
+  viewChild,
+} from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideBadgeCheck } from '@ng-icons/lucide';
-import { combineLatest,Subscription } from 'rxjs';
+import { combineLatest, Subscription } from 'rxjs';
 
 import { CodeEditor } from 'app/components/code-editor/code-editor';
 import { MarkdownEmpty } from 'app/components/markdown-empty/markdown-empty';
@@ -22,6 +32,7 @@ import { ZardBadgeComponent } from 'app/shared/components/badge';
     RouterLink,
     ZardBadgeComponent,
     NgIcon,
+    TranslocoPipe,
   ],
   viewProviders: [provideIcons({ lucideBadgeCheck })],
   templateUrl: './lesson-page.html',
@@ -31,7 +42,10 @@ import { ZardBadgeComponent } from 'app/shared/components/badge';
 export class LessonPage implements OnDestroy, OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly progressService = inject(UserProgressService);
+  private readonly transloco = inject(TranslocoService);
   private subscription = new Subscription();
+
+  readonly starterCode = this.transloco.translate<string>('pages.lesson.starterCode');
 
   readonly theoryPanel = viewChild<ElementRef<HTMLDivElement>>('theoryPanel');
 
@@ -44,21 +58,23 @@ export class LessonPage implements OnDestroy, OnInit {
   readonly isMarkingComplete = signal(false);
 
   ngOnInit(): void {
-    this.subscription = combineLatest([this.route.data, this.route.queryParamMap]).subscribe(([data, queryParams]) => {
-      const resolved = data['lesson'] as LessonResolved;
+    this.subscription = combineLatest([this.route.data, this.route.queryParamMap]).subscribe(
+      ([data, queryParams]) => {
+        const resolved = data['lesson'] as LessonResolved;
 
-      this.lesson.set(resolved.lesson);
-      this.theory.set(resolved.theory);
-      this.prevLesson.set(resolved.prevLesson);
-      this.nextLesson.set(resolved.nextLesson);
-      this.courseId.set(queryParams.get('course'));
-      this.isCompleted.set(resolved.lessonProgress?.completed ?? false);
+        this.lesson.set(resolved.lesson);
+        this.theory.set(resolved.theory);
+        this.prevLesson.set(resolved.prevLesson);
+        this.nextLesson.set(resolved.nextLesson);
+        this.courseId.set(queryParams.get('course'));
+        this.isCompleted.set(resolved.lessonProgress?.completed ?? false);
 
-      const panel = this.theoryPanel();
-      if (panel) {
-        panel.nativeElement.scrollTop = 0;
-      }
-    });
+        const panel = this.theoryPanel();
+        if (panel) {
+          panel.nativeElement.scrollTop = 0;
+        }
+      },
+    );
   }
 
   markComplete(): void {

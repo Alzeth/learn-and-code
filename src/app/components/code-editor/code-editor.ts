@@ -1,5 +1,14 @@
-import { ChangeDetectionStrategy, Component, effect, inject, Injector, input, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+  Injector,
+  input,
+  signal,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { editor } from 'monaco-editor';
 import { EditorComponent } from 'ngx-monaco-editor-v2';
 
@@ -12,11 +21,7 @@ import getEditorTheme from 'app/shared/utils/get-editor-theme';
 
 @Component({
   selector: 'app-code-editor',
-  imports: [
-    FormsModule,
-    EditorComponent,
-    ZardButtonComponent
-  ],
+  imports: [FormsModule, EditorComponent, ZardButtonComponent, TranslocoPipe],
   standalone: true,
   templateUrl: './code-editor.html',
   styleUrl: './code-editor.css',
@@ -25,6 +30,7 @@ import getEditorTheme from 'app/shared/utils/get-editor-theme';
 export class CodeEditor {
   private logger: LoggerService = inject(LoggerService);
   private readonly darkModeService = inject(ZardDarkMode);
+  private readonly transloco = inject(TranslocoService);
   private injector = inject(Injector);
   readonly pyodide = inject(PyodideService);
 
@@ -33,8 +39,12 @@ export class CodeEditor {
   options = AppSettings.MONACO_SETTINGS;
 
   private readonly _code = signal('');
-  get code(): string { return this._code(); }
-  set code(value: string) { this._code.set(value); }
+  get code(): string {
+    return this._code();
+  }
+  set code(value: string) {
+    this._code.set(value);
+  }
 
   readonly output = signal('');
   readonly hasError = signal(false);
@@ -60,7 +70,7 @@ export class CodeEditor {
         const theme = this.darkModeService.themeMode();
         this.setEditorTheme(theme);
       },
-      { injector: this.injector }
+      { injector: this.injector },
     );
   }
 
@@ -77,7 +87,7 @@ export class CodeEditor {
       this.output.set(stderr);
       this.hasError.set(true);
     } else {
-      this.output.set(stdout || '(no output)');
+      this.output.set(stdout || this.transloco.translate('codeEditor.noOutput'));
       this.hasError.set(false);
     }
 
