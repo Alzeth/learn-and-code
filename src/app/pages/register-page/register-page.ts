@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { ROUTES } from 'app/constants';
 import { HasUnsavedChanges } from 'app/guards/unsaved-changes.guard';
@@ -16,7 +17,7 @@ import { ZardInputDirective } from 'app/shared/components/input';
 
 @Component({
   selector: 'app-register-page',
-  imports: [ReactiveFormsModule, RouterLink, ZardButtonComponent, ZardFormMessageComponent, ZardFormControlComponent, ZardFormFieldComponent, ZardFormLabelComponent, ZardInputDirective],
+  imports: [ReactiveFormsModule, RouterLink, ZardButtonComponent, ZardFormMessageComponent, ZardFormControlComponent, ZardFormFieldComponent, ZardFormLabelComponent, ZardInputDirective, TranslocoPipe],
   templateUrl: './register-page.html',
   styleUrl: './register-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -25,6 +26,7 @@ export class RegisterPage implements HasUnsavedChanges {
   private auth = inject(AuthService);
   private router = inject(Router);
   private fb = inject(FormBuilder);
+  private readonly transloco = inject(TranslocoService);
 
   readonly ROUTES = ROUTES;
   readonly isLoading = signal(false);
@@ -51,8 +53,8 @@ export class RegisterPage implements HasUnsavedChanges {
       error: err => {
         const status = err?.status;
         const msg = status === 409
-          ? 'This email is already registered.'
-          : (err?.error?.error?.message ?? 'Registration failed. Please try again.');
+          ? this.transloco.translate('pages.register.emailTaken')
+          : (err?.error?.error?.message ?? this.transloco.translate('pages.register.failed'));
         this.error.set(msg);
         this.isLoading.set(false);
       },

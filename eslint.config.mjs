@@ -3,6 +3,7 @@ import angular from '@angular-eslint/eslint-plugin';
 import angularTemplate from '@angular-eslint/eslint-plugin-template';
 import angularTemplateParser from '@angular-eslint/template-parser';
 import prettierConfig from 'eslint-config-prettier';
+import prettierPlugin from 'eslint-plugin-prettier';
 import simpleImportSort from 'eslint-plugin-simple-import-sort';
 
 const localPlugin = {
@@ -41,6 +42,7 @@ export default tsEslint.config(
       '@angular-eslint': angular,
       local: localPlugin,
       'simple-import-sort': simpleImportSort,
+      prettier: prettierPlugin,
     },
     languageOptions: {
       parserOptions: {
@@ -100,12 +102,14 @@ export default tsEslint.config(
         exceptions: ['_'],
         exceptionPatterns: ['^[A-Z]$'], // TypeScript generic type parameters (T, K, V, etc.)
       }],
+      'prettier/prettier': 'error',
     },
   },
   {
     files: ['**/*.html'],
     plugins: {
       '@angular-eslint/template': angularTemplate,
+      prettier: prettierPlugin,
     },
     languageOptions: {
       parser: angularTemplateParser,
@@ -113,14 +117,9 @@ export default tsEslint.config(
     rules: {
       '@angular-eslint/template/no-negated-async': 'error',
       '@angular-eslint/template/prefer-self-closing-tags': 'warn',
+      '@angular-eslint/template/prefer-ngsrc': 'error',
+      'prettier/prettier': 'error',
     },
   },
   prettierConfig,
-  {
-    files: ['**/*.ts'],
-    rules: {
-      'indent': ['error', 2, { SwitchCase: 1 }],
-      'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 0, maxBOF: 0 }],
-    },
-  },
 );

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit,signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 import { CoursesList } from 'app/components/courses/list/list';
 import { ICourse } from 'app/interfaces';
@@ -10,6 +11,7 @@ import { LoggerService } from 'app/services/logger';
   standalone: true,
   imports: [
     CoursesList,
+    TranslocoPipe,
   ],
   templateUrl: './courses-page.html',
   styleUrl: './courses-page.css',

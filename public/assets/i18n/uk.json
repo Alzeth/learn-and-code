@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "courses": "Курси",
+    "lessons": "Уроки"
+  },
+  "header": {
+    "toggleTheme": "Змінити тему",
+    "userProfile": "Профіль користувача",
+    "login": "Увійти",
+    "logout": "Вийти"
+  },
+  "codeEditor": {
+    "title": "Редактор Python",
+    "reset": "Скинути",
+    "loadingPython": "Завантаження Python...",
+    "run": "Запустити ▶",
+    "error": "Помилка",
+    "output": "Вивід",
+    "runtimeNotReady": "Середовище Python завантажиться, коли редактор буде готовий.",
+    "noOutput": "(немає виводу)"
+  },
+  "markdownEmpty": {
+    "title": "Вміст недоступний",
+    "description": "Теорії для цього уроку ще немає. Наша команда готує її для вас.",
+    "checkLessons": "Переглянути інші уроки"
+  },
+  "pages": {
+    "about": {
+      "title": "Про нас",
+      "missionTitle": "Місія",
+      "mission": "Допомагати дітям розвиватися в технологіях"
+    },
+    "courses": {
+      "title": "Сторінка курсів",
+      "subtitle": "Навчайтесь швидко розвиватися в темах Python."
+    },
+    "lessons": {
+      "title": "Сторінка уроків",
+      "subtitle": "Навчайтесь швидко розвиватися в темах Python."
+    },
+    "home": {
+      "heading": "Ласкаво просимо до захоплюючої подорожі Python",
+      "subheading": "Навчайтесь і розвивайтесь щодня з цими курсами та уроками",
+      "getStarted": "Розпочати",
+      "learnMore": "Дізнатися більше"
+    },
+    "lesson": {
+      "completed": "Завершено",
+      "previous": "← Попередній",
+      "next": "Наступний →",
+      "markAsComplete": "Позначити як завершений",
+      "saving": "Збереження...",
+      "starterCode": "# Напишіть свій код Python тут\n"
+    },
+    "notFound": {
+      "title": "Сторінку не знайдено",
+      "description": "Схоже, ця сторінка не існує.",
+      "backToHome": "На головну"
+    },
+    "profile": {
+      "title": "Мій профіль"
+    },
+    "login": {
+      "title": "Увійти",
+      "emailLabel": "Електронна пошта",
+      "emailPlaceholder": "you@example.com",
+      "emailError": "Введіть дійсну електронну адресу.",
+      "passwordLabel": "Пароль",
+      "passwordError": "Пароль має містити щонайменше 8 символів.",
+      "signIn": "Увійти",
+      "forgotPassword": "Забули пароль?",
+      "noAccount": "Немає акаунта?",
+      "register": "Зареєструватись",
+      "invalidCredentials": "Невірна електронна пошта або пароль."
+    },
+    "register": {
+      "title": "Створити акаунт",
+      "emailLabel": "Електронна пошта",
+      "emailPlaceholder": "you@example.com",
+      "emailError": "Введіть дійсну електронну адресу.",
+      "passwordLabel": "Пароль",
+      "passwordError": "Пароль має містити щонайменше 8 символів.",
+      "createAccount": "Створити акаунт",
+      "alreadyHaveAccount": "Вже є акаунт?",
+      "signIn": "Увійти",
+      "emailTaken": "Ця електронна адреса вже зареєстрована.",
+      "failed": "Реєстрація не вдалася. Будь ласка, спробуйте ще раз."
+    },
+    "forgotPassword": {
+      "title": "Забули пароль",
+      "emailLabel": "Електронна пошта",
+      "emailPlaceholder": "you@example.com",
+      "emailError": "Введіть дійсну електронну адресу.",
+      "sendLink": "Надіслати посилання для скидання",
+      "backTo": "Повернутись до",
+      "signIn": "входу",
+      "inboxTitle": "Перевірте вашу пошту",
+      "inboxDescription": "Якщо ця електронна адреса зареєстрована, ви отримаєте посилання для скидання найближчим часом.",
+      "backToSignIn": "Повернутись до входу",
+      "error": "Щось пішло не так. Будь ласка, спробуйте ще раз."
+    },
+    "resetPassword": {
+      "invalidTitle": "Недійсне посилання для скидання",
+      "invalidDescription": "У цьому посиланні відсутній токен скидання.",
+      "requestNewLink": "Запросити нове посилання",
+      "successTitle": "Пароль оновлено",
+      "successDescription": "Ваш пароль змінено. Перенаправлення до входу…",
+      "formTitle": "Встановіть новий пароль",
+      "newPasswordLabel": "Новий пароль",
+      "newPasswordError": "Пароль має містити щонайменше 8 символів.",
+      "confirmPasswordLabel": "Підтвердіть пароль",
+      "confirmPasswordError": "Паролі не збігаються.",
+      "setNewPassword": "Встановити новий пароль",
+      "backTo": "Повернутись до",
+      "signIn": "входу",
+      "expiredLink": "Це посилання для скидання вичерпано або вже використано.",
+      "error": "Щось пішло не так. Будь ласка, спробуйте ще раз."
+    }
+  }
+}

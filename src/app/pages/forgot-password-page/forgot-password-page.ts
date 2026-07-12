@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { ROUTES } from 'app/constants';
 import { HasUnsavedChanges } from 'app/guards/unsaved-changes.guard';
@@ -16,13 +17,14 @@ import { ZardInputDirective } from 'app/shared/components/input';
 
 @Component({
   selector: 'app-forgot-password-page',
-  imports: [ReactiveFormsModule, RouterLink, ZardButtonComponent, ZardFormFieldComponent, ZardFormControlComponent, ZardFormMessageComponent, ZardFormLabelComponent, ZardInputDirective],
+  imports: [ReactiveFormsModule, RouterLink, ZardButtonComponent, ZardFormFieldComponent, ZardFormControlComponent, ZardFormMessageComponent, ZardFormLabelComponent, ZardInputDirective, TranslocoPipe],
   templateUrl: './forgot-password-page.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ForgotPasswordPage implements HasUnsavedChanges {
   private auth = inject(AuthService);
   private fb = inject(FormBuilder);
+  private readonly transloco = inject(TranslocoService);
 
   readonly ROUTES = ROUTES;
   readonly isLoading = signal(false);
@@ -50,7 +52,7 @@ export class ForgotPasswordPage implements HasUnsavedChanges {
         this.isLoading.set(false);
       },
       error: () => {
-        this.error.set('Something went wrong. Please try again.');
+        this.error.set(this.transloco.translate('pages.forgotPassword.error'));
         this.isLoading.set(false);
       },
     });

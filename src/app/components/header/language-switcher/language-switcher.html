@@ -1,0 +1,46 @@
+<div class="relative">
+  <button
+    type="button"
+    class="flex items-center justify-center size-8 rounded-md hover:bg-accent transition-colors"
+    (click)="toggle($event)"
+    [attr.aria-label]="activeLangLabel()"
+    aria-haspopup="listbox"
+    [attr.aria-expanded]="isOpen()"
+  >
+    <img
+      [ngSrc]="'assets/flags/' + activeLangFlag() + '.svg'"
+      width="20"
+      height="20"
+      [alt]="activeLangLabel()"
+      class="rounded-full"
+      priority
+    />
+  </button>
+
+  @if (isOpen()) {
+    <ul
+      role="listbox"
+      class="absolute right-0 top-full mt-1 z-50 bg-background border border-border rounded-md shadow-lg py-1 min-w-[160px]"
+    >
+      @for (lang of langs; track lang.code) {
+        <li role="option" [attr.aria-selected]="activeLang() === lang.code">
+          <button
+            type="button"
+            class="flex items-center gap-2.5 w-full px-3 py-2 text-sm hover:bg-muted transition-colors"
+            [class.font-semibold]="activeLang() === lang.code"
+            (click)="selectLang(lang.code, $event)"
+          >
+            <img
+              [ngSrc]="'assets/flags/' + lang.flag + '.svg'"
+              width="20"
+              height="20"
+              [alt]="lang.label"
+              class="rounded-full shrink-0"
+            />
+            <span>{{ lang.label }}</span>
+          </button>
+        </li>
+      }
+    </ul>
+  }
+</div>

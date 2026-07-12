@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, computed, inject, OnInit,signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 import { UserInfo } from 'app/components/user/user-info/user-info';
 import { UserLearningProgress } from 'app/components/user/user-learning-progress/user-learning-progress';
@@ -12,6 +13,7 @@ import { LoggerService } from 'app/services/logger';
   imports: [
     UserInfo,
     UserLearningProgress,
+    TranslocoPipe,
   ],
   templateUrl: './profile-page.html',
   styleUrl: './profile-page.css',

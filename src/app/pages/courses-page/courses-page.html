@@ -1,10 +1,10 @@
 <div class="container-fluid page-container">
-  <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance">Courses page</h1>
+  <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance">{{ 'pages.courses.title' | transloco }}</h1>
   <div class="container">
     <div class="bg-background py-10">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl lg:mx-0">
-          <p class="mt-2 text-lg/8">Learn how to grow in python topics quickly.</p>
+          <p class="mt-2 text-lg/8">{{ 'pages.courses.subtitle' | transloco }}</p>
         </div>
         <app-courses-list [courses]="courses()" />
       </div>

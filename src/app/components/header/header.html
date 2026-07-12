@@ -5,31 +5,32 @@
       <ul class="block md:flex gap-4">
         <li>
             <a routerLink="/courses">
-              <button z-button zSize="sm" zType="link">Courses</button>
+              <button z-button zSize="sm" zType="link">{{ 'nav.courses' | transloco }}</button>
             </a>
         </li>
         <li>
           <a routerLink="/lessons">
-            <button z-button zSize="sm" zType="link">Lessons</button>
+            <button z-button zSize="sm" zType="link">{{ 'nav.lessons' | transloco }}</button>
           </a>
         </li>
       </ul>
       <div class="flex flex-1 justify-end items-center gap-2">
+        <app-language-switcher />
         <button z-button zType="ghost" zSize="sm" (click)="toggleTheme()">
           <ng-icon name="lucideContrast" />
-          <span class="sr-only">Toggle theme</span>
+          <span class="sr-only">{{ 'header.toggleTheme' | transloco }}</span>
         </button>
         @if (isAuthenticated()) {
           <a routerLink="/profile">
             <button z-button zType="ghost" zSize="sm">
               <ng-icon name="lucideUserCircle" />
-              <span class="sr-only">User profile</span>
+              <span class="sr-only">{{ 'header.userProfile' | transloco }}</span>
             </button>
           </a>
-          <button z-button zType="link" zSize="sm" (click)="logout()">Log out</button>
+          <button z-button zType="link" zSize="sm" (click)="logout()">{{ 'header.logout' | transloco }}</button>
         } @else {
           <a routerLink="/login">
-            <button z-button zType="link" zSize="sm">Log in <span aria-hidden="true">&rarr;</span></button>
+            <button z-button zType="link" zSize="sm">{{ 'header.login' | transloco }} <span aria-hidden="true">&rarr;</span></button>
           </a>
         }
       </div>

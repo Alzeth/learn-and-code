@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, effect, inject, Injector, input, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { editor } from 'monaco-editor';
 import { EditorComponent } from 'ngx-monaco-editor-v2';
 
@@ -15,7 +16,8 @@ import getEditorTheme from 'app/shared/utils/get-editor-theme';
   imports: [
     FormsModule,
     EditorComponent,
-    ZardButtonComponent
+    ZardButtonComponent,
+    TranslocoPipe,
   ],
   standalone: true,
   templateUrl: './code-editor.html',
@@ -25,6 +27,7 @@ import getEditorTheme from 'app/shared/utils/get-editor-theme';
 export class CodeEditor {
   private logger: LoggerService = inject(LoggerService);
   private readonly darkModeService = inject(ZardDarkMode);
+  private readonly transloco = inject(TranslocoService);
   private injector = inject(Injector);
   readonly pyodide = inject(PyodideService);
 
@@ -77,7 +80,7 @@ export class CodeEditor {
       this.output.set(stderr);
       this.hasError.set(true);
     } else {
-      this.output.set(stdout || '(no output)');
+      this.output.set(stdout || this.transloco.translate('codeEditor.noOutput'));
       this.hasError.set(false);
     }
 

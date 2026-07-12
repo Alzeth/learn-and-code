@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "courses": "Courses",
+    "lessons": "Lessons"
+  },
+  "header": {
+    "toggleTheme": "Toggle theme",
+    "userProfile": "User profile",
+    "login": "Log in",
+    "logout": "Log out"
+  },
+  "codeEditor": {
+    "title": "Python editor",
+    "reset": "Reset",
+    "loadingPython": "Loading Python...",
+    "run": "Run ▶",
+    "error": "Error",
+    "output": "Output",
+    "runtimeNotReady": "Python runtime will load when the editor is ready.",
+    "noOutput": "(no output)"
+  },
+  "markdownEmpty": {
+    "title": "No available content here",
+    "description": "Here is no lesson theory yet. Our team is preparing it for you.",
+    "checkLessons": "Check other lessons"
+  },
+  "pages": {
+    "about": {
+      "title": "About",
+      "missionTitle": "Mission",
+      "mission": "To help kids grow in technologies"
+    },
+    "courses": {
+      "title": "Courses page",
+      "subtitle": "Learn how to grow in python topics quickly."
+    },
+    "lessons": {
+      "title": "Lessons page",
+      "subtitle": "Learn how to grow in python topics quickly."
+    },
+    "home": {
+      "heading": "Welcome to your exciting Python journey",
+      "subheading": "Learn and grow everyday with these courses and lessons",
+      "getStarted": "Get started",
+      "learnMore": "Learn more"
+    },
+    "lesson": {
+      "completed": "Completed",
+      "previous": "← Previous",
+      "next": "Next →",
+      "markAsComplete": "Mark as Complete",
+      "saving": "Saving...",
+      "starterCode": "# Write your Python code here\n"
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "Looks like this page doesn't exist.",
+      "backToHome": "Back to home"
+    },
+    "profile": {
+      "title": "My Profile"
+    },
+    "login": {
+      "title": "Sign in",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "emailError": "Enter a valid email.",
+      "passwordLabel": "Password",
+      "passwordError": "Password must be at least 8 characters.",
+      "signIn": "Sign in",
+      "forgotPassword": "Forgot password?",
+      "noAccount": "No account?",
+      "register": "Register",
+      "invalidCredentials": "Invalid email or password."
+    },
+    "register": {
+      "title": "Create account",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "emailError": "Enter a valid email.",
+      "passwordLabel": "Password",
+      "passwordError": "Password must be at least 8 characters.",
+      "createAccount": "Create account",
+      "alreadyHaveAccount": "Already have an account?",
+      "signIn": "Sign in",
+      "emailTaken": "This email is already registered.",
+      "failed": "Registration failed. Please try again."
+    },
+    "forgotPassword": {
+      "title": "Forgot password",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@example.com",
+      "emailError": "Enter a valid email address.",
+      "sendLink": "Send reset link",
+      "backTo": "Back to",
+      "signIn": "Sign in",
+      "inboxTitle": "Check your inbox",
+      "inboxDescription": "If that email is registered, you will receive a reset link shortly.",
+      "backToSignIn": "Back to Sign in",
+      "error": "Something went wrong. Please try again."
+    },
+    "resetPassword": {
+      "invalidTitle": "Invalid reset link",
+      "invalidDescription": "This link is missing a reset token.",
+      "requestNewLink": "Request a new link",
+      "successTitle": "Password updated",
+      "successDescription": "Your password has been changed. Redirecting to sign in…",
+      "formTitle": "Set a new password",
+      "newPasswordLabel": "New password",
+      "newPasswordError": "Password must be at least 8 characters.",
+      "confirmPasswordLabel": "Confirm password",
+      "confirmPasswordError": "Passwords do not match.",
+      "setNewPassword": "Set new password",
+      "backTo": "Back to",
+      "signIn": "Sign in",
+      "expiredLink": "This reset link has expired or has already been used.",
+      "error": "Something went wrong. Please try again."
+    }
+  }
+}

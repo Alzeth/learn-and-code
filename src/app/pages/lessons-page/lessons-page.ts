@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit,signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 import { LessonsEmpty } from 'app/components/lessons/lessons-empty/lessons-empty';
 import { LessonsList } from 'app/components/lessons/list/list';
@@ -15,6 +16,7 @@ import { LoggerService } from 'app/services/logger';
   imports: [
     LessonsList,
     LessonsEmpty,
+    TranslocoPipe,
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

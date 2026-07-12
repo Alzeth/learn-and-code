@@ -1,5 +1,5 @@
 <div class="container-fluid page-container">
-  <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance mb-10">Sign in</h1>
+  <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance mb-10">{{ 'pages.login.title' | transloco }}</h1>
   <div class="container">
     <div class="auth-card flex justify-center">
       <form [formGroup]="form" (ngSubmit)="submit()" class="space-y-6 min-w-1/2">
@@ -7,23 +7,23 @@
           <z-form-message zType="error">{{ error() }}</z-form-message>
         }
         <z-form-field>
-          <label for="email" z-form-label zRequired>Email</label>
+          <label for="email" z-form-label zRequired>{{ 'pages.login.emailLabel' | transloco }}</label>
           <z-form-control>
             <input
               id="email"
               type="email"
               autocomplete="email"
               formControlName="email"
-              placeholder="you@example.com"
+              [placeholder]="'pages.login.emailPlaceholder' | transloco"
               z-input
             />
           </z-form-control>
           @if (form.controls.email.invalid && form.controls.email.touched) {
-            <z-form-message zType="error">Enter a valid email.</z-form-message>
+            <z-form-message zType="error">{{ 'pages.login.emailError' | transloco }}</z-form-message>
           }
         </z-form-field>
         <z-form-field>
-          <label for="password" z-form-label zRequired>Password</label>
+          <label for="password" z-form-label zRequired>{{ 'pages.login.passwordLabel' | transloco }}</label>
           <z-form-control>
             <input
               id="password"
@@ -34,18 +34,18 @@
             />
           </z-form-control>
           @if (form.controls.password.invalid && form.controls.password.touched) {
-            <z-form-message zType="error">Password must be at least 8 characters.</z-form-message>
+            <z-form-message zType="error">{{ 'pages.login.passwordError' | transloco }}</z-form-message>
           }
         </z-form-field>
 
         <button z-button zType="default" zFull type="submit" [zLoading]="isLoading()" [zDisabled]="form.invalid">
-          Sign in
+          {{ 'pages.login.signIn' | transloco }}
         </button>
         <p class="py-2 text-center">
-          <a class="hover:underline" [routerLink]="['/', ROUTES.AUTH.FORGOT_PASSWORD]">Forgot password?</a>
+          <a class="hover:underline" [routerLink]="['/', ROUTES.AUTH.FORGOT_PASSWORD]">{{ 'pages.login.forgotPassword' | transloco }}</a>
         </p>
         <p class="py-2 text-center">
-          No account? <a class="hover:underline" [routerLink]="['/', ROUTES.AUTH.REGISTER]">Register</a>
+          {{ 'pages.login.noAccount' | transloco }} <a class="hover:underline" [routerLink]="['/', ROUTES.AUTH.REGISTER]">{{ 'pages.login.register' | transloco }}</a>
         </p>
       </form>
     </div>

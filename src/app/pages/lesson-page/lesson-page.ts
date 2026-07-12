@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, ElementRef, inject, OnDestroy, OnInit,signal, viewChild } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
+import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideBadgeCheck } from '@ng-icons/lucide';
 import { combineLatest,Subscription } from 'rxjs';
@@ -22,6 +23,7 @@ import { ZardBadgeComponent } from 'app/shared/components/badge';
     RouterLink,
     ZardBadgeComponent,
     NgIcon,
+    TranslocoPipe,
   ],
   viewProviders: [provideIcons({ lucideBadgeCheck })],
   templateUrl: './lesson-page.html',
@@ -31,7 +33,10 @@ import { ZardBadgeComponent } from 'app/shared/components/badge';
 export class LessonPage implements OnDestroy, OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly progressService = inject(UserProgressService);
+  private readonly transloco = inject(TranslocoService);
   private subscription = new Subscription();
+
+  readonly starterCode = this.transloco.translate<string>('pages.lesson.starterCode');
 
   readonly theoryPanel = viewChild<ElementRef<HTMLDivElement>>('theoryPanel');
 
