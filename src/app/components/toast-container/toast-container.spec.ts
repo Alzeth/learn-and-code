@@ -6,7 +6,9 @@ import { ToastService } from 'app/services/toast/toast.service';
 import { ToastContainerComponent } from './toast-container';
 
 describe('ToastContainerComponent', () => {
-  const mockToasts = signal<{ id: number; title: string; message: string; type: string; dismissing: boolean }[]>([]);
+  const mockToasts = signal<
+    { id: number; title: string; message: string; type: string; dismissing: boolean }[]
+  >([]);
   const mockToastService = {
     toasts: mockToasts.asReadonly(),
     show: vi.fn(),

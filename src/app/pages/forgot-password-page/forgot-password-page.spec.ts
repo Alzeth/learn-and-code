@@ -10,7 +10,7 @@ import { ForgotPasswordPage } from './forgot-password-page';
 
 describe('ForgotPasswordPage', () => {
   const mockAuth = { forgotPassword: vi.fn() };
-  const mockTransloco = { translate: vi.fn((k: string) => k) };
+  const mockTransloco = { translate: vi.fn((key: string) => key) };
 
   beforeEach(async () => {
     vi.clearAllMocks();
@@ -34,10 +34,10 @@ describe('ForgotPasswordPage', () => {
 
   it('should initialize signals to defaults', () => {
     const fixture = TestBed.createComponent(ForgotPasswordPage);
-    const { componentInstance: c } = fixture;
-    expect(c.isLoading()).toBe(false);
-    expect(c.error()).toBeNull();
-    expect(c.submitted()).toBe(false);
+    const { componentInstance: component } = fixture;
+    expect(component.isLoading()).toBe(false);
+    expect(component.error()).toBeNull();
+    expect(component.submitted()).toBe(false);
   });
 
   it('form should be invalid when email is empty', () => {

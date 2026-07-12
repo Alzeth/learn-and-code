@@ -81,7 +81,7 @@ describe('AuthService (browser)', () => {
     httpMock.post.mockReturnValue(of(wrapResponse(mockAuthResponse)));
     let result: IAuthResponse | undefined;
 
-    service.login('test@example.com', 'pass').subscribe((v) => (result = v));
+    service.login('test@example.com', 'pass').subscribe((resp) => (result = resp));
 
     expect(result).toEqual(mockAuthResponse);
     expect(service.currentUser()).toEqual(mockUser);

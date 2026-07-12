@@ -21,7 +21,7 @@ function buildRoute(token: string | null) {
 describe('ResetPasswordPage', () => {
   const mockAuth = { resetPassword: vi.fn() };
   const mockRouter = { navigate: vi.fn() };
-  const mockTransloco = { translate: vi.fn((k: string) => k) };
+  const mockTransloco = { translate: vi.fn((key: string) => key) };
 
   function setup(token: string | null = 'valid-token') {
     TestBed.configureTestingModule({
@@ -61,11 +61,11 @@ describe('ResetPasswordPage', () => {
   });
 
   it('should initialize other signals to defaults', () => {
-    const { componentInstance: c } = setup();
-    expect(c.isLoading()).toBe(false);
-    expect(c.success()).toBe(false);
-    expect(c.error()).toBeNull();
-    expect(c.isExpiredError()).toBe(false);
+    const { componentInstance: component } = setup();
+    expect(component.isLoading()).toBe(false);
+    expect(component.success()).toBe(false);
+    expect(component.error()).toBeNull();
+    expect(component.isExpiredError()).toBe(false);
   });
 
   it('form should be invalid when empty', () => {

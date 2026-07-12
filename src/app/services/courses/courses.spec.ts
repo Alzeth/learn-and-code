@@ -48,7 +48,7 @@ describe('CoursesService (remote)', () => {
     httpMock.get.mockReturnValue(of(wrapResponse(mockCoursesResponse)));
 
     let result: ICoursesResponse | undefined;
-    service.getAll().subscribe((v) => (result = v));
+    service.getAll().subscribe((resp) => (result = resp));
 
     expect(httpMock.get).toHaveBeenCalledWith('https://api.test/courses');
     expect(result).toEqual(mockCoursesResponse);
@@ -59,7 +59,7 @@ describe('CoursesService (remote)', () => {
     httpMock.get.mockReturnValue(of(wrapResponse(mockCourses[0])));
 
     let result: ICourse | undefined;
-    service.getById('c1').subscribe((v) => (result = v));
+    service.getById('c1').subscribe((resp) => (result = resp));
 
     expect(httpMock.get).toHaveBeenCalledWith('https://api.test/courses/c1');
     expect(result).toEqual(mockCourses[0]);
@@ -83,7 +83,7 @@ describe('CoursesService (local)', () => {
     httpMock.get.mockReturnValue(of(mockCoursesResponse));
 
     let result: ICourse | undefined;
-    service.getById('c2').subscribe((v) => (result = v));
+    service.getById('c2').subscribe((resp) => (result = resp));
 
     expect(result).toEqual(mockCourses[1]);
   });

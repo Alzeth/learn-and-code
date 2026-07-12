@@ -1,11 +1,11 @@
 import { signal } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { TranslocoService } from '@jsverse/transloco';
+import { EMPTY } from 'rxjs';
 
 import { LoggerService } from 'app/services/logger/logger';
 import { PyodideService } from 'app/services/pyodide/pyodide';
 import { EDarkModes, ZardDarkMode } from 'app/shared/services';
-import { TranslocoService } from '@jsverse/transloco';
-import { EMPTY } from 'rxjs';
 
 import { CodeEditor } from './code-editor';
 
@@ -79,9 +79,7 @@ describe('CodeEditor', () => {
   it('should set code to starterCode initially', () => {
     const fixture = TestBed.createComponent(CodeEditor);
     fixture.detectChanges();
-    expect(fixture.componentInstance.code).toBe(
-      'function x() {\nconsole.log("Hello world!");\n}',
-    );
+    expect(fixture.componentInstance.code).toBe('function x() {\nconsole.log("Hello world!");\n}');
   });
 
   it('should not run when pyodide is not ready', async () => {
@@ -149,9 +147,7 @@ describe('CodeEditor', () => {
 
     fixture.componentInstance.resetCode();
 
-    expect(fixture.componentInstance.code).toBe(
-      'function x() {\nconsole.log("Hello world!");\n}',
-    );
+    expect(fixture.componentInstance.code).toBe('function x() {\nconsole.log("Hello world!");\n}');
     expect(fixture.componentInstance.output()).toBe('');
     expect(fixture.componentInstance.hasError()).toBe(false);
   });

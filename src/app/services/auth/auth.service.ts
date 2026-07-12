@@ -6,7 +6,6 @@ import { firstValueFrom } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 
 import { ROUTES } from 'app/constants';
-
 import { API_BASE_URL } from 'app/services/api.config';
 import { IApiResponse, IAuthResponse, IAuthUser, IMessageResponse } from 'app/services/interfaces';
 

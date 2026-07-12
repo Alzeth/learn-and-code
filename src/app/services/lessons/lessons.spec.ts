@@ -52,7 +52,7 @@ describe('LessonsService (remote)', () => {
     httpMock.get.mockReturnValue(of(wrapResponse(mockResponse)));
 
     let result: ILessonsResponse | undefined;
-    service.getAll().subscribe((v) => (result = v));
+    service.getAll().subscribe((resp) => (result = resp));
 
     expect(httpMock.get).toHaveBeenCalledWith('https://api.test/lessons');
     expect(result).toEqual(mockResponse);
@@ -85,7 +85,7 @@ describe('LessonsService (remote)', () => {
     httpMock.get.mockReturnValue(of(wrapResponse(mockLesson)));
 
     let result: ILesson | undefined;
-    service.getByHref('intro').subscribe((v) => (result = v));
+    service.getByHref('intro').subscribe((resp) => (result = resp));
 
     expect(httpMock.get).toHaveBeenCalledWith('https://api.test/lessons/intro');
     expect(result).toEqual(mockLesson);
@@ -96,7 +96,7 @@ describe('LessonsService (remote)', () => {
     httpMock.get.mockReturnValue(of(wrapResponse('# Hello')));
 
     let result: string | undefined;
-    service.getLessonTheory('intro').subscribe((v) => (result = v));
+    service.getLessonTheory('intro').subscribe((resp) => (result = resp));
 
     expect(httpMock.get).toHaveBeenCalledWith('https://api.test/lessons/intro/theory');
     expect(result).toBe('# Hello');
@@ -120,7 +120,7 @@ describe('LessonsService (local)', () => {
     httpMock.get.mockReturnValue(of(mockResponse));
 
     let result: ILesson | undefined;
-    service.getByHref('intro').subscribe((v) => (result = v));
+    service.getByHref('intro').subscribe((resp) => (result = resp));
 
     expect(result).toEqual(mockLesson);
   });

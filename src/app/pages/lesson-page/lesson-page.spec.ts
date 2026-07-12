@@ -64,21 +64,21 @@ describe('LessonPage', () => {
 
   it('signals should have defaults before ngOnInit', () => {
     const fixture = setup();
-    const c = fixture.componentInstance;
-    expect(c.lesson()).toBeUndefined();
-    expect(c.theory()).toBe('');
-    expect(c.isCompleted()).toBe(false);
+    const component = fixture.componentInstance;
+    expect(component.lesson()).toBeUndefined();
+    expect(component.theory()).toBe('');
+    expect(component.isCompleted()).toBe(false);
   });
 
   it('ngOnInit() should set lesson, theory, prevLesson, nextLesson from route data', () => {
     const fixture = setup();
     fixture.componentInstance.ngOnInit();
-    const c = fixture.componentInstance;
+    const component = fixture.componentInstance;
 
-    expect(c.lesson()).toEqual(mockLesson);
-    expect(c.theory()).toBe('# Hello');
-    expect(c.prevLesson()).toBe('prev');
-    expect(c.nextLesson()).toBe('next');
+    expect(component.lesson()).toEqual(mockLesson);
+    expect(component.theory()).toBe('# Hello');
+    expect(component.prevLesson()).toBe('prev');
+    expect(component.nextLesson()).toBe('next');
   });
 
   it('ngOnInit() should set courseId from query params', () => {
@@ -94,7 +94,14 @@ describe('LessonPage', () => {
   });
 
   it('ngOnInit() should set isCompleted from lessonProgress', () => {
-    const resolved = { ...mockResolved, lessonProgress: { lessonId: 'l1', completed: true, completedAt: '2024-01-01' } as ILessonProgress };
+    const resolved = {
+      ...mockResolved,
+      lessonProgress: {
+        lessonId: 'l1',
+        completed: true,
+        completedAt: '2024-01-01',
+      } as ILessonProgress,
+    };
     const fixture = setup(resolved);
     fixture.componentInstance.ngOnInit();
     expect(fixture.componentInstance.isCompleted()).toBe(true);

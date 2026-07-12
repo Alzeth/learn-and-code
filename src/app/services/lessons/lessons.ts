@@ -4,7 +4,6 @@ import { environment } from 'environments/environment';
 import { map, Observable, shareReplay } from 'rxjs';
 
 import { ILesson } from 'app/interfaces';
-
 import { API_BASE_URL, USE_LOCAL_DATA } from 'app/services/api.config';
 import { IApiResponse, ILessonsResponse } from 'app/services/interfaces';
 

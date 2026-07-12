@@ -12,7 +12,7 @@ import { LoginPage } from './login-page';
 describe('LoginPage', () => {
   const mockAuth = { login: vi.fn() };
   const mockRouter = { navigate: vi.fn() };
-  const mockTransloco = { translate: vi.fn((k: string) => k) };
+  const mockTransloco = { translate: vi.fn((key: string) => key) };
 
   beforeEach(async () => {
     vi.clearAllMocks();
@@ -88,7 +88,9 @@ describe('LoginPage', () => {
   });
 
   it('submit() should set error and stop loading on failure', () => {
-    mockAuth.login.mockReturnValue(throwError(() => ({ error: { error: { message: 'Bad creds' } } })));
+    mockAuth.login.mockReturnValue(
+      throwError(() => ({ error: { error: { message: 'Bad creds' } } })),
+    );
     const fixture = TestBed.createComponent(LoginPage);
     fixture.componentInstance.form.setValue({ email: 'a@b.com', password: 'password123' });
 

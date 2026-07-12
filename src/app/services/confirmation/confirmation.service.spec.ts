@@ -61,9 +61,7 @@ describe('ConfirmationService', () => {
   });
 
   it('should pass confirmText and cancelText to dialog', () => {
-    dialogConfirmSpy.mockImplementation(({ zOnCancel }: { zOnCancel: () => void }) =>
-      zOnCancel(),
-    );
+    dialogConfirmSpy.mockImplementation(({ zOnCancel }: { zOnCancel: () => void }) => zOnCancel());
 
     service.confirm({
       title: 'T',
@@ -83,9 +81,7 @@ describe('ConfirmationService', () => {
   });
 
   it('should use default confirm/cancel text when not provided', () => {
-    dialogConfirmSpy.mockImplementation(({ zOnCancel }: { zOnCancel: () => void }) =>
-      zOnCancel(),
-    );
+    dialogConfirmSpy.mockImplementation(({ zOnCancel }: { zOnCancel: () => void }) => zOnCancel());
 
     service.confirm({ title: 'T', description: 'D' });
 

@@ -5,11 +5,7 @@ import { of } from 'rxjs';
 import { ILessonProgress } from 'app/interfaces';
 
 import { API_BASE_URL } from '../api.config';
-import {
-  IApiResponse,
-  ILessonProgressResponse,
-  IUserProgressResponse,
-} from '../interfaces';
+import { IApiResponse, ILessonProgressResponse, IUserProgressResponse } from '../interfaces';
 import { UserProgressService } from './user-progress.service';
 
 const mockLessonProgress: ILessonProgress = {
@@ -54,7 +50,7 @@ describe('UserProgressService', () => {
     httpMock.get.mockReturnValue(of(wrapResponse(mockUserProgress)));
 
     let result: IUserProgressResponse | undefined;
-    service.getUserProgress().subscribe((v) => (result = v));
+    service.getUserProgress().subscribe((resp) => (result = resp));
 
     expect(httpMock.get).toHaveBeenCalledWith('https://api.test/progress');
     expect(result).toEqual(mockUserProgress);
@@ -64,7 +60,7 @@ describe('UserProgressService', () => {
     httpMock.get.mockReturnValue(of(wrapResponse(mockLessonProgress)));
 
     let result: ILessonProgress | undefined;
-    service.getLessonProgress('intro').subscribe((v) => (result = v));
+    service.getLessonProgress('intro').subscribe((resp) => (result = resp));
 
     expect(httpMock.get).toHaveBeenCalledWith('https://api.test/progress/lessons/intro');
     expect(result).toEqual(mockLessonProgress);
@@ -75,7 +71,7 @@ describe('UserProgressService', () => {
     httpMock.post.mockReturnValue(of(wrapResponse(response)));
 
     let result: ILessonProgressResponse | undefined;
-    service.markLessonCompleted('intro').subscribe((v) => (result = v));
+    service.markLessonCompleted('intro').subscribe((resp) => (result = resp));
 
     expect(httpMock.post).toHaveBeenCalledWith(
       'https://api.test/progress/lessons/intro/complete',

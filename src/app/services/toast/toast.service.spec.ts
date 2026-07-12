@@ -56,7 +56,7 @@ describe('ToastService', () => {
     const id = service.toasts()[0].id;
 
     vi.advanceTimersByTime(DISPLAY_MS);
-    expect(service.toasts().find((t) => t.id === id)?.dismissing).toBe(true);
+    expect(service.toasts().find((toast) => toast.id === id)?.dismissing).toBe(true);
   });
 
   it('should remove the toast after DISPLAY_MS + EXIT_MS', () => {
@@ -64,7 +64,7 @@ describe('ToastService', () => {
     const id = service.toasts()[0].id;
 
     vi.advanceTimersByTime(DISPLAY_MS + EXIT_MS);
-    expect(service.toasts().find((t) => t.id === id)).toBeUndefined();
+    expect(service.toasts().find((toast) => toast.id === id)).toBeUndefined();
   });
 
   it('should mark toast dismissing immediately on dismiss()', () => {
@@ -72,7 +72,7 @@ describe('ToastService', () => {
     const id = service.toasts()[0].id;
 
     service.dismiss(id);
-    expect(service.toasts().find((t) => t.id === id)?.dismissing).toBe(true);
+    expect(service.toasts().find((toast) => toast.id === id)?.dismissing).toBe(true);
   });
 
   it('should remove toast after EXIT_MS following dismiss()', () => {
@@ -81,7 +81,7 @@ describe('ToastService', () => {
 
     service.dismiss(id);
     vi.advanceTimersByTime(EXIT_MS);
-    expect(service.toasts().find((t) => t.id === id)).toBeUndefined();
+    expect(service.toasts().find((toast) => toast.id === id)).toBeUndefined();
   });
 
   it('should not affect other toasts when one is dismissed', () => {

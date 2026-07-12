@@ -8,10 +8,7 @@ describe('PyodideService (server)', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        PyodideService,
-        { provide: PLATFORM_ID, useValue: 'server' },
-      ],
+      providers: [PyodideService, { provide: PLATFORM_ID, useValue: 'server' }],
     });
     service = TestBed.inject(PyodideService);
   });
@@ -44,10 +41,7 @@ describe('PyodideService (browser)', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [
-        PyodideService,
-        { provide: PLATFORM_ID, useValue: 'browser' },
-      ],
+      providers: [PyodideService, { provide: PLATFORM_ID, useValue: 'browser' }],
     });
     service = TestBed.inject(PyodideService);
   });

@@ -12,7 +12,7 @@ import { RegisterPage } from './register-page';
 describe('RegisterPage', () => {
   const mockAuth = { register: vi.fn() };
   const mockRouter = { navigate: vi.fn() };
-  const mockTransloco = { translate: vi.fn((k: string) => k) };
+  const mockTransloco = { translate: vi.fn((key: string) => key) };
 
   beforeEach(async () => {
     vi.clearAllMocks();
