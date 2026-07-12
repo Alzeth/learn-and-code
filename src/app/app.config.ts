@@ -16,7 +16,7 @@ import { provideMarkdown } from 'ngx-markdown';
 import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 
 import { authInterceptor } from 'app/services/auth.interceptor';
-import { AuthService } from 'app/services/auth.service';
+import { AuthService } from 'app/services/auth/auth.service';
 import { TranslocoBrowserLoader } from 'app/services/transloco-browser.loader';
 import { provideZard } from 'app/shared/core/provider/providezard';
 

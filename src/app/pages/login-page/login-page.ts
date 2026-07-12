@@ -5,7 +5,7 @@ import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { ROUTES } from 'app/constants';
 import { HasUnsavedChanges } from 'app/guards/unsaved-changes.guard';
-import { AuthService } from 'app/services/auth.service';
+import { AuthService } from 'app/services/auth/auth.service';
 import { ZardButtonComponent } from 'app/shared/components/button';
 import {
   ZardFormControlComponent,

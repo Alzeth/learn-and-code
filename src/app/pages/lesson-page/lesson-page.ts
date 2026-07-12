@@ -19,7 +19,7 @@ import { MarkdownEmpty } from 'app/components/markdown-empty/markdown-empty';
 import { MarkdownParcer } from 'app/components/markdown-parcer/markdown-parcer';
 import { ILesson } from 'app/interfaces';
 import { LessonResolved } from 'app/resolvers/lesson.resolver';
-import { UserProgressService } from 'app/services/user-progress.service';
+import { UserProgressService } from 'app/services/user-progress/user-progress.service';
 import { ZardBadgeComponent } from 'app/shared/components/badge';
 
 @Component({

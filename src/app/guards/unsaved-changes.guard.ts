@@ -1,7 +1,7 @@
 import { inject } from '@angular/core';
 import { CanDeactivateFn } from '@angular/router';
 
-import { ConfirmationService } from 'app/services/confirmation.service';
+import { ConfirmationService } from 'app/services/confirmation/confirmation.service';
 
 export interface HasUnsavedChanges {
   hasUnsavedChanges(): boolean;

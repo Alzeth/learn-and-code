@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { provideIcons } from '@ng-icons/core';
 import { lucideLock } from '@ng-icons/lucide';
 
-import { ToastService } from 'app/services/toast.service';
+import { ToastService } from 'app/services/toast/toast.service';
 import { ZardAlertComponent } from 'app/shared/components/alert/alert.component';
 
 @Component({

@@ -18,7 +18,7 @@ import {
 
 import { Header } from 'app/components/header/header';
 import { ToastContainerComponent } from 'app/components/toast-container/toast-container';
-import { LoggerService } from 'app/services/logger';
+import { LoggerService } from 'app/services/logger/logger';
 import { AppLoader } from 'app/shared/components/app-loader/app-loader';
 
 @Component({

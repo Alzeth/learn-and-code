@@ -2,7 +2,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment.development';
 
-import { LogLevel } from './log-level';
+import { LogLevel } from 'app/services/log-level';
 
 @Injectable({
   providedIn: 'root',

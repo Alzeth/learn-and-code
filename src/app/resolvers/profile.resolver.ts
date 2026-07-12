@@ -3,8 +3,8 @@ import { Resolve } from '@angular/router';
 import { forkJoin, Observable } from 'rxjs';
 
 import { IUser, IUserProgress } from 'app/interfaces';
-import { AuthService } from 'app/services/auth.service';
-import { UserProgressService } from 'app/services/user-progress.service';
+import { AuthService } from 'app/services/auth/auth.service';
+import { UserProgressService } from 'app/services/user-progress/user-progress.service';
 
 export interface IUserResolved {
   user: IUser;
