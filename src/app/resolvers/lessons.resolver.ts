@@ -13,7 +13,7 @@ export interface LessonsResolved {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LessonsResolver implements Resolve<LessonsResolved> {
   private lessonsService = inject(LessonsService);
@@ -31,10 +31,10 @@ export class LessonsResolver implements Resolve<LessonsResolved> {
         lessons: lessonsResponse.lessons,
         completedIds: new Set(
           (progress?.lessons ?? [])
-            .filter(lesson => lesson.completed)
-            .map(lesson => lesson.lessonId)
+            .filter((lesson) => lesson.completed)
+            .map((lesson) => lesson.lessonId),
         ),
-      }))
+      })),
     );
   }
 }

@@ -1,4 +1,5 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 import { IUser } from 'app/interfaces';
 import { ZardAvatarComponent } from 'app/shared/components/avatar';
@@ -6,9 +7,8 @@ import { LOGO_NO_TEXT_PATH_PRD } from 'app/shared/constants';
 
 @Component({
   selector: 'app-user-info',
-  imports: [
-    ZardAvatarComponent,
-  ],
+  imports: [ZardAvatarComponent, TranslocoPipe],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './user-info.html',
   styleUrl: './user-info.css',
 })

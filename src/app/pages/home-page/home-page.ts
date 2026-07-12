@@ -4,14 +4,9 @@ import { TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-home-page',
-  imports: [
-    RouterLink,
-    TranslocoPipe,
-  ],
+  imports: [RouterLink, TranslocoPipe],
   templateUrl: './home-page.html',
   styleUrl: './home-page.css',
   standalone: true,
 })
-export class HomePage {
-
-}
+export class HomePage {}

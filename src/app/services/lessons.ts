@@ -23,7 +23,9 @@ export class LessonsService {
 
     const request$ = this.useLocal
       ? this.http.get<ILessonsResponse>(`${environment.baseHref}lessons.json`)
-      : this.http.get<IApiResponse<ILessonsResponse>>(`${this.apiUrl}/lessons`).pipe(map(res => res.data!));
+      : this.http
+          .get<IApiResponse<ILessonsResponse>>(`${this.apiUrl}/lessons`)
+          .pipe(map((res) => res.data!));
 
     this.allCache$ = request$.pipe(shareReplay(1));
     return this.allCache$;
@@ -35,10 +37,12 @@ export class LessonsService {
 
   getByHref(href: string): Observable<ILesson> {
     if (this.useLocal) {
-      return this.getAll().pipe(map(res => res.lessons.find(lesson => lesson.href === href)!));
+      return this.getAll().pipe(map((res) => res.lessons.find((lesson) => lesson.href === href)!));
     }
 
-    return this.http.get<IApiResponse<ILesson>>(`${this.apiUrl}/lessons/${href}`).pipe(map(res => res.data!));
+    return this.http
+      .get<IApiResponse<ILesson>>(`${this.apiUrl}/lessons/${href}`)
+      .pipe(map((res) => res.data!));
   }
 
   getLessonTheory(href: string): Observable<string> {

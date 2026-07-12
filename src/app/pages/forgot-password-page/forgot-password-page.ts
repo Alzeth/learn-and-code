@@ -17,7 +17,17 @@ import { ZardInputDirective } from 'app/shared/components/input';
 
 @Component({
   selector: 'app-forgot-password-page',
-  imports: [ReactiveFormsModule, RouterLink, ZardButtonComponent, ZardFormFieldComponent, ZardFormControlComponent, ZardFormMessageComponent, ZardFormLabelComponent, ZardInputDirective, TranslocoPipe],
+  imports: [
+    ReactiveFormsModule,
+    RouterLink,
+    ZardButtonComponent,
+    ZardFormFieldComponent,
+    ZardFormControlComponent,
+    ZardFormMessageComponent,
+    ZardFormLabelComponent,
+    ZardInputDirective,
+    TranslocoPipe,
+  ],
   templateUrl: './forgot-password-page.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

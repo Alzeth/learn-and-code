@@ -15,7 +15,7 @@ export class ConfirmationService {
   private readonly dialogService = inject(ZardAlertDialogService);
 
   confirm(options: ConfirmOptions): Promise<boolean> {
-    return new Promise<boolean>(resolve => {
+    return new Promise<boolean>((resolve) => {
       let settled = false;
 
       const settle = (result: boolean) => {

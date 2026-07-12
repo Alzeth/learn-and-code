@@ -58,7 +58,14 @@
       "backToHome": "Zur Startseite"
     },
     "profile": {
-      "title": "Mein Profil"
+      "title": "Mein Profil",
+      "userInfo": {
+        "emailAddress": "E-Mail-Adresse",
+        "userId": "Benutzer-ID",
+        "bio": "Biografie",
+        "occupation": "Beruf",
+        "address": "Adresse"
+      }
     },
     "login": {
       "title": "Anmelden",

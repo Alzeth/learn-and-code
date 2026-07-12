@@ -15,15 +15,7 @@ import { LanguageSwitcher } from './language-switcher/language-switcher';
 
 @Component({
   selector: 'app-header',
-  imports: [
-    ZardButtonComponent,
-    Logo,
-    RouterLink,
-    Burger,
-    NgIcon,
-    LanguageSwitcher,
-    TranslocoPipe,
-  ],
+  imports: [ZardButtonComponent, Logo, RouterLink, Burger, NgIcon, LanguageSwitcher, TranslocoPipe],
   viewProviders: [provideIcons({ lucideContrast, lucideUserCircle })],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,

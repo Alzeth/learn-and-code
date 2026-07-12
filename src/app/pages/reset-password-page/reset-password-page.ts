@@ -1,6 +1,12 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
-import { AbstractControl, FormBuilder, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
+import {
+  AbstractControl,
+  FormBuilder,
+  ReactiveFormsModule,
+  ValidationErrors,
+  Validators,
+} from '@angular/forms';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
@@ -23,7 +29,17 @@ function passwordsMatch(control: AbstractControl): ValidationErrors | null {
 
 @Component({
   selector: 'app-reset-password-page',
-  imports: [ReactiveFormsModule, RouterLink, ZardButtonComponent, ZardFormFieldComponent, ZardFormControlComponent, ZardFormMessageComponent, ZardFormLabelComponent, ZardInputDirective, TranslocoPipe],
+  imports: [
+    ReactiveFormsModule,
+    RouterLink,
+    ZardButtonComponent,
+    ZardFormFieldComponent,
+    ZardFormControlComponent,
+    ZardFormMessageComponent,
+    ZardFormLabelComponent,
+    ZardInputDirective,
+    TranslocoPipe,
+  ],
   templateUrl: './reset-password-page.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -48,7 +64,7 @@ export class ResetPasswordPage {
       newPassword: ['', [Validators.required, Validators.minLength(8)]],
       confirmPassword: ['', Validators.required],
     },
-    { validators: passwordsMatch }
+    { validators: passwordsMatch },
   );
 
   submit(): void {
@@ -69,9 +85,11 @@ export class ResetPasswordPage {
       error: (err: HttpErrorResponse) => {
         const isExpired = err.status === 400;
         this.isExpiredError.set(isExpired);
-        this.error.set(isExpired
-          ? this.transloco.translate('pages.resetPassword.expiredLink')
-          : this.transloco.translate('pages.resetPassword.error'));
+        this.error.set(
+          isExpired
+            ? this.transloco.translate('pages.resetPassword.expiredLink')
+            : this.transloco.translate('pages.resetPassword.error'),
+        );
         this.isLoading.set(false);
       },
     });

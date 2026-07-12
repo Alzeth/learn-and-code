@@ -30,9 +30,11 @@ export class CoursesService {
 
   getById(id: string): Observable<ICourse> {
     if (this.useLocal) {
-      return this.getAll().pipe(map(res => res.courses.find(course => course.id === id)!));
+      return this.getAll().pipe(map((res) => res.courses.find((course) => course.id === id)!));
     }
 
-    return this.http.get<IApiResponse<ICourse>>(`${this.apiUrl}/courses/${id}`).pipe(map(res => res.data!));
+    return this.http
+      .get<IApiResponse<ICourse>>(`${this.apiUrl}/courses/${id}`)
+      .pipe(map((res) => res.data!));
   }
 }

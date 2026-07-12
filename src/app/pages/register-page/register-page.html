@@ -1,5 +1,7 @@
 <div class="container-fluid page-container">
-  <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance mb-10">{{ 'pages.register.title' | transloco }}</h1>
+  <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance mb-10">
+    {{ 'pages.register.title' | transloco }}
+  </h1>
   <div class="container">
     <div class="auth-card flex justify-center">
       <form [formGroup]="form" (ngSubmit)="submit()" class="space-y-6 min-w-1/2">
@@ -7,7 +9,9 @@
           <z-form-message zType="error">{{ error() }}</z-form-message>
         }
         <z-form-field>
-          <label for="email" z-form-label zRequired>{{ 'pages.register.emailLabel' | transloco }}</label>
+          <label for="email" z-form-label zRequired>{{
+            'pages.register.emailLabel' | transloco
+          }}</label>
           <z-form-control>
             <input
               id="email"
@@ -19,11 +23,15 @@
             />
           </z-form-control>
           @if (form.controls.email.invalid && form.controls.email.touched) {
-            <z-form-message zType="error">{{ 'pages.register.emailError' | transloco }}</z-form-message>
+            <z-form-message zType="error">{{
+              'pages.register.emailError' | transloco
+            }}</z-form-message>
           }
         </z-form-field>
         <z-form-field>
-          <label for="password" z-form-label zRequired>{{ 'pages.register.passwordLabel' | transloco }}</label>
+          <label for="password" z-form-label zRequired>{{
+            'pages.register.passwordLabel' | transloco
+          }}</label>
           <z-form-control>
             <input
               id="password"
@@ -34,15 +42,27 @@
             />
           </z-form-control>
           @if (form.controls.password.invalid && form.controls.password.touched) {
-            <z-form-message zType="error">{{ 'pages.register.passwordError' | transloco }}</z-form-message>
+            <z-form-message zType="error">{{
+              'pages.register.passwordError' | transloco
+            }}</z-form-message>
           }
         </z-form-field>
 
-        <button z-button zType="default" zFull type="submit" [zLoading]="isLoading()" [zDisabled]="form.invalid">
+        <button
+          z-button
+          zType="default"
+          zFull
+          type="submit"
+          [zLoading]="isLoading()"
+          [zDisabled]="form.invalid"
+        >
           {{ 'pages.register.createAccount' | transloco }}
         </button>
         <p class="py-2 text-center">
-          {{ 'pages.register.alreadyHaveAccount' | transloco }} <a class="hover:underline" [routerLink]="['/', ROUTES.AUTH.LOGIN]">{{ 'pages.register.signIn' | transloco }}</a>
+          {{ 'pages.register.alreadyHaveAccount' | transloco }}
+          <a class="hover:underline" [routerLink]="['/', ROUTES.AUTH.LOGIN]">{{
+            'pages.register.signIn' | transloco
+          }}</a>
         </p>
       </form>
     </div>

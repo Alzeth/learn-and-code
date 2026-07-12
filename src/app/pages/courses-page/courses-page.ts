@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit,signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 
@@ -9,10 +9,7 @@ import { LoggerService } from 'app/services/logger';
 @Component({
   selector: 'app-courses-page',
   standalone: true,
-  imports: [
-    CoursesList,
-    TranslocoPipe,
-  ],
+  imports: [CoursesList, TranslocoPipe],
   templateUrl: './courses-page.html',
   styleUrl: './courses-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -24,7 +21,7 @@ export class CoursesPage implements OnInit {
   private logger = inject(LoggerService);
 
   ngOnInit() {
-    const response = this.route.snapshot.data["courses"];
+    const response = this.route.snapshot.data['courses'];
     this.logger.debug('Courses page response:', response);
     this.courses.set(response?.courses);
   }

@@ -58,7 +58,14 @@
       "backToHome": "На головну"
     },
     "profile": {
-      "title": "Мій профіль"
+      "title": "Мій профіль",
+      "userInfo": {
+        "emailAddress": "Електронна пошта",
+        "userId": "ID користувача",
+        "bio": "Біографія",
+        "occupation": "Посада",
+        "address": "Адреса"
+      }
     },
     "login": {
       "title": "Увійти",

@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, computed, inject, OnInit,signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  OnInit,
+  signal,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 
@@ -10,11 +17,7 @@ import { LoggerService } from 'app/services/logger';
 @Component({
   selector: 'app-profile-page',
   standalone: true,
-  imports: [
-    UserInfo,
-    UserLearningProgress,
-    TranslocoPipe,
-  ],
+  imports: [UserInfo, UserLearningProgress, TranslocoPipe],
   templateUrl: './profile-page.html',
   styleUrl: './profile-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -26,12 +29,13 @@ export class ProfilePage implements OnInit {
   readonly user = signal<IUser | undefined>(undefined);
   readonly progress = signal<IUserProgress | undefined>(undefined);
 
-  readonly completedCourses = computed(() =>
-    this.progress()?.courses?.filter(course => course.percentage === 100).length ?? 0
+  readonly completedCourses = computed(
+    () => this.progress()?.courses?.filter((course) => course.percentage === 100).length ?? 0,
   );
   readonly totalCourses = computed(() => this.progress()?.courses?.length ?? 0);
-  readonly completedLessons = computed(() =>
-    this.progress()?.lessons?.filter(lesson => lesson.completed)?.length ?? 0);
+  readonly completedLessons = computed(
+    () => this.progress()?.lessons?.filter((lesson) => lesson.completed)?.length ?? 0,
+  );
 
   ngOnInit(): void {
     const data = this.route.snapshot.data['profile'];

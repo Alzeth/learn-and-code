@@ -1,21 +1,20 @@
 <div class="editor-container w-full max-w-full overflow-hidden">
-
   <div class="flex items-center justify-between">
-    <span class="text-sm text-muted-foreground font-medium">{{ 'codeEditor.title' | transloco }}</span>
+    <span class="text-sm text-muted-foreground font-medium">{{
+      'codeEditor.title' | transloco
+    }}</span>
     <div class="flex items-center gap-2">
-      <button z-button
-              zType="outline"
-              zSize="sm"
-              (click)="resetCode()"
-              [zDisabled]="isRunning()">
+      <button z-button zType="outline" zSize="sm" (click)="resetCode()" [zDisabled]="isRunning()">
         {{ 'codeEditor.reset' | transloco }}
       </button>
-      <button z-button
-              zType="default"
-              zSize="sm"
-              (click)="runCode()"
-              [zLoading]="isRunning() || pyodide.isLoading()"
-              [zDisabled]="!pyodide.isReady() || isRunning()">
+      <button
+        z-button
+        zType="default"
+        zSize="sm"
+        (click)="runCode()"
+        [zLoading]="isRunning() || pyodide.isLoading()"
+        [zDisabled]="!pyodide.isReady() || isRunning()"
+      >
         {{ (pyodide.isLoading() ? 'codeEditor.loadingPython' : 'codeEditor.run') | transloco }}
       </button>
     </div>
@@ -26,14 +25,19 @@
       class="w-full h-full"
       [options]="options"
       [(ngModel)]="code"
-      (onInit)="onInit($event)" />
+      (onInit)="onInit($event)"
+    />
   </div>
 
   @if (output()) {
-    <div class="rounded-md border p-3 font-mono text-sm leading-relaxed"
-         [class]="hasError()
-        ? 'border-destructive/40 bg-destructive/5 text-destructive'
-        : 'border-border bg-muted text-foreground'">
+    <div
+      class="rounded-md border p-3 font-mono text-sm leading-relaxed"
+      [class]="
+        hasError()
+          ? 'border-destructive/40 bg-destructive/5 text-destructive'
+          : 'border-border bg-muted text-foreground'
+      "
+    >
       <p class="text-xs font-sans font-medium mb-1 opacity-60">
         {{ (hasError() ? 'codeEditor.error' : 'codeEditor.output') | transloco }}
       </p>
@@ -46,5 +50,4 @@
       {{ 'codeEditor.runtimeNotReady' | transloco }}
     </p>
   }
-
 </div>

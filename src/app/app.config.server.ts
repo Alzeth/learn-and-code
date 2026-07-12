@@ -13,7 +13,7 @@ const serverConfig: ApplicationConfig = {
     { provide: API_BASE_URL, useFactory: () => process.env['NG_APP_API_URL'] ?? '' },
     { provide: USE_LOCAL_DATA, useFactory: () => process.env['NG_APP_USE_LOCAL_DATA'] === 'true' },
     { provide: TRANSLOCO_LOADER, useClass: TranslocoServerLoader },
-  ]
+  ],
 };
 
 export const config = mergeApplicationConfig(appConfig, serverConfig);

@@ -1,4 +1,12 @@
-import { ChangeDetectionStrategy, Component, effect, inject, Injector, input, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+  Injector,
+  input,
+  signal,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 import { editor } from 'monaco-editor';
@@ -13,12 +21,7 @@ import getEditorTheme from 'app/shared/utils/get-editor-theme';
 
 @Component({
   selector: 'app-code-editor',
-  imports: [
-    FormsModule,
-    EditorComponent,
-    ZardButtonComponent,
-    TranslocoPipe,
-  ],
+  imports: [FormsModule, EditorComponent, ZardButtonComponent, TranslocoPipe],
   standalone: true,
   templateUrl: './code-editor.html',
   styleUrl: './code-editor.css',
@@ -36,8 +39,12 @@ export class CodeEditor {
   options = AppSettings.MONACO_SETTINGS;
 
   private readonly _code = signal('');
-  get code(): string { return this._code(); }
-  set code(value: string) { this._code.set(value); }
+  get code(): string {
+    return this._code();
+  }
+  set code(value: string) {
+    this._code.set(value);
+  }
 
   readonly output = signal('');
   readonly hasError = signal(false);
@@ -63,7 +70,7 @@ export class CodeEditor {
         const theme = this.darkModeService.themeMode();
         this.setEditorTheme(theme);
       },
-      { injector: this.injector }
+      { injector: this.injector },
     );
   }
 

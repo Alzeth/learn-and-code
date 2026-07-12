@@ -17,7 +17,17 @@ import { ZardInputDirective } from 'app/shared/components/input';
 
 @Component({
   selector: 'app-register-page',
-  imports: [ReactiveFormsModule, RouterLink, ZardButtonComponent, ZardFormMessageComponent, ZardFormControlComponent, ZardFormFieldComponent, ZardFormLabelComponent, ZardInputDirective, TranslocoPipe],
+  imports: [
+    ReactiveFormsModule,
+    RouterLink,
+    ZardButtonComponent,
+    ZardFormMessageComponent,
+    ZardFormControlComponent,
+    ZardFormFieldComponent,
+    ZardFormLabelComponent,
+    ZardInputDirective,
+    TranslocoPipe,
+  ],
   templateUrl: './register-page.html',
   styleUrl: './register-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -50,11 +60,12 @@ export class RegisterPage implements HasUnsavedChanges {
 
     this.auth.register(email!, password!).subscribe({
       next: () => this.router.navigate([ROUTES.BASE_URL]),
-      error: err => {
+      error: (err) => {
         const status = err?.status;
-        const msg = status === 409
-          ? this.transloco.translate('pages.register.emailTaken')
-          : (err?.error?.error?.message ?? this.transloco.translate('pages.register.failed'));
+        const msg =
+          status === 409
+            ? this.transloco.translate('pages.register.emailTaken')
+            : (err?.error?.error?.message ?? this.transloco.translate('pages.register.failed'));
         this.error.set(msg);
         this.isLoading.set(false);
       },

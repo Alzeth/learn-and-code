@@ -10,12 +10,7 @@ import { ZardCardComponent } from 'app/shared/components/card';
 @Component({
   selector: 'app-lesson-item',
   standalone: true,
-  imports: [
-    ZardCardComponent,
-    RouterLink,
-    NgIcon,
-    ZardBadgeComponent,
-  ],
+  imports: [ZardCardComponent, RouterLink, NgIcon, ZardBadgeComponent],
   viewProviders: [provideIcons({ lucideBadgeCheck })],
   templateUrl: './item.html',
   styleUrl: './item.css',

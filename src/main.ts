@@ -14,5 +14,4 @@ if (environment.production) {
   });
 }
 
-bootstrapApplication(App, appConfig)
-  .catch((err) => console.error(err)); // eslint-disable-line no-console
+bootstrapApplication(App, appConfig).catch((err) => console.error(err)); // eslint-disable-line no-console

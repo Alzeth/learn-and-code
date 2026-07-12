@@ -7,10 +7,7 @@ import { ZardCardComponent } from 'app/shared/components/card';
 @Component({
   selector: 'app-course-item',
   standalone: true,
-  imports: [
-    ZardCardComponent,
-    RouterLink,
-  ],
+  imports: [ZardCardComponent, RouterLink],
   templateUrl: './item.html',
   styleUrl: './item.css',
   changeDetection: ChangeDetectionStrategy.OnPush,

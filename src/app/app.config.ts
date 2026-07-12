@@ -1,6 +1,14 @@
 import { isPlatformBrowser } from '@angular/common';
 import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
-import { ApplicationConfig, importProvidersFrom, inject, isDevMode, PLATFORM_ID, provideAppInitializer, provideBrowserGlobalErrorListeners } from '@angular/core';
+import {
+  ApplicationConfig,
+  importProvidersFrom,
+  inject,
+  isDevMode,
+  PLATFORM_ID,
+  provideAppInitializer,
+  provideBrowserGlobalErrorListeners,
+} from '@angular/core';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import { provideTransloco, TranslocoService } from '@jsverse/transloco';

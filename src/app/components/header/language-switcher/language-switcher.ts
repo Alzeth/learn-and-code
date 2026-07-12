@@ -1,5 +1,12 @@
 import { isPlatformBrowser, NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, computed, inject, PLATFORM_ID, signal } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  inject,
+  PLATFORM_ID,
+  signal,
+} from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { TranslocoService } from '@jsverse/transloco';
 
@@ -11,9 +18,7 @@ import { LANGUAGES } from '@/shared/constants';
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './language-switcher.html',
   host: { '(document:click)': 'onDocumentClick()' },
-  imports: [
-    NgOptimizedImage,
-  ],
+  imports: [NgOptimizedImage],
 })
 export class LanguageSwitcher {
   private readonly translocoService = inject(TranslocoService);
@@ -25,10 +30,10 @@ export class LanguageSwitcher {
     initialValue: this.translocoService.getActiveLang(),
   });
   readonly activeLangFlag = computed(
-    () => LANGUAGES.find((language) => language.code === this.activeLang())?.flag ?? 'gb'
+    () => LANGUAGES.find((language) => language.code === this.activeLang())?.flag ?? 'gb',
   );
   readonly activeLangLabel = computed(
-    () => LANGUAGES.find((language) => language.code === this.activeLang())?.label ?? 'English'
+    () => LANGUAGES.find((language) => language.code === this.activeLang())?.label ?? 'English',
   );
 
   toggle(event: Event): void {

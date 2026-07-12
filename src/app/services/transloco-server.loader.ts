@@ -14,7 +14,7 @@ export class TranslocoServerLoader implements TranslocoLoader {
       'browser',
       'assets',
       'i18n',
-      `${lang}.json`
+      `${lang}.json`,
     );
     return of(JSON.parse(readFileSync(filePath, 'utf-8')));
   }

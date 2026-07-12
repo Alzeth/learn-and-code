@@ -1,12 +1,12 @@
 import { inject, Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot,Resolve } from '@angular/router';
+import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { ICourse } from 'app/interfaces';
 import { CoursesService } from 'app/services/courses';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CourseResolver implements Resolve<ICourse> {
   private readonly courseService = inject(CoursesService);

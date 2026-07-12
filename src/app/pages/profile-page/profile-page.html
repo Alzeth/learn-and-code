@@ -1,10 +1,13 @@
 <div class="container-fluid page-container">
-  <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance mb-10">{{ 'pages.profile.title' | transloco }}</h1>
+  <h1 class="scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance mb-10">
+    {{ 'pages.profile.title' | transloco }}
+  </h1>
   <div class="container">
     <app-user-info [user]="user()" />
     <app-user-learning-progress
       [completedCourses]="completedCourses()"
       [totalCourses]="totalCourses()"
-      [completedLessons]="completedLessons()" />
+      [completedLessons]="completedLessons()"
+    />
   </div>
 </div>

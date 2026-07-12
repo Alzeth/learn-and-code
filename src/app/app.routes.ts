@@ -30,7 +30,7 @@ export const routes: Routes = [
     component: LessonsPage,
     resolve: {
       lessons: LessonsResolver,
-    }
+    },
   },
   {
     path: ROUTES.LESSON,
@@ -39,14 +39,14 @@ export const routes: Routes = [
     data: { authMessage: 'Please log in to access lessons.' },
     resolve: {
       lesson: LessonResolver,
-    }
+    },
   },
   {
     path: ROUTES.COURSES,
     component: CoursesPage,
     resolve: {
       courses: CoursesResolver,
-    }
+    },
   },
   {
     path: ROUTES.COURSE,
@@ -55,11 +55,15 @@ export const routes: Routes = [
     data: { authMessage: 'Please log in to access courses.' },
     resolve: {
       course: CourseResolver,
-    }
+    },
   },
   { path: ROUTES.AUTH.LOGIN, component: LoginPage, canDeactivate: [unsavedChangesGuard] },
   { path: ROUTES.AUTH.REGISTER, component: RegisterPage, canDeactivate: [unsavedChangesGuard] },
-  { path: ROUTES.AUTH.FORGOT_PASSWORD, component: ForgotPasswordPage, canDeactivate: [unsavedChangesGuard] },
+  {
+    path: ROUTES.AUTH.FORGOT_PASSWORD,
+    component: ForgotPasswordPage,
+    canDeactivate: [unsavedChangesGuard],
+  },
   { path: ROUTES.AUTH.RESET_PASSWORD, component: ResetPasswordPage },
   {
     path: ROUTES.PROFILE,
@@ -68,7 +72,7 @@ export const routes: Routes = [
     data: { authMessage: 'Please log in to view your profile.' },
     resolve: {
       profile: ProfileResolver,
-    }
+    },
   },
   { path: ROUTES.ABOUT, component: AboutPage },
   { path: ROUTES.NOT_FOUND, component: NotFoundPage },
