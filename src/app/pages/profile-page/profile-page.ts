@@ -1,22 +1,18 @@
 import { ChangeDetectionStrategy, Component, computed, inject, OnInit,signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideBookSearch, lucideScrollText } from '@ng-icons/lucide';
 
+import { UserInfo } from 'app/components/user/user-info/user-info';
+import { UserLearningProgress } from 'app/components/user/user-learning-progress/user-learning-progress';
 import { IUser, IUserProgress } from 'app/interfaces';
 import { LoggerService } from 'app/services/logger';
-import { ZardAvatarComponent } from 'app/shared/components/avatar';
-import { ZardProgressBarComponent } from 'app/shared/components/progress-bar';
 
 @Component({
   selector: 'app-profile-page',
   standalone: true,
   imports: [
-    ZardAvatarComponent,
-    NgIcon,
-    ZardProgressBarComponent,
+    UserInfo,
+    UserLearningProgress,
   ],
-  viewProviders: [provideIcons({ lucideBookSearch, lucideScrollText })],
   templateUrl: './profile-page.html',
   styleUrl: './profile-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
