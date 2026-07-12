@@ -19,6 +19,14 @@
     "runtimeNotReady": "El entorno de Python se cargará cuando el editor esté listo.",
     "noOutput": "(sin salida)"
   },
+  "course": {
+    "startCourse": "Iniciar curso",
+    "empty": {
+      "title": "No hay contenido disponible",
+      "description": "Este curso no fue encontrado",
+      "tryOther": "Prueba otros cursos"
+    }
+  },
   "markdownEmpty": {
     "title": "No hay contenido disponible",
     "description": "Aún no hay teoría para esta lección. Nuestro equipo la está preparando.",

@@ -19,6 +19,14 @@
     "runtimeNotReady": "Środowisko Python załaduje się, gdy edytor będzie gotowy.",
     "noOutput": "(brak wyniku)"
   },
+  "course": {
+    "startCourse": "Rozpocznij kurs",
+    "empty": {
+      "title": "Brak dostępnej treści",
+      "description": "Ten kurs nie został znaleziony",
+      "tryOther": "Spróbuj innych kursów"
+    }
+  },
   "markdownEmpty": {
     "title": "Brak dostępnej treści",
     "description": "Nie ma jeszcze teorii dla tej lekcji. Nasz zespół ją przygotowuje.",

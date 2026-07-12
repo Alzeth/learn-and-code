@@ -13,9 +13,13 @@
               Name Surname
             </h4>
             <div class="flex items-center gap-1 sm:gap-3">
-              <p class="text-sm text-gray-500 dark:text-gray-400">{{ 'pages.profile.userInfo.occupation' | transloco }}</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">
+                {{ 'pages.profile.userInfo.occupation' | transloco }}
+              </p>
               <div class="hidden h-3.5 w-px bg-gray-300 sm:block dark:bg-gray-700"></div>
-              <p class="text-sm text-gray-500 dark:text-gray-400">{{ 'pages.profile.userInfo.address' | transloco }}</p>
+              <p class="text-sm text-gray-500 dark:text-gray-400">
+                {{ 'pages.profile.userInfo.address' | transloco }}
+              </p>
             </div>
           </div>
         </div>
@@ -24,20 +28,28 @@
         class="relative grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-4 xl:gap-x-11 xl:gap-y-7"
       >
         <div>
-          <p class="mb-2 text-xs leading-normal text-gray-500 dark:text-gray-400">{{ 'pages.profile.userInfo.emailAddress' | transloco }}</p>
+          <p class="mb-2 text-xs leading-normal text-gray-500 dark:text-gray-400">
+            {{ 'pages.profile.userInfo.emailAddress' | transloco }}
+          </p>
           <p class="text-sm font-medium text-gray-800 dark:text-white/90">
             {{ user()?.email }}
           </p>
         </div>
         <div>
-          <p class="mb-2 text-xs leading-normal text-gray-500 dark:text-gray-400">{{ 'pages.profile.userInfo.userId' | transloco }}</p>
+          <p class="mb-2 text-xs leading-normal text-gray-500 dark:text-gray-400">
+            {{ 'pages.profile.userInfo.userId' | transloco }}
+          </p>
           <p class="text-sm font-medium text-gray-800 dark:text-white/90">
             {{ user()?.id }}
           </p>
         </div>
         <div>
-          <p class="mb-2 text-xs leading-normal text-gray-500 dark:text-gray-400">{{ 'pages.profile.userInfo.bio' | transloco }}</p>
-          <p class="text-sm font-medium text-gray-800 dark:text-white/90">{{ 'pages.profile.userInfo.bio' | transloco }}</p>
+          <p class="mb-2 text-xs leading-normal text-gray-500 dark:text-gray-400">
+            {{ 'pages.profile.userInfo.bio' | transloco }}
+          </p>
+          <p class="text-sm font-medium text-gray-800 dark:text-white/90">
+            {{ 'pages.profile.userInfo.bio' | transloco }}
+          </p>
         </div>
       </div>
     </div>

@@ -25,7 +25,7 @@ export class CoursesService {
       return this.http.get<ICoursesResponse>(url);
     }
 
-    return this.http.get<IApiResponse<ICoursesResponse>>(url).pipe(map(res => res.data!));
+    return this.http.get<IApiResponse<ICoursesResponse>>(url).pipe(map((res) => res.data!));
   }
 
   getById(id: string): Observable<ICourse> {

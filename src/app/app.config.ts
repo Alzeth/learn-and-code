@@ -47,5 +47,5 @@ export const appConfig: ApplicationConfig = {
         inject(TranslocoService).setActiveLang(savedLang);
       }
     }),
-  ]
+  ],
 };

@@ -4,9 +4,9 @@
       <div class="flex flex-1"><app-logo /></div>
       <ul class="block md:flex gap-4">
         <li>
-            <a routerLink="/courses">
-              <button z-button zSize="sm" zType="link">{{ 'nav.courses' | transloco }}</button>
-            </a>
+          <a routerLink="/courses">
+            <button z-button zSize="sm" zType="link">{{ 'nav.courses' | transloco }}</button>
+          </a>
         </li>
         <li>
           <a routerLink="/lessons">
@@ -27,10 +27,14 @@
               <span class="sr-only">{{ 'header.userProfile' | transloco }}</span>
             </button>
           </a>
-          <button z-button zType="link" zSize="sm" (click)="logout()">{{ 'header.logout' | transloco }}</button>
+          <button z-button zType="link" zSize="sm" (click)="logout()">
+            {{ 'header.logout' | transloco }}
+          </button>
         } @else {
           <a routerLink="/login">
-            <button z-button zType="link" zSize="sm">{{ 'header.login' | transloco }} <span aria-hidden="true">&rarr;</span></button>
+            <button z-button zType="link" zSize="sm">
+              {{ 'header.login' | transloco }} <span aria-hidden="true">&rarr;</span>
+            </button>
           </a>
         }
       </div>

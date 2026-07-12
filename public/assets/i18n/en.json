@@ -19,6 +19,14 @@
     "runtimeNotReady": "Python runtime will load when the editor is ready.",
     "noOutput": "(no output)"
   },
+  "course": {
+    "startCourse": "Start course",
+    "empty": {
+      "title": "No available content here",
+      "description": "This course isn't found",
+      "tryOther": "Try other courses instead"
+    }
+  },
   "markdownEmpty": {
     "title": "No available content here",
     "description": "Here is no lesson theory yet. Our team is preparing it for you.",

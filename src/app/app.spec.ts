@@ -5,13 +5,13 @@ import { App } from './app';
 
 describe('App', () => {
   const fakeActivatedRoute = {
-    snapshot: { data: { } }
+    snapshot: { data: {} },
   } as ActivatedRoute;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
-      providers: [{provide: ActivatedRoute, useValue: fakeActivatedRoute}]
+      providers: [{ provide: ActivatedRoute, useValue: fakeActivatedRoute }],
     }).compileComponents();
   });
 

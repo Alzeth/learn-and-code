@@ -19,6 +19,14 @@
     "runtimeNotReady": "L'ambiente Python si caricherà quando l'editor sarà pronto.",
     "noOutput": "(nessun output)"
   },
+  "course": {
+    "startCourse": "Inizia il corso",
+    "empty": {
+      "title": "Nessun contenuto disponibile",
+      "description": "Questo corso non è stato trovato",
+      "tryOther": "Prova altri corsi"
+    }
+  },
   "markdownEmpty": {
     "title": "Nessun contenuto disponibile",
     "description": "Non c'è ancora teoria per questa lezione. Il nostro team la sta preparando.",

@@ -19,6 +19,14 @@
     "runtimeNotReady": "Die Python-Laufzeitumgebung wird geladen, sobald der Editor bereit ist.",
     "noOutput": "(keine Ausgabe)"
   },
+  "course": {
+    "startCourse": "Kurs starten",
+    "empty": {
+      "title": "Kein Inhalt verfügbar",
+      "description": "Dieser Kurs wurde nicht gefunden",
+      "tryOther": "Andere Kurse ausprobieren"
+    }
+  },
   "markdownEmpty": {
     "title": "Kein Inhalt verfügbar",
     "description": "Für diese Lektion gibt es noch keine Theorie. Unser Team bereitet sie vor.",

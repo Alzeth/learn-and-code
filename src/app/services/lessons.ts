@@ -50,6 +50,6 @@ export class LessonsService {
       ? `${environment.baseHref}theory/${href}.md`
       : `${this.apiUrl}/lessons/${href}/theory`;
 
-    return this.http.get<IApiResponse<string>>(url).pipe(map(res => res.data!));
+    return this.http.get<IApiResponse<string>>(url).pipe(map((res) => res.data!));
   }
 }
