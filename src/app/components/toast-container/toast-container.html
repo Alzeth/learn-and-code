@@ -1,4 +1,4 @@
-<div class="toast-container">
+<div class="toast-container" [style.--toast-duration]="toastDuration">
   @for (toast of toastService.toasts(); track toast.id) {
     <div class="toast-wrapper" [class.dismissing]="toast.dismissing">
       <z-alert
@@ -7,6 +7,7 @@
         [zDescription]="toast.message"
         [zIcon]="toast.icon ?? ''"
       />
+      <div class="toast-progress"></div>
     </div>
   }
 </div>
