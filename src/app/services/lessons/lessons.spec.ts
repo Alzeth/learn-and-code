@@ -101,6 +101,17 @@ describe('LessonsService (remote)', () => {
     expect(httpMock.get).toHaveBeenCalledWith('https://api.test/lessons/intro/theory');
     expect(result).toBe('# Hello');
   });
+
+  it('getLessonTheory() should return the same cached observable on repeated calls', () => {
+    const { service, httpMock } = setup(false);
+    httpMock.get.mockReturnValue(of(wrapResponse('# Hello')));
+
+    const first = service.getLessonTheory('intro');
+    const second = service.getLessonTheory('intro');
+
+    expect(first).toBe(second);
+    expect(httpMock.get).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe('LessonsService (local)', () => {
