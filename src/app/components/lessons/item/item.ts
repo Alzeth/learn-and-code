@@ -6,11 +6,12 @@ import { lucideBadgeCheck } from '@ng-icons/lucide';
 import { ILesson } from 'app/interfaces';
 import { ZardBadgeComponent } from 'app/shared/components/badge';
 import { ZardCardComponent } from 'app/shared/components/card';
+import { TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-lesson-item',
   standalone: true,
-  imports: [ZardCardComponent, RouterLink, NgIcon, ZardBadgeComponent],
+  imports: [ZardCardComponent, RouterLink, NgIcon, ZardBadgeComponent, TranslocoPipe],
   viewProviders: [provideIcons({ lucideBadgeCheck })],
   templateUrl: './item.html',
   styleUrl: './item.css',

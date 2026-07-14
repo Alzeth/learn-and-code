@@ -1,4 +1,7 @@
 {
+  "list": {
+    "noItems": "There are no items."
+  },
   "nav": {
     "courses": "Courses",
     "lessons": "Lessons"
@@ -12,8 +15,8 @@
   "codeEditor": {
     "title": "Python editor",
     "reset": "Reset",
-    "loadingPython": "Loading Python...",
-    "run": "Run ▶",
+    "loadingPython": "Loading Python",
+    "run": "Run",
     "error": "Error",
     "output": "Output",
     "runtimeNotReady": "Python runtime will load when the editor is ready.",

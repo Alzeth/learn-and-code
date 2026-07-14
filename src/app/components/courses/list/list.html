@@ -4,6 +4,6 @@
   @for (course of courses(); track course.id) {
     <app-course-item [course]="course" />
   } @empty {
-    <li>There are no items.</li>
+    <li>{{ 'list.noItems' | transloco }}</li>
   }
 </ul>

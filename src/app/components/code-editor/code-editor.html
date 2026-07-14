@@ -1,11 +1,12 @@
-<div class="editor-container w-full max-w-full overflow-hidden">
-  <div class="flex items-center justify-between">
+<div class="w-full max-w-full overflow-hidden">
+  <div class="flex items-center justify-between mb-2">
     <span class="text-sm text-muted-foreground font-medium">{{
       'codeEditor.title' | transloco
     }}</span>
     <div class="flex items-center gap-2">
       <button z-button zType="outline" zSize="sm" (click)="resetCode()" [zDisabled]="isRunning()">
         {{ 'codeEditor.reset' | transloco }}
+        <ng-icon name="lucideRotateCcw" />
       </button>
       <button
         z-button
@@ -16,13 +17,16 @@
         [zDisabled]="!pyodide.isReady() || isRunning()"
       >
         {{ (pyodide.isLoading() ? 'codeEditor.loadingPython' : 'codeEditor.run') | transloco }}
+        @if (!pyodide.isLoading()) {
+          <ng-icon name="lucidePlay" />
+        }
       </button>
     </div>
   </div>
 
-  <div class="flex-1 h-[60dvh] rounded-md overflow-hidden border border-border">
+  <div class="flex-1 h-[60dvh] rounded-md overflow-hidden border border-border mb-2">
     <ngx-monaco-editor
-      class="w-full h-full"
+      class="w-full h-full!"
       [options]="options"
       [(ngModel)]="code"
       (onInit)="onInit($event)"
@@ -31,7 +35,7 @@
 
   @if (output()) {
     <div
-      class="rounded-md border p-3 font-mono text-sm leading-relaxed"
+      class="h-[25dvh] rounded-md border p-3 font-mono text-sm leading-relaxed overflow-y-auto"
       [class]="
         hasError()
           ? 'border-destructive/40 bg-destructive/5 text-destructive'

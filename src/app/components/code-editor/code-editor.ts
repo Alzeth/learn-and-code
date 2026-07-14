@@ -9,6 +9,8 @@ import {
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { lucidePlay, lucideRotateCcw } from '@ng-icons/lucide';
 import { editor } from 'monaco-editor';
 import { EditorComponent } from 'ngx-monaco-editor-v2';
 
@@ -21,7 +23,14 @@ import getEditorTheme from 'app/shared/utils/get-editor-theme';
 
 @Component({
   selector: 'app-code-editor',
-  imports: [FormsModule, EditorComponent, ZardButtonComponent, TranslocoPipe],
+  imports: [
+    FormsModule,
+    EditorComponent,
+    ZardButtonComponent,
+    TranslocoPipe,
+    NgIcon,
+  ],
+  viewProviders: [provideIcons({ lucidePlay, lucideRotateCcw })],
   standalone: true,
   templateUrl: './code-editor.html',
   styleUrl: './code-editor.css',

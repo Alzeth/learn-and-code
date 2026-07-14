@@ -6,6 +6,6 @@
       <app-lesson-item [lesson]="lesson" [completed]="completedIds().has(lesson.id)" />
     </li>
   } @empty {
-    <li>There are no items.</li>
+    <li>{{ 'list.noItems' | transloco }}</li>
   }
 </ul>

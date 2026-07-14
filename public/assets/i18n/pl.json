@@ -1,4 +1,7 @@
 {
+  "list": {
+    "noItems": "Brak elementów."
+  },
   "nav": {
     "courses": "Kursy",
     "lessons": "Lekcje"
