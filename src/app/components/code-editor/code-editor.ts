@@ -23,13 +23,7 @@ import getEditorTheme from 'app/shared/utils/get-editor-theme';
 
 @Component({
   selector: 'app-code-editor',
-  imports: [
-    FormsModule,
-    EditorComponent,
-    ZardButtonComponent,
-    TranslocoPipe,
-    NgIcon,
-  ],
+  imports: [FormsModule, EditorComponent, ZardButtonComponent, TranslocoPipe, NgIcon],
   viewProviders: [provideIcons({ lucidePlay, lucideRotateCcw })],
   standalone: true,
   templateUrl: './code-editor.html',

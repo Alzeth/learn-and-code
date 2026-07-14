@@ -1,12 +1,12 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { TranslocoPipe } from '@jsverse/transloco';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideBadgeCheck } from '@ng-icons/lucide';
 
 import { ILesson } from 'app/interfaces';
 import { ZardBadgeComponent } from 'app/shared/components/badge';
 import { ZardCardComponent } from 'app/shared/components/card';
-import { TranslocoPipe } from '@jsverse/transloco';
 
 @Component({
   selector: 'app-lesson-item',
