@@ -43,13 +43,11 @@ describe('CoursesPage', () => {
 
   it('ngOnInit() should set courses from route data', () => {
     const fixture = setup({ courses: mockCourses });
-    fixture.componentInstance.ngOnInit();
     expect(fixture.componentInstance.courses()).toEqual(mockCourses);
   });
 
   it('ngOnInit() should set courses to undefined when route data has no courses key', () => {
     const fixture = setup(undefined);
-    fixture.componentInstance.ngOnInit();
     expect(fixture.componentInstance.courses()).toBeUndefined();
   });
 });

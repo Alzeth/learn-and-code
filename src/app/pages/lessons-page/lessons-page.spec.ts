@@ -56,19 +56,16 @@ describe('LessonsPage', () => {
 
   it('ngOnInit() should set lessons from route data', () => {
     const fixture = setup(mockResolved);
-    fixture.componentInstance.ngOnInit();
     expect(fixture.componentInstance.lessons()).toEqual([mockLesson]);
   });
 
   it('ngOnInit() should set completedIds from route data', () => {
     const fixture = setup(mockResolved);
-    fixture.componentInstance.ngOnInit();
     expect(fixture.componentInstance.completedIds()).toEqual(new Set(['l1']));
   });
 
   it('ngOnInit() should set an empty completedIds when none are completed', () => {
     const fixture = setup({ lessons: [mockLesson], completedIds: new Set() });
-    fixture.componentInstance.ngOnInit();
     expect(fixture.componentInstance.completedIds()).toEqual(new Set());
   });
 });
