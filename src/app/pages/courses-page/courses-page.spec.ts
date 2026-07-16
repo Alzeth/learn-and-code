@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 import { ICourse } from 'app/interfaces';
 import { LoggerService } from 'app/services/logger/logger';
@@ -15,7 +16,7 @@ describe('CoursesPage', () => {
   const mockLogger = { debug: vi.fn(), info: vi.fn() };
 
   function setup(routeData: unknown) {
-    const routeMock = { snapshot: { data: { courses: routeData } } };
+    const routeMock = { data: of({ courses: routeData }) };
     TestBed.configureTestingModule({
       imports: [CoursesPage],
       providers: [
@@ -36,17 +37,12 @@ describe('CoursesPage', () => {
     expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('courses signal should be undefined before ngOnInit', () => {
-    const fixture = setup({ courses: mockCourses });
-    expect(fixture.componentInstance.courses()).toBeUndefined();
-  });
-
-  it('ngOnInit() should set courses from route data', () => {
+  it('should set courses from route data', () => {
     const fixture = setup({ courses: mockCourses });
     expect(fixture.componentInstance.courses()).toEqual(mockCourses);
   });
 
-  it('ngOnInit() should set courses to undefined when route data has no courses key', () => {
+  it('should set courses to undefined when route data has no courses key', () => {
     const fixture = setup(undefined);
     expect(fixture.componentInstance.courses()).toBeUndefined();
   });
