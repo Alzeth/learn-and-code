@@ -1,6 +1,8 @@
-import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
+import { map } from 'rxjs';
 
 import { CoursesList } from 'app/components/courses/list/list';
 import { ICourse } from 'app/interfaces';
@@ -14,15 +16,16 @@ import { LoggerService } from 'app/services/logger/logger';
   styleUrl: './courses-page.css',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CoursesPage implements OnInit {
-  readonly courses = signal<ICourse[] | undefined>(undefined);
-
+export class CoursesPage {
   private route = inject(ActivatedRoute);
   private logger = inject(LoggerService);
 
-  ngOnInit() {
-    const response = this.route.snapshot.data['courses'];
-    this.logger.debug('Courses page response:', response);
-    this.courses.set(response?.courses);
-  }
+  readonly courses = toSignal<ICourse[]>(
+    this.route.data.pipe(
+      map((data) => {
+        this.logger.debug('Courses page response:', data['courses']);
+        return data['courses']?.courses;
+      }),
+    ),
+  );
 }

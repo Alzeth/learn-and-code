@@ -16,7 +16,7 @@
     "title": "Editor de Python",
     "reset": "Restablecer",
     "loadingPython": "Cargando Python...",
-    "run": "Ejecutar ▶",
+    "run": "Ejecutar",
     "error": "Error",
     "output": "Salida",
     "runtimeNotReady": "El entorno de Python se cargará cuando el editor esté listo.",

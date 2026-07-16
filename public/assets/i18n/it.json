@@ -16,7 +16,7 @@
     "title": "Editor Python",
     "reset": "Reimposta",
     "loadingPython": "Caricamento Python...",
-    "run": "Esegui ▶",
+    "run": "Esegui",
     "error": "Errore",
     "output": "Output",
     "runtimeNotReady": "L'ambiente Python si caricherà quando l'editor sarà pronto.",

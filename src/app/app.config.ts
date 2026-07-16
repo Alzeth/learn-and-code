@@ -17,6 +17,7 @@ import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 
 import { authInterceptor } from 'app/services/auth.interceptor';
 import { AuthService } from 'app/services/auth/auth.service';
+import { localeInterceptor } from 'app/services/locale.interceptor';
 import { TranslocoBrowserLoader } from 'app/services/transloco-browser.loader';
 import { provideZard } from 'app/shared/core/provider/providezard';
 
@@ -27,7 +28,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
-    provideHttpClient(withFetch(), withInterceptors([authInterceptor])),
+    provideHttpClient(withFetch(), withInterceptors([localeInterceptor, authInterceptor])),
     provideZard(),
     importProvidersFrom(MonacoEditorModule.forRoot()),
     provideMarkdown(),

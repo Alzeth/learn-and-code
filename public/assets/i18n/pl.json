@@ -16,7 +16,7 @@
     "title": "Edytor Pythona",
     "reset": "Resetuj",
     "loadingPython": "Ładowanie Pythona...",
-    "run": "Uruchom ▶",
+    "run": "Uruchom",
     "error": "Błąd",
     "output": "Wynik",
     "runtimeNotReady": "Środowisko Python załaduje się, gdy edytor będzie gotowy.",

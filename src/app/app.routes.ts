@@ -28,6 +28,7 @@ export const routes: Routes = [
     path: ROUTES.LESSONS,
     pathMatch: 'full',
     component: LessonsPage,
+    runGuardsAndResolvers: 'paramsOrQueryParamsChange',
     resolve: {
       lessons: LessonsResolver,
     },
@@ -36,6 +37,7 @@ export const routes: Routes = [
     path: ROUTES.LESSON,
     canActivate: [authGuard],
     component: LessonPage,
+    runGuardsAndResolvers: 'paramsOrQueryParamsChange',
     data: { authMessage: 'Please log in to access lessons.' },
     resolve: {
       lesson: LessonResolver,
@@ -44,6 +46,7 @@ export const routes: Routes = [
   {
     path: ROUTES.COURSES,
     component: CoursesPage,
+    runGuardsAndResolvers: 'paramsOrQueryParamsChange',
     resolve: {
       courses: CoursesResolver,
     },

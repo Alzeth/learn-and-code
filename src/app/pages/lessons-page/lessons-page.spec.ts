@@ -1,5 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
+import { of } from 'rxjs';
 
 import { ILesson } from 'app/interfaces';
 import { LessonsResolved } from 'app/resolvers/lessons.resolver';
@@ -27,7 +28,7 @@ describe('LessonsPage', () => {
   const mockLogger = { debug: vi.fn(), info: vi.fn() };
 
   function setup(resolved: LessonsResolved = mockResolved) {
-    const routeMock = { snapshot: { data: { lessons: resolved } } };
+    const routeMock = { data: of({ lessons: resolved }) };
     TestBed.configureTestingModule({
       imports: [LessonsPage],
       providers: [
@@ -48,27 +49,18 @@ describe('LessonsPage', () => {
     expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('lessons and completedIds should have defaults before ngOnInit', () => {
-    const fixture = setup();
-    expect(fixture.componentInstance.lessons()).toBeUndefined();
-    expect(fixture.componentInstance.completedIds()).toEqual(new Set());
-  });
-
-  it('ngOnInit() should set lessons from route data', () => {
+  it('should set lessons from route data', () => {
     const fixture = setup(mockResolved);
-    fixture.componentInstance.ngOnInit();
     expect(fixture.componentInstance.lessons()).toEqual([mockLesson]);
   });
 
-  it('ngOnInit() should set completedIds from route data', () => {
+  it('should set completedIds from route data', () => {
     const fixture = setup(mockResolved);
-    fixture.componentInstance.ngOnInit();
     expect(fixture.componentInstance.completedIds()).toEqual(new Set(['l1']));
   });
 
-  it('ngOnInit() should set an empty completedIds when none are completed', () => {
+  it('should set an empty completedIds when none are completed', () => {
     const fixture = setup({ lessons: [mockLesson], completedIds: new Set() });
-    fixture.componentInstance.ngOnInit();
     expect(fixture.componentInstance.completedIds()).toEqual(new Set());
   });
 });

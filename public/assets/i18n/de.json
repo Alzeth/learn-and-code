@@ -16,7 +16,7 @@
     "title": "Python-Editor",
     "reset": "Zurücksetzen",
     "loadingPython": "Python wird geladen...",
-    "run": "Ausführen ▶",
+    "run": "Ausführen",
     "error": "Fehler",
     "output": "Ausgabe",
     "runtimeNotReady": "Die Python-Laufzeitumgebung wird geladen, sobald der Editor bereit ist.",

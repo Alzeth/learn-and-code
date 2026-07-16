@@ -33,6 +33,7 @@ export class LessonsService {
 
   invalidateAll(): void {
     this.allCache$ = null;
+    this.theoryCache$ = null;
   }
 
   getByHref(href: string): Observable<ILesson> {
