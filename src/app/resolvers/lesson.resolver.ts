@@ -24,8 +24,14 @@ export class LessonResolver implements Resolve<LessonResolved> {
   private readonly coursesService = inject(CoursesService);
   private readonly progressService = inject(UserProgressService);
   private logger = inject(LoggerService);
+  private resolvedLang: string | undefined;
 
   resolve(route: ActivatedRouteSnapshot): Observable<LessonResolved> {
+    const lang = route.queryParams['lang'];
+    if (lang !== this.resolvedLang) {
+      this.lessonsService.invalidateAll();
+      this.resolvedLang = lang;
+    }
     const href = route.paramMap.get('id')!;
     const courseId = route.queryParamMap.get('course');
 
