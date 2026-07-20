@@ -4,7 +4,14 @@
       'codeEditor.title' | transloco
     }}</span>
     <div class="flex items-center gap-2">
-      <button z-button zType="outline" zSize="sm" (click)="resetCode()" [zDisabled]="isRunning()">
+      <button
+        z-button
+        zType="outline"
+        zSize="sm"
+        [zTooltip]="'codeEditor.resetTooltip' | transloco"
+        (click)="resetCode()"
+        [zDisabled]="isRunning()"
+      >
         {{ 'codeEditor.reset' | transloco }}
         <ng-icon name="lucideRotateCcw" />
       </button>
@@ -12,6 +19,7 @@
         z-button
         zType="default"
         zSize="sm"
+        [zTooltip]="'codeEditor.runTooltip' | transloco"
         (click)="runCode()"
         [zLoading]="isRunning() || pyodide.isLoading()"
         [zDisabled]="!pyodide.isReady() || isRunning()"
