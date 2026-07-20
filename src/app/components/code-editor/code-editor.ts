@@ -21,9 +21,18 @@ import { ZardButtonComponent } from 'app/shared/components/button';
 import { EDarkModes, ZardDarkMode } from 'app/shared/services';
 import getEditorTheme from 'app/shared/utils/get-editor-theme';
 
+import { ZardTooltipImports } from '@/shared/components/tooltip';
+
 @Component({
   selector: 'app-code-editor',
-  imports: [FormsModule, EditorComponent, ZardButtonComponent, TranslocoPipe, NgIcon],
+  imports: [
+    FormsModule,
+    EditorComponent,
+    ZardButtonComponent,
+    TranslocoPipe,
+    NgIcon,
+    ZardTooltipImports,
+  ],
   viewProviders: [provideIcons({ lucidePlay, lucideRotateCcw })],
   standalone: true,
   templateUrl: './code-editor.html',
