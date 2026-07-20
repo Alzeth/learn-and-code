@@ -8,7 +8,7 @@ import {
   signal,
 } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TranslocoService } from '@jsverse/transloco';
 
 import { LANGUAGES } from '@/shared/constants';
@@ -25,6 +25,7 @@ export class LanguageSwitcher {
   private readonly translocoService = inject(TranslocoService);
   private readonly platformId = inject(PLATFORM_ID);
   private readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
 
   readonly langs = LANGUAGES;
   readonly isOpen = signal(false);
@@ -48,7 +49,9 @@ export class LanguageSwitcher {
     this.translocoService.setActiveLang(code);
     if (isPlatformBrowser(this.platformId)) {
       localStorage.setItem('lang', code);
-      this.router.navigate([this.router.url.split('?')[0]], { queryParams: { lang: code } });
+      this.router.navigate([this.router.url.split('?')[0]], {
+        queryParams: { ...this.route.snapshot.queryParams, lang: code },
+      });
     }
     this.isOpen.set(false);
   }

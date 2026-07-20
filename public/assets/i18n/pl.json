@@ -59,8 +59,8 @@
     },
     "lesson": {
       "completed": "Ukończono",
-      "previous": "← Poprzednia",
-      "next": "Następna →",
+      "previous": "Poprzednia",
+      "next": "Następna",
       "markAsComplete": "Oznacz jako ukończone",
       "saving": "Zapisywanie...",
       "starterCode": "# Napisz tutaj swój kod Python\n"

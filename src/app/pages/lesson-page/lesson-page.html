@@ -20,8 +20,9 @@
           <a
             [routerLink]="['/lessons', prevLesson()]"
             [queryParams]="{ course: courseId() }"
-            class="text-sm text-indigo-400 hover:text-indigo-300"
-            >{{ 'pages.lesson.previous' | transloco }}</a
+            class="arrow-animated left text-sm text-indigo-400 hover:text-indigo-300"
+            ><span class="icon inline-block" aria-hidden="true">← </span>
+            {{ 'pages.lesson.previous' | transloco }}</a
           >
         } @else {
           <span></span>
@@ -42,9 +43,10 @@
           <a
             [routerLink]="['/lessons', nextLesson()]"
             [queryParams]="{ course: courseId() }"
-            class="text-sm text-indigo-400 hover:text-indigo-300"
+            class="arrow-animated text-sm text-indigo-400 hover:text-indigo-300"
           >
             {{ 'pages.lesson.next' | transloco }}
+            <span class="icon inline-block" aria-hidden="true"> →</span>
           </a>
         } @else {
           <span></span>
