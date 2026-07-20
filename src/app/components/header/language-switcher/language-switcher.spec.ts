@@ -1,11 +1,13 @@
 import { PLATFORM_ID } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from '@angular/router';
 import { TranslocoService } from '@jsverse/transloco';
 import { of } from 'rxjs';
 
 import { LanguageSwitcher } from './language-switcher';
 
 describe('LanguageSwitcher', () => {
+  const routeMock = { snapshot: { data: {} } };
   const mockTransloco = {
     getActiveLang: vi.fn().mockReturnValue('en'),
     langChanges$: of('en'),
@@ -22,6 +24,7 @@ describe('LanguageSwitcher', () => {
       providers: [
         { provide: TranslocoService, useValue: mockTransloco },
         { provide: PLATFORM_ID, useValue: 'browser' },
+        { provide: ActivatedRoute, useValue: routeMock },
       ],
     })
       .overrideComponent(LanguageSwitcher, { set: { template: '', imports: [] } })
