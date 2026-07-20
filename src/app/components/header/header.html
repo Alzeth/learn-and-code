@@ -16,13 +16,26 @@
       </ul>
       <div class="flex flex-1 justify-end items-center gap-2">
         <app-language-switcher />
-        <button z-button zType="ghost" zSize="sm" [zTooltip]="'header.toggleTheme' | transloco" zPosition="bottom" (click)="toggleTheme()">
+        <button
+          z-button
+          zType="ghost"
+          zSize="sm"
+          [zTooltip]="'header.toggleTheme' | transloco"
+          zPosition="bottom"
+          (click)="toggleTheme()"
+        >
           <ng-icon name="lucideContrast" />
           <span class="sr-only">{{ 'header.toggleTheme' | transloco }}</span>
         </button>
         @if (isAuthenticated()) {
           <a routerLink="/profile">
-            <button z-button zType="ghost" zSize="sm" [zTooltip]="'header.userProfile' | transloco" zPosition="bottom">
+            <button
+              z-button
+              zType="ghost"
+              zSize="sm"
+              [zTooltip]="'header.userProfile' | transloco"
+              zPosition="bottom"
+            >
               <ng-icon name="lucideUserCircle" />
               <span class="sr-only">{{ 'header.userProfile' | transloco }}</span>
             </button>

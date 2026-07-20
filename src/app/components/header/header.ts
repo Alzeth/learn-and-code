@@ -12,11 +12,21 @@ import { Logo } from 'app/shared/components/logo/logo';
 import { ZardDarkMode } from 'app/shared/services/dark-mode';
 
 import { LanguageSwitcher } from './language-switcher/language-switcher';
+
 import { ZardTooltipImports } from '@/shared/components/tooltip';
 
 @Component({
   selector: 'app-header',
-  imports: [ZardButtonComponent, Logo, RouterLink, Burger, NgIcon, LanguageSwitcher, TranslocoPipe, ZardTooltipImports],
+  imports: [
+    ZardButtonComponent,
+    Logo,
+    RouterLink,
+    Burger,
+    NgIcon,
+    LanguageSwitcher,
+    TranslocoPipe,
+    ZardTooltipImports,
+  ],
   viewProviders: [provideIcons({ lucideContrast, lucideUserCircle })],
   standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
