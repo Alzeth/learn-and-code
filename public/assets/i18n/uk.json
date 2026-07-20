@@ -59,8 +59,8 @@
     },
     "lesson": {
       "completed": "Завершено",
-      "previous": "← Попередній",
-      "next": "Наступний →",
+      "previous": "Попередній",
+      "next": "Наступний",
       "markAsComplete": "Позначити як завершений",
       "saving": "Збереження...",
       "starterCode": "# Напишіть свій код Python тут\n"

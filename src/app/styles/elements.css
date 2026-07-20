@@ -18,3 +18,19 @@
 button {
   cursor: pointer;
 }
+
+.arrow-animated {
+  & > .icon {
+    transition: transform 0.1s linear;
+  }
+
+  &:hover .icon {
+    transform: translateX(10px);
+  }
+
+  &.left {
+    &:hover .icon {
+      transform: translateX(-10px);
+    }
+  }
+}
