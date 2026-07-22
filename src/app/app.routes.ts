@@ -14,7 +14,13 @@ import { NotFoundPage } from 'app/pages/not-found-page';
 import { ProfilePage } from 'app/pages/profile-page';
 import { RegisterPage } from 'app/pages/register-page';
 import { ResetPasswordPage } from 'app/pages/reset-password-page';
-import { CourseResolver, CoursesResolver, LessonResolver, LessonsResolver, ProfileResolver } from 'app/resolvers';
+import {
+  CourseResolver,
+  CoursesResolver,
+  LessonResolver,
+  LessonsResolver,
+  ProfileResolver,
+} from 'app/resolvers';
 
 import { ROUTES } from './constants';
 
