@@ -6,7 +6,7 @@ import { ILesson } from 'app/interfaces';
 
 import { API_BASE_URL, USE_LOCAL_DATA } from '../api.config';
 import { IApiResponse, ILessonsResponse } from '../interfaces';
-import { LessonsService } from './lessons';
+import { LessonsService } from './lessons.service';
 
 const mockLesson: ILesson = {
   id: 'l1',

@@ -7,7 +7,7 @@ import { LoggerService } from 'app/services/logger';
 
 import { API_BASE_URL, USE_LOCAL_DATA } from '../api.config';
 import { IApiResponse, ICoursesResponse } from '../interfaces';
-import { CoursesService } from './courses';
+import { CoursesService } from './courses.service';
 
 const mockCourses: ICourse[] = [
   { id: 'c1', title: 'Python Basics', description: 'Intro', tableOfContents: [] },
