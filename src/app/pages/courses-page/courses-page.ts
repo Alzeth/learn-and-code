@@ -4,9 +4,9 @@ import { ActivatedRoute } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 import { map } from 'rxjs';
 
-import { CoursesList } from 'app/components/courses/list/list';
+import { CoursesList } from 'app/components/courses/list';
 import { ICourse } from 'app/interfaces';
-import { LoggerService } from 'app/services/logger/logger';
+import { LoggerService } from 'app/services/logger';
 
 @Component({
   selector: 'app-courses-page',

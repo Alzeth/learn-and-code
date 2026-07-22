@@ -14,12 +14,12 @@ import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideBadgeCheck } from '@ng-icons/lucide';
 import { combineLatest, Subscription } from 'rxjs';
 
-import { CodeEditor } from 'app/components/code-editor/code-editor';
-import { MarkdownEmpty } from 'app/components/markdown-empty/markdown-empty';
-import { MarkdownParcer } from 'app/components/markdown-parcer/markdown-parcer';
+import { CodeEditor } from 'app/components/code-editor';
+import { MarkdownEmpty } from 'app/components/markdown-empty';
+import { MarkdownParcer } from 'app/components/markdown-parcer';
 import { ILesson } from 'app/interfaces';
 import { LessonResolved } from 'app/resolvers/lesson.resolver';
-import { UserProgressService } from 'app/services/user-progress/user-progress.service';
+import { UserProgressService } from 'app/services/user-progress';
 import { ZardBadgeComponent } from 'app/shared/components/badge';
 
 @Component({

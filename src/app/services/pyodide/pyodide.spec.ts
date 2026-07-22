@@ -1,7 +1,7 @@
 import { PLATFORM_ID } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 
-import { PyodideService } from './pyodide';
+import { PyodideService } from './pyodide.service';
 
 describe('PyodideService (server)', () => {
   let service: PyodideService;

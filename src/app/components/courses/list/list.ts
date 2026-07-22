@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { TranslocoPipe } from '@jsverse/transloco';
 
-import { Item } from 'app/components/courses/item/item';
+import { Item } from 'app/components/courses/item';
 import { ICourse } from 'app/interfaces';
 
 @Component({

@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 
 import { IUser, IUserProgress } from 'app/interfaces';
-import { LoggerService } from 'app/services/logger/logger';
+import { LoggerService } from 'app/services/logger';
 
 import { ProfilePage } from './profile-page';
 

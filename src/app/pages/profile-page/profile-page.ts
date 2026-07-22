@@ -9,10 +9,10 @@ import {
 import { ActivatedRoute } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 
-import { UserInfo } from 'app/components/user/user-info/user-info';
-import { UserLearningProgress } from 'app/components/user/user-learning-progress/user-learning-progress';
+import { UserInfo } from 'app/components/user/user-info';
+import { UserLearningProgress } from 'app/components/user/user-learning-progress';
 import { IUser, IUserProgress } from 'app/interfaces';
-import { LoggerService } from 'app/services/logger/logger';
+import { LoggerService } from 'app/services/logger';
 
 @Component({
   selector: 'app-profile-page',

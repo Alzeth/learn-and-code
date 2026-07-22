@@ -3,8 +3,8 @@ import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 
 import { IUser } from 'app/interfaces';
-import { AuthService } from 'app/services/auth/auth.service';
-import { LoggerService } from 'app/services/logger/logger';
+import { AuthService } from 'app/services/auth';
+import { LoggerService } from 'app/services/logger';
 import { EDarkModes, ZardDarkMode } from 'app/shared/services';
 
 import { Header } from './header';

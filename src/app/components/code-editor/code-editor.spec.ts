@@ -3,8 +3,8 @@ import { TestBed } from '@angular/core/testing';
 import { TranslocoService } from '@jsverse/transloco';
 import { EMPTY } from 'rxjs';
 
-import { LoggerService } from 'app/services/logger/logger';
-import { PyodideService } from 'app/services/pyodide/pyodide';
+import { LoggerService } from 'app/services/logger';
+import { PyodideService } from 'app/services/pyodide';
 import { EDarkModes, ZardDarkMode } from 'app/shared/services';
 
 import { CodeEditor } from './code-editor';

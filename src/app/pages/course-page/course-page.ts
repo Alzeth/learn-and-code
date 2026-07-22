@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit, signal } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Course } from 'app/components/course/course';
-import { CourseEmpty } from 'app/components/course/course-empty/course-empty';
+import { Course } from 'app/components/course';
+import { CourseEmpty } from 'app/components/course/course-empty';
 import { ICourse } from 'app/interfaces';
-import { LoggerService } from 'app/services/logger/logger';
+import { LoggerService } from 'app/services/logger';
 
 @Component({
   selector: 'app-course-page',

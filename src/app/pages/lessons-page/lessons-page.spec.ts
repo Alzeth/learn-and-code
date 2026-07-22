@@ -4,7 +4,7 @@ import { of } from 'rxjs';
 
 import { ILesson } from 'app/interfaces';
 import { LessonsResolved } from 'app/resolvers/lessons.resolver';
-import { LoggerService } from 'app/services/logger/logger';
+import { LoggerService } from 'app/services/logger';
 
 import { LessonsPage } from './lessons-page';
 

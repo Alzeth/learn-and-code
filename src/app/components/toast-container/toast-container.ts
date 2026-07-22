@@ -3,7 +3,7 @@ import { provideIcons } from '@ng-icons/core';
 import { lucideLock } from '@ng-icons/lucide';
 
 import { DISPLAY_MS } from 'app/services/constants';
-import { ToastService } from 'app/services/toast/toast.service';
+import { ToastService } from 'app/services/toast';
 import { ZardAlertComponent } from 'app/shared/components/alert/alert.component';
 
 @Component({
