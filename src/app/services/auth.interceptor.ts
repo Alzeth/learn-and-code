@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 
 import { ROUTES } from 'app/constants';
-import { ToastService } from 'app/services/toast/toast.service';
+import { ToastService } from 'app/services/toast';
 
 export const authInterceptor: HttpInterceptorFn = (req, next) => {
   const router = inject(Router);

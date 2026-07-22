@@ -3,7 +3,7 @@ import { TestBed } from '@angular/core/testing';
 import { of } from 'rxjs';
 
 import { ICourse } from 'app/interfaces';
-import { LoggerService } from 'app/services/logger/logger';
+import { LoggerService } from 'app/services/logger';
 
 import { API_BASE_URL, USE_LOCAL_DATA } from '../api.config';
 import { IApiResponse, ICoursesResponse } from '../interfaces';

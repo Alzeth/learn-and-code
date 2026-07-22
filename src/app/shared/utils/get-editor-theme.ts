@@ -1,7 +1,7 @@
 import { EDarkModes } from '@app/shared/services';
 import { AppSettings } from '@app/app.settings';
 
-const getEditorTheme = (inputTheme: EDarkModes) => {
+export const getEditorTheme = (inputTheme: EDarkModes) => {
   const resolveTheme = (theme: 'dark' | 'light') =>
     theme === 'dark' ? AppSettings.EDITOR_THEME.DARK : AppSettings.EDITOR_THEME.LIGHT;
 
@@ -12,5 +12,3 @@ const getEditorTheme = (inputTheme: EDarkModes) => {
     return resolveTheme(inputTheme);
   }
 };
-
-export default getEditorTheme;

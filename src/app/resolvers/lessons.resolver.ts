@@ -3,9 +3,9 @@ import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { catchError, forkJoin, map, Observable, of } from 'rxjs';
 
 import { ILesson } from 'app/interfaces';
-import { AuthService } from 'app/services/auth/auth.service';
-import { LessonsService } from 'app/services/lessons/lessons';
-import { UserProgressService } from 'app/services/user-progress/user-progress.service';
+import { AuthService } from 'app/services/auth';
+import { LessonsService } from 'app/services/lessons';
+import { UserProgressService } from 'app/services/user-progress';
 
 export interface LessonsResolved {
   lessons: ILesson[];

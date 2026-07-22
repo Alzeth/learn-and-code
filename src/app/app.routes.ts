@@ -1,24 +1,20 @@
 import { Routes } from '@angular/router';
 
-import { authGuard } from 'app/guards/auth.guard';
-import { unsavedChangesGuard } from 'app/guards/unsaved-changes.guard';
-import { AboutPage } from 'app/pages/about-page/about-page';
-import { CoursePage } from 'app/pages/course-page/course-page';
-import { CoursesPage } from 'app/pages/courses-page/courses-page';
-import { ForgotPasswordPage } from 'app/pages/forgot-password-page/forgot-password-page';
-import { HomePage } from 'app/pages/home-page/home-page';
-import { LessonPage } from 'app/pages/lesson-page/lesson-page';
-import { LessonsPage } from 'app/pages/lessons-page/lessons-page';
-import { LoginPage } from 'app/pages/login-page/login-page';
-import { NotFoundPage } from 'app/pages/not-found-page/not-found-page';
-import { ProfilePage } from 'app/pages/profile-page/profile-page';
-import { RegisterPage } from 'app/pages/register-page/register-page';
-import { ResetPasswordPage } from 'app/pages/reset-password-page/reset-password-page';
-import { CourseResolver } from 'app/resolvers/course.resolver';
-import { CoursesResolver } from 'app/resolvers/courses.resolver';
-import { LessonResolver } from 'app/resolvers/lesson.resolver';
-import { LessonsResolver } from 'app/resolvers/lessons.resolver';
-import { ProfileResolver } from 'app/resolvers/profile.resolver';
+import { authGuard } from 'app/guards';
+import { unsavedChangesGuard } from 'app/guards';
+import { AboutPage } from 'app/pages/about-page';
+import { CoursePage } from 'app/pages/course-page';
+import { CoursesPage } from 'app/pages/courses-page';
+import { ForgotPasswordPage } from 'app/pages/forgot-password-page';
+import { HomePage } from 'app/pages/home-page';
+import { LessonPage } from 'app/pages/lesson-page';
+import { LessonsPage } from 'app/pages/lessons-page';
+import { LoginPage } from 'app/pages/login-page';
+import { NotFoundPage } from 'app/pages/not-found-page';
+import { ProfilePage } from 'app/pages/profile-page';
+import { RegisterPage } from 'app/pages/register-page';
+import { ResetPasswordPage } from 'app/pages/reset-password-page';
+import { CourseResolver, CoursesResolver, LessonResolver, LessonsResolver, ProfileResolver } from 'app/resolvers';
 
 import { ROUTES } from './constants';
 

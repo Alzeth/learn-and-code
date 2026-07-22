@@ -5,7 +5,7 @@ import { TranslocoService } from '@jsverse/transloco';
 import { of, throwError } from 'rxjs';
 
 import { ROUTES } from 'app/constants';
-import { AuthService } from 'app/services/auth/auth.service';
+import { AuthService } from 'app/services/auth';
 
 import { LoginPage } from './login-page';
 

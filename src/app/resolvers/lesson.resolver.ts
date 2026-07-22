@@ -3,10 +3,10 @@ import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { catchError, forkJoin, map, Observable, of, tap } from 'rxjs';
 
 import { ILesson, ILessonProgress } from 'app/interfaces';
-import { CoursesService } from 'app/services/courses/courses';
-import { LessonsService } from 'app/services/lessons/lessons';
-import { LoggerService } from 'app/services/logger/logger';
-import { UserProgressService } from 'app/services/user-progress/user-progress.service';
+import { CoursesService } from 'app/services/courses';
+import { LessonsService } from 'app/services/lessons';
+import { LoggerService } from 'app/services/logger';
+import { UserProgressService } from 'app/services/user-progress';
 
 export interface LessonResolved {
   lesson: ILesson | undefined;

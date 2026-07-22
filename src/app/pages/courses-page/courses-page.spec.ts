@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
 import { ICourse } from 'app/interfaces';
-import { LoggerService } from 'app/services/logger/logger';
+import { LoggerService } from 'app/services/logger';
 
 import { CoursesPage } from './courses-page';
 

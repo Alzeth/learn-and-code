@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { ICourse } from 'app/interfaces';
-import { CoursesService } from 'app/services/courses/courses';
+import { CoursesService } from 'app/services/courses';
 
 @Injectable({
   providedIn: 'root',

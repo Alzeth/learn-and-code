@@ -4,7 +4,7 @@ import { provideRouter } from '@angular/router';
 import { TranslocoService } from '@jsverse/transloco';
 import { of, throwError } from 'rxjs';
 
-import { AuthService } from 'app/services/auth/auth.service';
+import { AuthService } from 'app/services/auth';
 
 import { ForgotPasswordPage } from './forgot-password-page';
 

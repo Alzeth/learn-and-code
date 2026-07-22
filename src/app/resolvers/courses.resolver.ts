@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { Resolve } from '@angular/router';
 import { Observable } from 'rxjs';
 
-import { CoursesService } from 'app/services/courses/courses';
+import { CoursesService } from 'app/services/courses';
 import { ICoursesResponse } from 'app/services/interfaces';
 
 @Injectable({

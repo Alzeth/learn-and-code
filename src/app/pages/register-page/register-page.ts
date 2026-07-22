@@ -4,8 +4,8 @@ import { Router, RouterLink } from '@angular/router';
 import { TranslocoPipe, TranslocoService } from '@jsverse/transloco';
 
 import { ROUTES } from 'app/constants';
-import { HasUnsavedChanges } from 'app/guards/unsaved-changes.guard';
-import { AuthService } from 'app/services/auth/auth.service';
+import { HasUnsavedChanges } from 'app/guards';
+import { AuthService } from 'app/services/auth';
 import { ZardButtonComponent } from 'app/shared/components/button';
 import {
   ZardFormControlComponent,

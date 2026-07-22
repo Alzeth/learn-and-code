@@ -4,14 +4,14 @@ import { TranslocoPipe } from '@jsverse/transloco';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { lucideContrast, lucideUserCircle } from '@ng-icons/lucide';
 
-import { AuthService } from 'app/services/auth/auth.service';
-import { LoggerService } from 'app/services/logger/logger';
+import { AuthService } from 'app/services/auth';
+import { LoggerService } from 'app/services/logger';
 import { Burger } from 'app/shared/components/burger/burger';
 import { ZardButtonComponent } from 'app/shared/components/button';
 import { Logo } from 'app/shared/components/logo/logo';
 import { ZardDarkMode } from 'app/shared/services/dark-mode';
 
-import { LanguageSwitcher } from './language-switcher/language-switcher';
+import { LanguageSwitcher } from './language-switcher';
 
 import { ZardTooltipImports } from '@/shared/components/tooltip';
 

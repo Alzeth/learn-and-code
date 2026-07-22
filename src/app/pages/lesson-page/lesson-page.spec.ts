@@ -5,7 +5,7 @@ import { of, throwError } from 'rxjs';
 
 import { ILesson, ILessonProgress } from 'app/interfaces';
 import { LessonResolved } from 'app/resolvers/lesson.resolver';
-import { UserProgressService } from 'app/services/user-progress/user-progress.service';
+import { UserProgressService } from 'app/services/user-progress';
 
 import { LessonPage } from './lesson-page';
 

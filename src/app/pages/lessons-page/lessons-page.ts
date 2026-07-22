@@ -3,9 +3,9 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 
-import { LessonsEmpty } from 'app/components/lessons/lessons-empty/lessons-empty';
-import { LessonsList } from 'app/components/lessons/list/list';
-import { LoggerService } from 'app/services/logger/logger';
+import { LessonsEmpty } from 'app/components/lessons/lessons-empty';
+import { LessonsList } from 'app/components/lessons/list';
+import { LoggerService } from 'app/services/logger';
 
 @Component({
   selector: 'app-lessons-page',

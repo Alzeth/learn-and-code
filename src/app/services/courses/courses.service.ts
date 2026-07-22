@@ -5,7 +5,7 @@ import { map, Observable } from 'rxjs';
 import { ICourse } from 'app/interfaces';
 import { API_BASE_URL, USE_LOCAL_DATA } from 'app/services/api.config';
 import { IApiResponse, ICoursesResponse } from 'app/services/interfaces';
-import { LoggerService } from 'app/services/logger/logger';
+import { LoggerService } from 'app/services/logger';
 
 @Injectable({
   providedIn: 'root',

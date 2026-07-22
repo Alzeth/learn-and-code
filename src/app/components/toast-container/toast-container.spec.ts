@@ -1,7 +1,7 @@
 import { signal } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
 
-import { ToastService } from 'app/services/toast/toast.service';
+import { ToastService } from 'app/services/toast';
 
 import { ToastContainerComponent } from './toast-container';
 
