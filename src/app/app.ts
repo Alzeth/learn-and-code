@@ -26,7 +26,7 @@ import { AppLoader } from 'app/shared/components/app-loader/app-loader';
   standalone: true,
   imports: [RouterOutlet, Header, AppLoader, ToastContainerComponent],
   templateUrl: './app.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrl: './app.css',
 })
 export class App implements OnInit {
