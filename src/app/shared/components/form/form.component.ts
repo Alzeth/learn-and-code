@@ -15,8 +15,8 @@ import {
   formLabelVariants,
   formMessageVariants,
   type ZardFormMessageTypeVariants,
-} from '@app/shared/components/form/form.variants';
-import { mergeClasses } from '@app/shared/utils/merge-classes';
+} from 'app/shared/components/form/form.variants';
+import { mergeClasses } from 'app/shared/utils/merge-classes';
 
 @Component({
   selector: 'z-form-field, [z-form-field]',

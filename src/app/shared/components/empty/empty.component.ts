@@ -11,8 +11,8 @@ import {
 import { NgIcon } from '@ng-icons/core';
 import type { ClassValue } from 'clsx';
 
-import { ZardStringTemplateOutletDirective } from '@app/shared/core/directives/string-template-outlet/string-template-outlet.directive';
-import { mergeClasses } from '@app/shared/utils/merge-classes';
+import { ZardStringTemplateOutletDirective } from 'app/shared/core/directives/string-template-outlet/string-template-outlet.directive';
+import { mergeClasses } from 'app/shared/utils/merge-classes';
 
 import {
   emptyActionsVariants,
