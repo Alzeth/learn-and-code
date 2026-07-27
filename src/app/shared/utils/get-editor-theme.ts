@@ -1,5 +1,5 @@
-import { EDarkModes } from '@app/shared/services';
-import { AppSettings } from '@app/app.settings';
+import { EDarkModes } from 'app/shared/services';
+import { AppSettings } from 'app/app.settings';
 
 export const getEditorTheme = (inputTheme: EDarkModes) => {
   const resolveTheme = (theme: 'dark' | 'light') =>

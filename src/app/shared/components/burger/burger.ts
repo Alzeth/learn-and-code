@@ -1,10 +1,11 @@
-import { Component, Input, WritableSignal } from '@angular/core';
+import { Component, Input, WritableSignal, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
   selector: 'app-burger',
   imports: [],
   standalone: true,
   templateUrl: './burger.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './burger.css',
 })
 export class Burger {

@@ -1,5 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
   ],
   standalone: true,
   templateUrl: './logo.html',
+  changeDetection: ChangeDetectionStrategy.Eager,
   styleUrl: './logo.css',
 })
 export class Logo {

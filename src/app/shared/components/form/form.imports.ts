@@ -3,7 +3,7 @@ import {
   ZardFormFieldComponent,
   ZardFormLabelComponent,
   ZardFormMessageComponent,
-} from '@app/shared/components/form/form.component';
+} from 'app/shared/components/form/form.component';
 
 export const ZardFormImports = [
   ZardFormFieldComponent,

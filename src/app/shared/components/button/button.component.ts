@@ -14,7 +14,7 @@ import {
 
 import type { ClassValue } from 'clsx';
 
-import { mergeClasses } from '@app/shared/utils/merge-classes';
+import { mergeClasses } from 'app/shared/utils/merge-classes';
 
 import {
   buttonVariants,

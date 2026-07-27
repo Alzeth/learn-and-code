@@ -11,9 +11,9 @@ import {
 
 import type { ClassValue } from 'clsx';
 
-import { ZardButtonComponent } from '@app/shared/components/button/button.component';
-import { ZardIdDirective, ZardStringTemplateOutletDirective } from '@app/shared/core';
-import { mergeClasses } from '@app/shared/utils/merge-classes';
+import { ZardButtonComponent } from 'app/shared/components/button/button.component';
+import { ZardIdDirective, ZardStringTemplateOutletDirective } from 'app/shared/core';
+import { mergeClasses } from 'app/shared/utils/merge-classes';
 
 import { cardBodyVariants, cardFooterVariants, cardHeaderVariants, cardVariants } from './card.variants';
 
