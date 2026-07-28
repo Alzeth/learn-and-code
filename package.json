@@ -61,7 +61,7 @@
     "monaco-editor": "^0.55.1",
     "ngx-markdown": "^22.0.0",
     "ngx-monaco-editor-v2": "^22.0.4",
-    "pyodide": "^314.0.2",
+    "pyodide": "^314.0.3",
     "rxjs": "~7.8.0",
     "tailwind-merge": "^3.6.0",
     "tslib": "^2.3.0"
