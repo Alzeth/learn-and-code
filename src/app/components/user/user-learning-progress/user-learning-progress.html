@@ -1,17 +1,22 @@
 <div
   class="rounded-2xl border border-gray-200 bg-white p-5 lg:p-6 dark:border-gray-800 dark:bg-white/3"
 >
-  <h3 class="text-lg font-semibold text-gray-800 dark:text-white/90 mb-5">Learning Progress</h3>
+  <h3 class="text-lg font-semibold text-gray-800 dark:text-white/90 mb-5">
+    {{ 'pages.profile.learningProgress.title' | transloco }}
+  </h3>
   <div class="flex gap-2.5">
     <div class="min-h-20 rounded-2xl border border-gray-200 p-4">
       <h4 class="flex mb-6 text-lg font-semibold text-gray-800 dark:text-white/90">
         <ng-icon name="lucideBookSearch" />
-        Courses
+        {{ 'pages.profile.learningProgress.courses' | transloco }}
       </h4>
       <div>
-        <span class="inline-block mb-2"
-          >{{ completedCourses() }}/{{ totalCourses() }} completed</span
-        >
+        <span class="inline-block mb-2">
+          {{
+            'pages.profile.learningProgress.coursesCompleted'
+              | transloco: { completed: completedCourses(), total: totalCourses() }
+          }}
+        </span>
         <z-progress-bar
           [progress]="(completedCourses() / totalCourses()) * 100"
           zSize="lg"
@@ -22,10 +27,15 @@
     <div class="min-h-20 rounded-2xl border border-gray-200 p-4">
       <h4 class="flex mb-6 text-lg font-semibold text-gray-800 dark:text-white/90">
         <ng-icon name="lucideScrollText" />
-        Lessons
+        {{ 'pages.profile.learningProgress.lessons' | transloco }}
       </h4>
       <div>
-        <span class="inline-block mb-2">{{ completedLessons() }} completed</span>
+        <span class="inline-block mb-2">
+          {{
+            'pages.profile.learningProgress.lessonsCompleted'
+              | transloco: { count: completedLessons() }
+          }}
+        </span>
       </div>
     </div>
   </div>

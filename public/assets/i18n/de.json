@@ -78,6 +78,18 @@
         "bio": "Biografie",
         "occupation": "Beruf",
         "address": "Adresse"
+      },
+      "learningProgress": {
+        "title": "Lernfortschritt",
+        "courses": "Kurse",
+        "lessons": "Lektionen",
+        "coursesCompleted": "{{completed}}/{{total}} abgeschlossen",
+        "lessonsCompleted": "{{count}} abgeschlossen"
+      },
+      "continueJourney": {
+        "title": "Weiter lernen",
+        "empty": "Keine Kurse in Bearbeitung.",
+        "continueLastLesson": "Letzte Lektion fortsetzen"
       }
     },
     "login": {
