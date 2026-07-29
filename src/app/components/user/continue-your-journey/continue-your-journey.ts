@@ -3,17 +3,17 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TranslocoPipe } from '@jsverse/transloco';
 
-import { IEnrolledCourse } from './interfaces';
-
-import { ZardBadgeComponent } from '@/shared/components/badge';
-import { ZardButtonComponent } from '@/shared/components/button';
+import { ZardBadgeComponent } from 'app/shared/components/badge';
+import { ZardButtonComponent } from 'app/shared/components/button';
 import {
   ZardCardActionComponent,
   ZardCardComponent,
   ZardCardFooterComponent,
   ZardCardHeaderComponent,
   ZardCardTitleComponent,
-} from '@/shared/components/card';
+} from 'app/shared/components/card';
+
+import { IEnrolledCourse } from './interfaces';
 
 @Component({
   selector: 'app-continue-your-journey',
