@@ -26,9 +26,9 @@ export class CoursePage implements OnInit {
   ngOnInit(): void {
     const data = this.route.snapshot.data['course'] as CourseResolved;
 
-    this.course.set(data.course);
-    this.courseProgress.set(data.courseProgress);
-    this.firstIncompleteLessonId.set(data.firstIncompleteLessonId);
+    this.course.set(data?.course);
+    this.courseProgress.set(data?.courseProgress ?? null);
+    this.firstIncompleteLessonId.set(data?.firstIncompleteLessonId ?? null);
     this.logger.debug('Course Page loaded', this.course());
   }
 }
