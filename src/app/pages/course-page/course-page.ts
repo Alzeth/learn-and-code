@@ -3,7 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Course } from 'app/components/course';
 import { CourseEmpty } from 'app/components/course/course-empty';
-import { ICourse } from 'app/interfaces';
+import { ICourse, ICourseProgress } from 'app/interfaces';
+import { CourseResolved } from 'app/resolvers/course.resolver';
 import { LoggerService } from 'app/services/logger';
 
 @Component({
@@ -19,11 +20,15 @@ export class CoursePage implements OnInit {
   private logger = inject(LoggerService);
 
   readonly course = signal<ICourse | undefined>(undefined);
+  readonly courseProgress = signal<ICourseProgress | null>(null);
+  readonly firstIncompleteLessonId = signal<string | null>(null);
 
   ngOnInit(): void {
-    const data = this.route.snapshot.data['course'];
+    const data = this.route.snapshot.data['course'] as CourseResolved;
 
-    this.course.set(data);
+    this.course.set(data.course);
+    this.courseProgress.set(data.courseProgress);
+    this.firstIncompleteLessonId.set(data.firstIncompleteLessonId);
     this.logger.debug('Course Page loaded', this.course());
   }
 }

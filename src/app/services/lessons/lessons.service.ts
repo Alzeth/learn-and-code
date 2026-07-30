@@ -16,7 +16,7 @@ export class LessonsService {
   private useLocal = inject(USE_LOCAL_DATA);
 
   private allCache$: Observable<ILessonsResponse> | null = null;
-  private theoryCache$: Observable<string> | null = null;
+  private theoryCache$ = new Map<string, Observable<string>>();
 
   getAll(): Observable<ILessonsResponse> {
     if (this.allCache$) return this.allCache$;
@@ -33,7 +33,7 @@ export class LessonsService {
 
   invalidateAll(): void {
     this.allCache$ = null;
-    this.theoryCache$ = null;
+    this.theoryCache$.clear();
   }
 
   getByHref(href: string): Observable<ILesson> {
@@ -47,15 +47,18 @@ export class LessonsService {
   }
 
   getLessonTheory(href: string): Observable<string> {
-    if (this.theoryCache$) return this.theoryCache$;
+    if (this.theoryCache$.has(href)) return this.theoryCache$.get(href)!;
 
     const url = this.useLocal
       ? `${environment.baseHref}theory/${href}.md`
       : `${this.apiUrl}/lessons/${href}/theory`;
 
-    const request = this.http.get<IApiResponse<string>>(url).pipe(map((res) => res.data!));
+    const cached$ = this.http.get<IApiResponse<string>>(url).pipe(
+      map((res) => res.data!),
+      shareReplay(1),
+    );
 
-    this.theoryCache$ = request.pipe(shareReplay(1));
-    return this.theoryCache$;
+    this.theoryCache$.set(href, cached$);
+    return cached$;
   }
 }

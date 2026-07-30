@@ -1,6 +1,10 @@
 <div class="container-fluid page-container">
   @if (course()) {
-    <app-course [course]="course()" />
+    <app-course
+      [course]="course()"
+      [courseProgress]="courseProgress()"
+      [firstIncompleteLessonId]="firstIncompleteLessonId()"
+    />
   } @else {
     <app-course-empty />
   }
