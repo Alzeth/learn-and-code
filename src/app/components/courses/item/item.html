@@ -1,9 +1,10 @@
 <a [routerLink]="course()?.id" class="group block h-full">
   <div class="gradient-wrap relative p-[2px] rounded-xl h-full">
-    <z-card
-      [zTitle]="course()?.title"
-      [zDescription]="course()?.description"
-      class="h-full rounded-[10px]"
-    />
+    <z-card class="h-full rounded-[10px]">
+      <z-card-header>
+        <z-card-title [zTitle]="course()?.title" />
+        <z-card-description [zDescription]="course()?.description" />
+      </z-card-header>
+    </z-card>
   </div>
 </a>

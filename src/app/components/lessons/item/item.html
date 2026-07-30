@@ -1,10 +1,10 @@
 <a [routerLink]="lesson()?.id" class="group block h-full">
   <div class="gradient-wrap relative p-[2px] rounded-xl h-full">
-    <z-card
-      [zTitle]="lesson()?.title"
-      [zDescription]="lesson()?.description"
-      class="h-full rounded-[10px]"
-    >
+    <z-card class="h-full rounded-[10px]">
+      <z-card-header>
+        <z-card-title [zTitle]="lesson()?.title" />
+        <z-card-description [zDescription]="lesson()?.description" />
+      </z-card-header>
       <div class="flex items-center justify-between">
         <time [dateTime]="lesson()?.datetime">{{ lesson()?.date }}</time>
         @if (completed()) {

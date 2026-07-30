@@ -78,6 +78,18 @@
         "bio": "Біографія",
         "occupation": "Посада",
         "address": "Адреса"
+      },
+      "learningProgress": {
+        "title": "Прогрес навчання",
+        "courses": "Курси",
+        "lessons": "Уроки",
+        "coursesCompleted": "{{completed}}/{{total}} завершено",
+        "lessonsCompleted": "{{count}} завершено"
+      },
+      "continueJourney": {
+        "title": "Продовжити навчання",
+        "empty": "Немає курсів у процесі.",
+        "continueLastLesson": "Продовжити останній урок"
       }
     },
     "login": {

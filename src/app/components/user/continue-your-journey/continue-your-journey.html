@@ -1,0 +1,45 @@
+<div
+  class="rounded-2xl border border-gray-200 bg-white p-5 lg:p-6 dark:border-gray-800 dark:bg-white/3"
+>
+  <h3 class="text-lg font-semibold text-gray-800 dark:text-white/90 mb-5">
+    {{ 'pages.profile.continueJourney.title' | transloco }}
+  </h3>
+  @if (enrolledCourses().length === 0) {
+    <p class="text-sm text-gray-500 dark:text-gray-400">
+      {{ 'pages.profile.continueJourney.empty' | transloco }}
+    </p>
+  } @else {
+    <ul class="flex flex-col gap-2">
+      @for (item of enrolledCourses(); track item.course.id) {
+        <li class="w-1/3">
+          <a
+            [routerLink]="['/lessons', item.nextLessonId]"
+            [queryParams]="{ course: item.course.id }"
+          >
+            <z-card class="relative mx-auto w-full min-w-sm pt-0">
+              <div class="absolute inset-0 z-30 aspect-video bg-black/35"></div>
+              <img
+                ngSrc="https://avatar.vercel.sh/shadcn1"
+                alt="Event cover"
+                class="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
+                width="120"
+                height="120"
+              />
+              <z-card-header>
+                <z-card-action>
+                  <z-badge zType="secondary">{{ item.percentage }}%</z-badge>
+                </z-card-action>
+                <z-card-title [zTitle]="item.course.title" />
+              </z-card-header>
+              <z-card-footer>
+                <z-button class="w-full">{{
+                  'pages.profile.continueJourney.continueLastLesson' | transloco
+                }}</z-button>
+              </z-card-footer>
+            </z-card>
+          </a>
+        </li>
+      }
+    </ul>
+  }
+</div>

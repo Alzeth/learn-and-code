@@ -1,5 +1,5 @@
 import { isPlatformBrowser } from '@angular/common';
-import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import {
   ApplicationConfig,
   importProvidersFrom,
@@ -28,7 +28,7 @@ export const appConfig: ApplicationConfig = {
     provideBrowserGlobalErrorListeners(),
     provideRouter(routes),
     provideClientHydration(withEventReplay()),
-    provideHttpClient(withFetch(), withInterceptors([localeInterceptor, authInterceptor])),
+    provideHttpClient(withInterceptors([localeInterceptor, authInterceptor])),
     provideZard(),
     importProvidersFrom(MonacoEditorModule.forRoot()),
     provideMarkdown(),
