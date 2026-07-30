@@ -2,6 +2,7 @@ import { TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 
 import { ICourse } from 'app/interfaces';
+import { CourseResolved } from 'app/resolvers/course.resolver';
 import { LoggerService } from 'app/services/logger';
 
 import { CoursePage } from './course-page';
@@ -13,10 +14,16 @@ const mockCourse: ICourse = {
   tableOfContents: [],
 };
 
+const mockResolved: CourseResolved = {
+  course: mockCourse,
+  courseProgress: null,
+  firstIncompleteLessonId: null,
+};
+
 describe('CoursePage', () => {
   const mockLogger = { debug: vi.fn(), info: vi.fn() };
 
-  function setup(courseData: ICourse | undefined) {
+  function setup(courseData: CourseResolved | undefined) {
     const routeMock = { snapshot: { data: { course: courseData } } };
     TestBed.configureTestingModule({
       imports: [CoursePage],
@@ -35,17 +42,17 @@ describe('CoursePage', () => {
   });
 
   it('should create', () => {
-    const fixture = setup(mockCourse);
+    const fixture = setup(mockResolved);
     expect(fixture.componentInstance).toBeTruthy();
   });
 
   it('course signal should be undefined before ngOnInit', () => {
-    const fixture = setup(mockCourse);
+    const fixture = setup(mockResolved);
     expect(fixture.componentInstance.course()).toBeUndefined();
   });
 
   it('ngOnInit() should set course from route data', () => {
-    const fixture = setup(mockCourse);
+    const fixture = setup(mockResolved);
     fixture.componentInstance.ngOnInit();
     expect(fixture.componentInstance.course()).toEqual(mockCourse);
   });
