@@ -3,6 +3,18 @@
     {{ course()?.title }}
   </h1>
   <p class="leading-7 [&amp;:not(:first-child)]:mt-6 mb-10">{{ course()?.description }}</p>
+  @if (courseProgress()) {
+    <div class="mb-10">
+      <div class="flex justify-between items-center mb-2">
+        <span class="text-sm text-muted-foreground">
+          {{ courseProgress()!.completedLessons }} / {{ courseProgress()!.totalLessons }} lessons
+          completed
+        </span>
+        <span class="text-sm font-medium">{{ courseProgress()!.percentage }}%</span>
+      </div>
+      <z-progress-bar [progress]="courseProgress()!.percentage" zSize="lg" zType="accent" />
+    </div>
+  }
   <z-accordion class="mb-10" [zDefaultValue]="course()?.tableOfContents?.[0]?.id ?? ''">
     @for (item of course()?.tableOfContents ?? []; track item.id) {
       <z-accordion-item [zValue]="item.id" [zTitle]="item.title">
@@ -11,7 +23,7 @@
     }
   </z-accordion>
   <a
-    [routerLink]="['/lessons', course()?.tableOfContents?.[0]?.id]"
+    [routerLink]="['/lessons', firstIncompleteLessonId() ?? course()?.tableOfContents?.[0]?.id]"
     [queryParams]="{ course: course()?.id }"
   >
     <button type="button" z-button zType="outline">
