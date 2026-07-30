@@ -52,7 +52,7 @@
     "@angular/router": "^22.0.1",
     "@angular/ssr": "^22.0.1",
     "@jsverse/transloco": "^8.4.0",
-    "@ng-icons/core": "^33.2.3",
+    "@ng-icons/core": "^34.0.0",
     "@ng-icons/lucide": "^33.2.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
