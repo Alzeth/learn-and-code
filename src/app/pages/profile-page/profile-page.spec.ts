@@ -1,7 +1,10 @@
 import { TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
+import { TranslocoService } from '@jsverse/transloco';
+import { Subject } from 'rxjs';
 
 import { IUser, IUserProgress } from 'app/interfaces';
+import { CoursesService } from 'app/services/courses';
 import { LoggerService } from 'app/services/logger';
 import { ProfileStore } from 'app/store/profile.store';
 
@@ -21,6 +24,9 @@ const mockProgress: IUserProgress = {
 
 describe('ProfilePage', () => {
   const mockLogger = { debug: vi.fn(), info: vi.fn() };
+  const mockLangChanges$ = new Subject<string>();
+  const mockTransloco = { langChanges$: mockLangChanges$.asObservable() };
+  const mockCoursesService = { getAll: vi.fn() };
 
   function setup(profileData = { user: mockUser, userProgress: mockProgress }) {
     const routeMock = { snapshot: { data: { profile: profileData } } };
@@ -29,6 +35,8 @@ describe('ProfilePage', () => {
       providers: [
         { provide: ActivatedRoute, useValue: routeMock },
         { provide: LoggerService, useValue: mockLogger },
+        { provide: TranslocoService, useValue: mockTransloco },
+        { provide: CoursesService, useValue: mockCoursesService },
         ProfileStore,
       ],
     }).overrideComponent(ProfilePage, { set: { template: '', imports: [] } });
