@@ -3,9 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 
 import { IUser, IUserProgress } from 'app/interfaces';
 import { LoggerService } from 'app/services/logger';
+import { ProfileStore } from 'app/store/profile.store';
 
 import { ProfilePage } from './profile-page';
-import { ProfileStore } from './profile-page.store';
 
 const mockUser: IUser = { id: 'u1', email: 'test@example.com' };
 const mockProgress: IUserProgress = {
