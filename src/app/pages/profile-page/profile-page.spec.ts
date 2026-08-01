@@ -5,6 +5,7 @@ import { IUser, IUserProgress } from 'app/interfaces';
 import { LoggerService } from 'app/services/logger';
 
 import { ProfilePage } from './profile-page';
+import { ProfileStore } from './profile-page.store';
 
 const mockUser: IUser = { id: 'u1', email: 'test@example.com' };
 const mockProgress: IUserProgress = {
@@ -28,6 +29,7 @@ describe('ProfilePage', () => {
       providers: [
         { provide: ActivatedRoute, useValue: routeMock },
         { provide: LoggerService, useValue: mockLogger },
+        ProfileStore,
       ],
     }).overrideComponent(ProfilePage, { set: { template: '', imports: [] } });
     return TestBed.createComponent(ProfilePage);
@@ -43,42 +45,41 @@ describe('ProfilePage', () => {
     expect(fixture.componentInstance).toBeTruthy();
   });
 
-  it('signals should have defaults before ngOnInit', () => {
+  it('store signals should have defaults before ngOnInit', () => {
     const fixture = setup();
-    expect(fixture.componentInstance.user()).toBeUndefined();
-    expect(fixture.componentInstance.progress()).toBeUndefined();
+    expect(fixture.componentInstance.store.user()).toBeUndefined();
+    expect(fixture.componentInstance.store.completedCourses()).toBe(0);
   });
 
-  it('ngOnInit() should set user and progress from route data', () => {
+  it('ngOnInit() should initialize store from route data', () => {
     const fixture = setup();
     fixture.componentInstance.ngOnInit();
-    expect(fixture.componentInstance.user()).toEqual(mockUser);
-    expect(fixture.componentInstance.progress()).toEqual(mockProgress);
+    expect(fixture.componentInstance.store.user()).toEqual(mockUser);
   });
 
   it('completedCourses should count courses with 100% completion', () => {
     const fixture = setup();
     fixture.componentInstance.ngOnInit();
-    expect(fixture.componentInstance.completedCourses()).toBe(1);
+    expect(fixture.componentInstance.store.completedCourses()).toBe(1);
   });
 
   it('totalCourses should count all courses', () => {
     const fixture = setup();
     fixture.componentInstance.ngOnInit();
-    expect(fixture.componentInstance.totalCourses()).toBe(2);
+    expect(fixture.componentInstance.store.totalCourses()).toBe(2);
   });
 
   it('completedLessons should count completed lessons', () => {
     const fixture = setup();
     fixture.componentInstance.ngOnInit();
-    expect(fixture.componentInstance.completedLessons()).toBe(1);
+    expect(fixture.componentInstance.store.completedLessons()).toBe(1);
   });
 
   it('computed values should return 0 when progress is undefined', () => {
     const fixture = setup({ user: mockUser, userProgress: undefined as unknown as IUserProgress });
     fixture.componentInstance.ngOnInit();
-    expect(fixture.componentInstance.completedCourses()).toBe(0);
-    expect(fixture.componentInstance.totalCourses()).toBe(0);
-    expect(fixture.componentInstance.completedLessons()).toBe(0);
+    expect(fixture.componentInstance.store.completedCourses()).toBe(0);
+    expect(fixture.componentInstance.store.totalCourses()).toBe(0);
+    expect(fixture.componentInstance.store.completedLessons()).toBe(0);
   });
 });
