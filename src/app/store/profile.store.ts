@@ -51,4 +51,8 @@ export class ProfileStore {
     this._progress.set(progress);
     this._courses.set(courses);
   }
+
+  updateCourses(courses: ICourse[]): void {
+    this._courses.set(courses);
+  }
 }
