@@ -3,12 +3,12 @@
     {{ 'pages.profile.title' | transloco }}
   </h1>
   <div class="container">
-    <app-user-info [user]="user()" />
+    <app-user-info [user]="store.user()" />
     <app-user-learning-progress
-      [completedCourses]="completedCourses()"
-      [totalCourses]="totalCourses()"
-      [completedLessons]="completedLessons()"
+      [completedCourses]="store.completedCourses()"
+      [totalCourses]="store.totalCourses()"
+      [completedLessons]="store.completedLessons()"
     />
-    <app-continue-your-journey [enrolledCourses]="enrolledCourses()" />
+    <app-continue-your-journey [enrolledCourses]="store.enrolledCourses()" />
   </div>
 </div>
