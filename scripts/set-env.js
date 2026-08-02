@@ -1,11 +1,18 @@
 // Run with --prod flag to generate environment.ts (CI/prod builds)
 // Run without flag to generate environment.development.ts (local dev via prestart)
 // Local: node --env-file=.env scripts/set-env.js
-// CI:    node scripts/set-env.js --prod
+// CI:    node scripts/set-env.js --prod  (runs automatically via prebuild in CI)
 const { writeFileSync } = require('fs');
 const { resolve } = require('path');
 
 const isProd = process.argv.includes('--prod');
+
+// When building locally without CI env vars, skip overwriting environment.ts so
+// manual edits are preserved. GitHub Actions always sets CI=true.
+if (isProd && !process.env['CI'] && !process.env['NG_APP_API_URL'] && !process.env['GEO_API_KEY']) {
+  console.log('Skipping environment.ts generation (not in CI and no env vars set). Using existing file.');
+  process.exit(0);
+}
 
 const apiUrl = JSON.stringify(
   process.env['NG_APP_API_URL'] ??
