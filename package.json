@@ -1,7 +1,7 @@
 {
   "name": "learn-and-code",
   "homepage": "https://alzeth.github.io/learn-and-code/",
-  "version": "17.0.2",
+  "version": "18.0.0",
   "description": "Learning platform with code editor",
   "repository": {
     "type": "git",
@@ -14,9 +14,7 @@
   ],
   "scripts": {
     "ng": "ng",
-    "prestart": "node --env-file=.env scripts/set-env.js",
     "start": "ng serve",
-    "prebuild": "node scripts/set-env.js --prod",
     "build": "ng build --base-href /learn-and-code/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
