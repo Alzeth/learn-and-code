@@ -26,6 +26,10 @@ jobs:
 
       - name: Build 📥
         run: npm run build # This must output to /dist
+        env:
+          GEO_API_KEY: ${{ secrets.GEO_API_KEY }}
+          GEO_API_URL: ${{ secrets.GEO_API_URL }}
+          NG_APP_API_URL: ${{ secrets.NG_APP_API_URL }}
 
       - name: Copy 404 page 🔧
         run: cp dist/learn-and-code/browser/404/index.html dist/learn-and-code/browser/404.html

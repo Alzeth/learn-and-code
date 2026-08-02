@@ -31,7 +31,7 @@ import { AppLoader } from 'app/shared/components/app-loader/app-loader';
 })
 export class App implements OnInit {
   private readonly router = inject(Router);
-  private logger: LoggerService = inject(LoggerService);
+  private readonly logger = inject(LoggerService);
   private readonly destroyRef = inject(DestroyRef);
   readonly isLoading = signal(false);
   protected readonly title = signal('learn-and-code');

@@ -6,4 +6,6 @@ export const environment = {
   logLevel: LogLevel.OFF,
   apiUrl: 'https://learn-and-code-be-sepia.vercel.app',
   useLocalData: false,
+  geoApiKey: '',
+  geoApiUrl: '',
 };
