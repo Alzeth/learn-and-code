@@ -15,3 +15,5 @@ export const ROUTES = {
   ABOUT: 'about',
   NOT_FOUND: '404',
 };
+
+export const AVAILABLE_LANGS = ['en', 'uk', 'de', 'es', 'pl', 'fr', 'it'];

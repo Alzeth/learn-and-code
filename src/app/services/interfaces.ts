@@ -59,3 +59,70 @@ export interface IToastOptions {
   type?: 'default' | 'destructive';
   icon?: string;
 }
+
+export interface IGeolocationResponse {
+  city: IGeolocationCity;
+  country: IGeolocationCountry;
+  state: IGeolocationState;
+  location: IGeolocationLocation;
+  continent: IGeolocationContinent;
+  subdivisions: IGeolocationSubdivision[];
+  ip: string;
+}
+
+export interface IGeolocationCity {
+  name: string;
+  names: IGeolocationNames;
+}
+
+export interface IGeolocationNames {
+  en: string;
+  de?: string;
+  es?: string;
+  fa?: string;
+  fr?: string;
+  ja?: string;
+  ko?: string;
+  'pt-BR'?: string;
+  ru?: string;
+  'zh-CN'?: string;
+}
+
+export interface IGeolocationContinent {
+  code: string;
+  name: string;
+  names: IGeolocationNames;
+  geoname_id: number;
+}
+
+export interface IGeolocationCountry {
+  name: string;
+  iso_code: string;
+  names: IGeolocationNames;
+  geoname_id: number;
+  name_native: string;
+  phone_code: string;
+  capital: string;
+  currency: string;
+  flag: string;
+  languages: IGeolocationLanguage[];
+}
+
+export interface IGeolocationLanguage {
+  iso_code: string;
+  name: string;
+  name_native: string;
+}
+
+export interface IGeolocationLocation {
+  latitude: number;
+  longitude: number;
+}
+
+export interface IGeolocationState {
+  name: string;
+}
+
+export interface IGeolocationSubdivision {
+  names: IGeolocationNames;
+}
