@@ -148,5 +148,14 @@
       "expiredLink": "Ce lien de réinitialisation a expiré ou a déjà été utilisé.",
       "error": "Une erreur s'est produite. Veuillez réessayer."
     }
+  },
+  "guards": {
+    "auth": {
+      "title": "Connexion requise",
+      "default": "Veuillez vous connecter pour continuer.",
+      "lessons": "Veuillez vous connecter pour accéder aux leçons.",
+      "courses": "Veuillez vous connecter pour accéder aux cours.",
+      "profile": "Veuillez vous connecter pour voir votre profil."
+    }
   }
 }

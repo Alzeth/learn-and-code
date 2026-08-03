@@ -148,5 +148,14 @@
       "expiredLink": "Este enlace de restablecimiento ha caducado o ya se ha utilizado.",
       "error": "Algo salió mal. Por favor, inténtalo de nuevo."
     }
+  },
+  "guards": {
+    "auth": {
+      "title": "Inicio de sesión requerido",
+      "default": "Por favor, inicia sesión para continuar.",
+      "lessons": "Por favor, inicia sesión para acceder a las lecciones.",
+      "courses": "Por favor, inicia sesión para acceder a los cursos.",
+      "profile": "Por favor, inicia sesión para ver tu perfil."
+    }
   }
 }

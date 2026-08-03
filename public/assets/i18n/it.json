@@ -148,5 +148,14 @@
       "expiredLink": "Questo link di reimpostazione è scaduto o è già stato utilizzato.",
       "error": "Qualcosa è andato storto. Per favore riprova."
     }
+  },
+  "guards": {
+    "auth": {
+      "title": "Accesso richiesto",
+      "default": "Effettua il login per continuare.",
+      "lessons": "Effettua il login per accedere alle lezioni.",
+      "courses": "Effettua il login per accedere ai corsi.",
+      "profile": "Effettua il login per visualizzare il tuo profilo."
+    }
   }
 }

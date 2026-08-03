@@ -5,22 +5,11 @@ import { unsavedChangesGuard } from 'app/guards';
 import { AboutPage } from 'app/pages/about-page';
 import { CoursePage } from 'app/pages/course-page';
 import { CoursesPage } from 'app/pages/courses-page';
-import { ForgotPasswordPage } from 'app/pages/forgot-password-page';
 import { HomePage } from 'app/pages/home-page';
-import { LessonPage } from 'app/pages/lesson-page';
 import { LessonsPage } from 'app/pages/lessons-page';
-import { LoginPage } from 'app/pages/login-page';
 import { NotFoundPage } from 'app/pages/not-found-page';
 import { ProfilePage } from 'app/pages/profile-page';
-import { RegisterPage } from 'app/pages/register-page';
-import { ResetPasswordPage } from 'app/pages/reset-password-page';
-import {
-  CourseResolver,
-  CoursesResolver,
-  LessonResolver,
-  LessonsResolver,
-  ProfileResolver,
-} from 'app/resolvers';
+import { CourseResolver, CoursesResolver, LessonsResolver, ProfileResolver } from 'app/resolvers';
 
 import { ROUTES } from './constants';
 
@@ -37,13 +26,7 @@ export const routes: Routes = [
   },
   {
     path: ROUTES.LESSON,
-    canActivate: [authGuard],
-    component: LessonPage,
-    runGuardsAndResolvers: 'paramsOrQueryParamsChange',
-    data: { authMessage: 'Please log in to access lessons.' },
-    resolve: {
-      lesson: LessonResolver,
-    },
+    loadChildren: () => import('app/pages/lesson-page/lesson.routes').then((mod) => mod.default),
   },
   {
     path: ROUTES.COURSES,
@@ -57,24 +40,37 @@ export const routes: Routes = [
     path: ROUTES.COURSE,
     canActivate: [authGuard],
     component: CoursePage,
-    data: { authMessage: 'Please log in to access courses.' },
+    data: { authMessage: 'guards.auth.courses' },
     resolve: {
       course: CourseResolver,
     },
   },
-  { path: ROUTES.AUTH.LOGIN, component: LoginPage, canDeactivate: [unsavedChangesGuard] },
-  { path: ROUTES.AUTH.REGISTER, component: RegisterPage, canDeactivate: [unsavedChangesGuard] },
   {
-    path: ROUTES.AUTH.FORGOT_PASSWORD,
-    component: ForgotPasswordPage,
+    path: ROUTES.AUTH.LOGIN,
+    loadComponent: () => import('app/pages/login-page').then((mod) => mod.LoginPage),
     canDeactivate: [unsavedChangesGuard],
   },
-  { path: ROUTES.AUTH.RESET_PASSWORD, component: ResetPasswordPage },
+  {
+    path: ROUTES.AUTH.REGISTER,
+    loadComponent: () => import('app/pages/register-page').then((mod) => mod.RegisterPage),
+    canDeactivate: [unsavedChangesGuard],
+  },
+  {
+    path: ROUTES.AUTH.FORGOT_PASSWORD,
+    loadComponent: () =>
+      import('app/pages/forgot-password-page').then((mod) => mod.ForgotPasswordPage),
+    canDeactivate: [unsavedChangesGuard],
+  },
+  {
+    path: ROUTES.AUTH.RESET_PASSWORD,
+    loadComponent: () =>
+      import('app/pages/reset-password-page').then((mod) => mod.ResetPasswordPage),
+  },
   {
     path: ROUTES.PROFILE,
     canActivate: [authGuard],
     component: ProfilePage,
-    data: { authMessage: 'Please log in to view your profile.' },
+    data: { authMessage: 'guards.auth.profile' },
     resolve: {
       profile: ProfileResolver,
     },
