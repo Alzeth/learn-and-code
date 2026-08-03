@@ -148,5 +148,14 @@
       "expiredLink": "This reset link has expired or has already been used.",
       "error": "Something went wrong. Please try again."
     }
+  },
+  "guards": {
+    "auth": {
+      "title": "Login required",
+      "default": "Please log in to continue.",
+      "lessons": "Please log in to access lessons.",
+      "courses": "Please log in to access courses.",
+      "profile": "Please log in to view your profile."
+    }
   }
 }

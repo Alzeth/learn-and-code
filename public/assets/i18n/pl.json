@@ -148,5 +148,14 @@
       "expiredLink": "Ten link do resetowania wygasł lub został już użyty.",
       "error": "Coś poszło nie tak. Spróbuj ponownie."
     }
+  },
+  "guards": {
+    "auth": {
+      "title": "Wymagane logowanie",
+      "default": "Zaloguj się, aby kontynuować.",
+      "lessons": "Zaloguj się, aby uzyskać dostęp do lekcji.",
+      "courses": "Zaloguj się, aby uzyskać dostęp do kursów.",
+      "profile": "Zaloguj się, aby wyświetlić swój profil."
+    }
   }
 }

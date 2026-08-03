@@ -148,5 +148,14 @@
       "expiredLink": "Dieser Reset-Link ist abgelaufen oder wurde bereits verwendet.",
       "error": "Etwas ist schiefgelaufen. Bitte versuche es erneut."
     }
+  },
+  "guards": {
+    "auth": {
+      "title": "Anmeldung erforderlich",
+      "default": "Bitte melden Sie sich an, um fortzufahren.",
+      "lessons": "Bitte melden Sie sich an, um auf Lektionen zuzugreifen.",
+      "courses": "Bitte melden Sie sich an, um auf Kurse zuzugreifen.",
+      "profile": "Bitte melden Sie sich an, um Ihr Profil anzuzeigen."
+    }
   }
 }

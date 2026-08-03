@@ -2,7 +2,6 @@ import { isPlatformBrowser } from '@angular/common';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import {
   ApplicationConfig,
-  importProvidersFrom,
   inject,
   isDevMode,
   PLATFORM_ID,
@@ -12,8 +11,6 @@ import {
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
 import { provideRouter } from '@angular/router';
 import { provideTransloco, TranslocoService } from '@jsverse/transloco';
-import { provideMarkdown } from 'ngx-markdown';
-import { MonacoEditorModule } from 'ngx-monaco-editor-v2';
 import { firstValueFrom } from 'rxjs';
 
 import { AVAILABLE_LANGS } from 'app/constants';
@@ -33,8 +30,6 @@ export const appConfig: ApplicationConfig = {
     provideClientHydration(withEventReplay()),
     provideHttpClient(withInterceptors([localeInterceptor, authInterceptor])),
     provideZard(),
-    importProvidersFrom(MonacoEditorModule.forRoot()),
-    provideMarkdown(),
     provideTransloco({
       config: {
         availableLangs: AVAILABLE_LANGS,
